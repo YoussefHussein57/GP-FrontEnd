@@ -1,0 +1,31 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px ;
+    border-style: outset;
+}
+
+.nav-logo {
+    width: 60px;
+}
+
+.nav-items {
+    list-style: none;
+    display: flex;
+}
+
+.nav-items > li {
+    padding: 10px;
+}
+
+.page-Footer {
+    position: fixed;
+    background-color: rgba(120, 120, 120)  ;
+    color: white;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+     
+}
