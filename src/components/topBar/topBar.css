@@ -1,0 +1,26 @@
+.top-bar {
+    display: flex;
+    background-color: #F4EDEB;
+    border-radius: 15px;
+    padding: 5px;
+  }
+  
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 15px 15px 15px;
+    cursor: pointer;
+    color: #F08254;
+    font-weight: bold;
+    text-decoration: none; /* Remove underline from links */
+    background-color: #FFFFFF;
+    justify-content: space-between;
+    
+  }
+  
+  .tab.active {
+    background-color: #F08254;
+    color: white;
+    border-radius: 15px 15px 0 0;
+  }
+  

@@ -1,0 +1,83 @@
+/* src/components/Sidebar/Sidebar.css */
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  padding: 20px;
+  height: 100vh;
+  justify-content: space-evenly;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.logo-Container {
+  font-size: 24px;
+  margin-bottom: 80px;
+  background-image: url("../../Images/Helwan_Logo.png");
+  background-repeat: no-repeat;
+  background-size: 128px;
+  background-position: center;
+}
+
+.logo-text {
+  height: 128px; /* Adjust to match your logo size */
+  font-size: 80%;
+  text-align: center;
+  padding-top: 230px;
+}
+
+.logo-text h2 {
+  font-size: 50px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+.logo-text h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  margin-top: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  margin: 10px 0;
+}
+
+button.Buttons {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  height: 2.7rem;
+  padding: 0.5rem 1rem;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 21px;
+  background: none;
+  transition: background-color 0.3s;
+  border-radius: 11%;
+  text-align: center;
+  color: #ef8354;
+  margin-top: 30px;
+}
+
+button.Buttons:hover,
+button.Buttons.active {
+  background-color: #ef8354;
+  color: antiquewhite;
+}
+
+.icon {
+  margin-right: 1rem;
+  color: #ef8354;
+}

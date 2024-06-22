@@ -1,0 +1,144 @@
+/* src/pages/Login/Login.css */
+.background-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.background-left {
+  flex: 1;
+  background: url("../../Images/Warehouse.png") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #eeeded;
+}
+
+.background-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+}
+
+.logo {
+  background-image: url("../../Images/logo.png");
+  background-size: contain;
+  background-position: center;
+  display: block;
+  background-repeat: no-repeat;
+  width: 6.875rem;
+  height: 7.5rem;
+  margin-bottom: 20px;
+}
+
+.text-container {
+  text-align: center;
+  margin-top: 1.25rem;
+}
+
+.background-left h1 {
+  margin: 0;
+  padding: 0.625rem;
+  font-size: 3.438rem;
+}
+
+.background-left h2 {
+  margin: 0;
+  padding: 0.625rem;
+  font-family: bold;
+  font-size: 2.813rem;
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0.938rem;
+}
+
+.icon {
+  position: absolute;
+  left: 0.625rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: hsl(0, 2%, 62%);
+  z-index: 1;
+}
+
+.input-container input {
+  width: 100%;
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+}
+
+input[type="email"],
+input[type="password"] {
+  padding: 0.625rem 2.5rem;
+  font-size: 1rem;
+  border: 0.0625rem solid #bab6b6;
+  width: 100%;
+  border-radius: 0.625rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+button {
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  background: linear-gradient(to right, #2d3142 90%, #ef8354);
+  color: white;
+  border: none;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0.938rem;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.label {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.forgot-password {
+  margin-top: 0.625rem;
+  font-size: 0.875rem;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}

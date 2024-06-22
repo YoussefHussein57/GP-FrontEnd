@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Login from "./pages/Login/Login";
+import Home from "./pages/Home/Home";
+import Dashboard from "./pages/Dashboard/Dashboard";
+// import Notification from "./pages/Notification/Notification";
+// import Inventory from "./pages/Inventory/Inventory";
+// import Settings from "./pages/Settings/Settings";
+import "./App.css";
 
-function App() {
+const App = () => {
+  return (
+    <Router>
+      <Main />
+    </Router>
+  );
+};
+
+const Main = () => {
+  const location = useLocation();
+  const hideSidebarRoutes = ["/login"];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!hideSidebarRoutes.includes(location.pathname) && <Sidebar />}
+      <div className="content">
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          {/* <Route path="/notification" element={<Notification />} />
+          <Route path="/inventory" element={<Inventory />} />
+          <Route path="/settings" element={<Settings />} /> */}
+          <Route path="*" element={<Navigate to="/login" />} />
+        </Routes>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

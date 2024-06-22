@@ -1,0 +1,24 @@
+/* src/pages/Home/Home.css */
+.home {
+  display: flex;
+  height: 100vh;
+  overflow-y: auto;
+  margin-left: 250px; /* Add margin to accommodate the sidebar */
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 20px;
+  background-color: antiquewhite;
+  width: calc(100% - 250px); /* Adjust width to account for the sidebar */
+}
+
+.column {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 20px;
+}
