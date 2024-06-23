@@ -1,12 +1,13 @@
 /* src/App.css */
 .App {
-  display: flex;
-}
+    display: flex;
+    text-align: center;
+  }
 
 .content {
   flex-grow: 1;
-  margin-left: 250px; /* Add margin to accommodate the sidebar */
-  padding: 20px;
+  margin-left: 0px; /* Add margin to accommodate the sidebar */
+  padding: 0px;
 }
 
 .page {

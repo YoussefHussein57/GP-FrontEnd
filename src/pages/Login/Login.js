@@ -86,7 +86,7 @@ export default function BackgroundComponent() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <div className="forgot-password">Forgot Password?</div>
+  
             <div>
               <button type="submit">Log In</button>
             </div>

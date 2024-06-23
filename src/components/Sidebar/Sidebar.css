@@ -1,12 +1,12 @@
 /* src/components/Sidebar/Sidebar.css */
 .sidebar {
-  width: 250px;
+  width: 10%;
   background-color: #ffffff;
   padding: 20px;
   height: 100vh;
   justify-content: space-evenly;
   position: fixed;
-  left: 0;
+  left: 10px;
   top: 0;
   bottom: 0;
 }
@@ -27,7 +27,7 @@
   padding-top: 230px;
 }
 
-.logo-text h2 {
+.logo-text h2  {
   font-size: 50px;
   font-weight: bolder;
   margin-bottom: 10px;
@@ -80,4 +80,7 @@ button.Buttons.active {
 .icon {
   margin-right: 1rem;
   color: #ef8354;
+  justify-content: space-around;
+  
+  
 }

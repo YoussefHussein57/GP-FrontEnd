@@ -1,76 +1,89 @@
-/* src/pages/Login/Login.css */
 .background-container {
   display: flex;
-  height: 100vh;
+  flex-wrap: wrap;
+  height: 100%;
   width: 100%;
+  left: 0;
 }
 
 .background-left {
-  flex: 1;
-  background: url("../../Images/Warehouse.png") no-repeat center center;
+  background: url('../../Images/Warehouse.png') no-repeat center;
   background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #eeeded;
+  background-position-x: left;
+  width: 100%;
+  flex: 1 1 50%;
 }
 
 .background-right {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  position: relative;
+  padding: 30px;
+  flex: 1 1 50%;
+  box-sizing: border-box;
 }
 
 .logo {
-  background-image: url("../../Images/logo.png");
+  background-image: url('../../Images/logo.png');
   background-size: contain;
   background-position: center;
   display: block;
   background-repeat: no-repeat;
-  width: 6.875rem;
-  height: 7.5rem;
-  margin-bottom: 20px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 35rem;
+  height: auto;
+  aspect-ratio: 46.625 / 15.781;
+  margin-top: 5rem;
+  z-index: 1;
+  text-align: center;
 }
 
 .text-container {
   text-align: center;
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
+  display: block;
+}
+
+.background-left h1,
+.background-left h2 {
+  margin: 0 4rem;
+  padding: 0.625rem;
+  color: #eeeded;
+  position: relative;
+  z-index: 1;
+  text-align: center;
 }
 
 .background-left h1 {
-  margin: 0;
-  padding: 0.625rem;
   font-size: 3.438rem;
 }
 
 .background-left h2 {
-  margin: 0;
-  padding: 0.625rem;
   font-family: bold;
   font-size: 2.813rem;
+  margin-left: 30px;
 }
 
 .login-form-container {
   width: 100%;
-  max-width: 400px;
-  padding: 2rem;
+  max-width: 50%;
+  padding: 1.25rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  font-family: "Times New Roman", Times, serif;
-  background: rgba(255, 255, 255, 1);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1.25rem;
 }
 
@@ -82,63 +95,120 @@ form {
 
 .input-container {
   position: relative;
-  width: 100%;
   margin-bottom: 0.938rem;
+  width: 100%;
+  max-width: 21rem;
 }
 
 .icon {
   position: absolute;
-  left: 0.625rem;
-  top: 50%;
+  left: 0.01rem;
+  top: 70%;
   transform: translateY(-50%);
   color: hsl(0, 2%, 62%);
   z-index: 1;
 }
 
 .input-container input {
-  width: 100%;
   padding-left: 2.5rem;
-  padding-right: 1rem;
+}
+
+.input-container label {
+  display: block;
+  margin-bottom: 0.625rem;
+}
+
+.label p {
+  margin: 0;
 }
 
 input[type="email"],
 input[type="password"] {
-  padding: 0.625rem 2.5rem;
+  padding: 0.625rem 2.7rem;
   font-size: 1rem;
   border: 0.0625rem solid #bab6b6;
   width: 100%;
+  max-width: 80%;
   border-radius: 0.625rem;
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 button {
-  padding: 0.625rem 1.25rem;
+  padding: 0.625rem 2.7rem;
   font-size: 1rem;
-  background: linear-gradient(to right, #2d3142 90%, #ef8354);
+  background: linear-gradient(to right, #2D3142 90%, #EF8354);
   color: white;
   border: none;
   border-radius: 0.625rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 0.938rem;
+  margin-top: 0.923rem;
   width: 100%;
-}
-
-button:hover {
-  background-color: #0056b3;
+  max-width: 22.5rem;
+  margin-right: 3rem;
 }
 
 .label {
-  font-family: "Times New Roman", Times, serif;
+  padding-right: 100%;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-.forgot-password {
-  margin-top: 0.625rem;
-  font-size: 0.875rem;
-  color: #007bff;
-  cursor: pointer;
+/* Media Queries */
+@media (max-width: 768px) {
+  .background-left,
+  .background-right {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .background-left h1 {
+    font-size: 2rem;
+    margin: 0 1rem;
+  }
+
+  .background-left h2 {
+    font-size: 1.5rem;
+    margin: 0 1rem 0 1rem;
+  }
+
+  .login-form-container {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .input-container {
+    width: 100%;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
 }
 
-.forgot-password:hover {
-  text-decoration: underline;
+@media (max-width: 480px) {
+  .background-left h1 {
+    font-size: 1.5rem;
+  }
+
+  .background-left h2 {
+    font-size: 1.25rem;
+  }
+
+  .input-container {
+    width: 100%;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    padding: 0.5rem 1.5rem;
+  }
+
+  button {
+    padding: 0.5rem 1.5rem;
+  }
 }
