@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Searchbar from "../../components/Searchbar/Searchbar";
 import GaugeChart from "react-gauge-chart";
 import Modal from "react-modal";
 import {

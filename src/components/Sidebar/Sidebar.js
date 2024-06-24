@@ -37,7 +37,7 @@ const Sidebar = () => {
                 className={`Buttons ${
                   activeButton === "Home" ? "active" : ""
                 }`}>
-                <span className="icon">
+                <span className="Shape">
                   <FontAwesomeIcon icon={faHouse} />
                 </span>
                 Home
@@ -53,7 +53,7 @@ const Sidebar = () => {
                 className={`Buttons ${
                   activeButton === "Dashboard" ? "active" : ""
                 }`}>
-                <span className="icon">
+                <span className="Shape">
                   <FontAwesomeIcon icon={faChartLine} />
                 </span>
                 Dashboard
@@ -69,7 +69,7 @@ const Sidebar = () => {
                 className={`Buttons ${
                   activeButton === "Inventory" ? "active" : ""
                 }`}>
-                <span className="icon">
+                <span className="Shape">
                   <FontAwesomeIcon icon={faBox} />
                 </span>
                 Inventory
@@ -85,7 +85,7 @@ const Sidebar = () => {
                 className={`Buttons ${
                   activeButton === "Notifications" ? "active" : ""
                 }`}>
-                <span className="icon">
+                <span className="Shape">
                   <FontAwesomeIcon icon={faBell} />
                 </span>
                 Notifications
@@ -101,7 +101,7 @@ const Sidebar = () => {
                 className={`Buttons ${
                   activeButton === "Settings" ? "active" : ""
                 }`}>
-                <span className="icon">
+                <span className="Shape">
                   <FontAwesomeIcon icon={faGear} />
                 </span>
                 Settings

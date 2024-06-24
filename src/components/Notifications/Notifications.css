@@ -1,19 +1,21 @@
 /* Notifications.css */
 
 .notifications {
-    background-color: #fff;
-    padding: 20px;
-    flex-shrink: 0;
-    width: 40%;
-    margin-left: 0px;
-    margin-right: 2%;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
-    display: flex;
-    flex-direction: column;
-    border-radius: 7%;
-    height: 80%;
-    overflow-y: auto;
-    margin-top: 8%;
+  padding: 1.6rem;
+  background-color: #fff;
+  width: 50%;
+  max-height: 85%;
+  margin-right: 2%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 16%);
+  overflow-y: auto;
+  margin-top: 8%;
+  box-sizing: border-box;
+    
     
   }
   

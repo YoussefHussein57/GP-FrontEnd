@@ -15,6 +15,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 // import Inventory from "./pages/Inventory/Inventory";
 // import Settings from "./pages/Settings/Settings";
 import "./App.css";
+import Searchbar from "./components/Searchbar/Searchbar";
 
 const App = () => {
   return (
@@ -27,11 +28,16 @@ const App = () => {
 const Main = () => {
   const location = useLocation();
   const hideSidebarRoutes = ["/login"];
+  const hideSearchbarRoutes = ["/login"];
 
   return (
     <div className="App">
       {!hideSidebarRoutes.includes(location.pathname) && <Sidebar />}
+   
       <div className="content">
+      <div className="SearchBar">
+      {!hideSearchbarRoutes.includes(location.pathname) && <Searchbar/>}
+      </div>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />

@@ -35,7 +35,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="dashboard-container">
+    <div className="favorites-container">
       <h2>Favorites</h2>
       <div className="favorites">
         {favorites.map((favorite, index) => (

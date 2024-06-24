@@ -6,14 +6,14 @@
   margin-top: 16%;
   height: auto;
   width: 90%;
-  max-width: 1200px;
+  max-width: 75rem;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  border-radius: 7%;
+  border-radius: 3%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 auto;
-  margin-top: 2%;
+  margin: 0 28rem;
+  margin-top: 6%;
   
 }
 .top-text {

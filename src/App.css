@@ -1,8 +1,15 @@
 /* src/App.css */
 .App {
-    display: flex;
-    text-align: center;
-  }
+  display: flex;
+  text-align: center;
+  background-color: antiquewhite;
+  height: 100vh;
+}
+
+.SearchBar {
+  margin-left: 15.5rem;
+  max-width: 85%;
+}
 
 .content {
   flex-grow: 1;
@@ -14,4 +21,34 @@
   padding: 20px;
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .SearchBar {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .SearchBar {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 0;
+  }
 }

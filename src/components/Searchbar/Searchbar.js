@@ -11,9 +11,9 @@ const Searchbar = () => {
         <input type="text" placeholder="Search anything" />
       </div>
       <div className="icons">
-        <FontAwesomeIcon icon={faEnvelope} className="icon" />
-        <FontAwesomeIcon icon={faBell} className="icon" />
-        <FontAwesomeIcon icon={faQuestionCircle} className="icon" />
+        <FontAwesomeIcon icon={faEnvelope} className="search-shape" />
+        <FontAwesomeIcon icon={faBell} className="search-shape" />
+        <FontAwesomeIcon icon={faQuestionCircle} className="search-shape" />
       </div>
     </div>
   );

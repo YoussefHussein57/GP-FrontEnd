@@ -3,10 +3,9 @@ import React from "react";
 import "./Login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-let BASE_URL = "http://localhost:4000/api";
+import { getLast10Readings, login } from "../../Helpers/apiHelper";
 
 export default function BackgroundComponent() {
   const [email, setEmail] = React.useState("");
@@ -17,29 +16,11 @@ export default function BackgroundComponent() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null); // Clear previous errors
-
-    try {
-      const response = await axios.post(`${BASE_URL}/users/login`, {
-        email,
-        password,
-      });
-
-      setError("Login Successful");
-      console.log("token:", response.data.token);
-
+    const token = await login(email, password); // Get the token from login function
+    if (token) {
       // Redirect to the home page
+      await getLast10Readings("66757c879087f55851cfe033"); // Call the function with the token
       navigate("/home");
-    } catch (err) {
-      if (err.response) {
-        console.error("Response error:", err.response);
-        setError(err.response.data.message || "Invalid Credentials");
-      } else if (err.request) {
-        console.error("Request error:", err.request);
-        setError("No response from the server. Please try again later.");
-      } else {
-        console.error("General error:", err.message);
-        setError("An error occurred. Please try again.");
-      }
     }
   };
 
@@ -86,7 +67,7 @@ export default function BackgroundComponent() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-  
+
             <div>
               <button type="submit">Log In</button>
             </div>
