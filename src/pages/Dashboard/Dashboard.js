@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Searchbar from "../../components/Searchbar/Searchbar";
 import GaugeChart from "react-gauge-chart";
 import Modal from "react-modal";
 import {
@@ -13,6 +12,11 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import {
+  getFactroiesByUser,
+  getLast10Readings,
+  appendNewReading,
+} from "../../Helpers/apiHelper";
 import "./Dashboard.css";
 
 ChartJS.register(
@@ -95,12 +99,42 @@ const dashboards = [
 ];
 
 const Dashboard = () => {
+  const [factories, setFactories] = useState([]);
+  const [selectedFactory, setSelectedFactory] = useState(null);
   const [selectedGauge, setSelectedGauge] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [isLedOn, setIsLedOn] = useState(false); // State to track LED status
+  const [gaugeData, setGaugeData] = useState([]);
 
-  const openModal = (gauge) => {
+  useEffect(() => {
+    const fetchFactories = async () => {
+      const factoriesData = await getFactroiesByUser();
+      setFactories(factoriesData || []); // Ensure factoriesData is an array
+    };
+
+    fetchFactories();
+  }, []);
+
+  const handleFactoryChange = async (e) => {
+    const factoryId = e.target.value;
+    setSelectedFactory(factoryId);
+
+    const readingData = {
+      bn: "temperature",
+      bv: 293,
+      n: "nozzle temperature",
+      u: "C",
+      v: 292,
+      s: "s_value",
+      t: "1718879726",
+    };
+    await appendNewReading(factoryId, readingData);
+  };
+
+  const openModal = async (gauge) => {
     setSelectedGauge(gauge);
+    const readings = await getLast10Readings("66757c879087f55851cfe033");
+    setGaugeData(readings || []); // Ensure readings is an array
     setModalIsOpen(true);
   };
 
@@ -111,7 +145,6 @@ const Dashboard = () => {
 
   const toggleLed = () => {
     setIsLedOn((prevStatus) => !prevStatus);
-    // Implement the logic to actually toggle the LED here (e.g., API call)
     console.log(`LED is now ${!isLedOn ? "ON" : "OFF"}`);
   };
 
@@ -120,10 +153,7 @@ const Dashboard = () => {
     datasets: [
       {
         label: `${selectedGauge ? selectedGauge.label : ""} Over Time`,
-        data: Array.from(
-          { length: 10 },
-          () => Math.random() * (selectedGauge ? selectedGauge.max : 100)
-        ),
+        data: gaugeData.map((reading) => reading.value),
         fill: false,
         backgroundColor: selectedGauge ? selectedGauge.color : "#000",
         borderColor: selectedGauge ? selectedGauge.color : "#000",
@@ -132,61 +162,81 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="dashboard-container">
-      <h2>Dashboard</h2>
-      {dashboards.map((dashboard) => (
-        <div key={dashboard.id} className="dashboard-wrapper">
-          <div className="dashboard">
-            <h3>{dashboard.title}</h3>
-            <div className="gauges">
-              {dashboard.gauges.map((gauge) => (
-                <div
-                  className="gauge-container"
-                  key={gauge.id}
-                  onClick={() => openModal(gauge)}>
-                  <h3>{gauge.label}</h3>
-                  <GaugeChart
-                    id={`gauge-chart-${gauge.id}`}
-                    nrOfLevels={10}
-                    percent={gauge.value}
-                    colors={[gauge.color, "#eee"]}
-                    arcWidth={0.3}
-                    textColor="#000"
-                  />
+    <main>
+      <div className="dropdown-container">
+        <select
+          id="factories"
+          onChange={handleFactoryChange}
+          className="dropdown"
+        >
+          <option value="">Select a factory</option>
+          {factories.map((factory) => (
+            <option key={factory.id} value={factory.id}>
+              {factory.name}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className="dashboard-container">
+        <h2>Dashboard</h2>
+
+        {dashboards.map((dashboard) => (
+          <div key={dashboard.id} className="dashboard-wrapper">
+            <div className="dashboard">
+              <h3>{dashboard.title}</h3>
+              <div className="gauges">
+                {dashboard.gauges.map((gauge) => (
                   <div
-                    style={{
-                      marginTop: "10px",
-                      fontSize: "20px",
-                      color: "#000",
-                    }}>
-                    {gauge.value * gauge.max} {gauge.unit}
+                    className="gauge-container"
+                    key={gauge.id}
+                    onClick={() => openModal(gauge)}
+                  >
+                    <h3>{gauge.label}</h3>
+                    <GaugeChart
+                      id={`gauge-chart-${gauge.id}`}
+                      nrOfLevels={10}
+                      percent={gauge.value}
+                      colors={[gauge.color, "#eee"]}
+                      arcWidth={0.3}
+                      textColor="#000"
+                    />
+                    <div
+                      style={{
+                        marginTop: "10px",
+                        fontSize: "20px",
+                        color: "#000",
+                      }}
+                    >
+                      {gauge.value * gauge.max} {gauge.unit}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="Gauge Details"
-        className="modal"
-        overlayClassName="modal-overlay">
-        {selectedGauge && (
-          <>
-            <h2>{selectedGauge.label} Details</h2>
-            <Line data={data} />
-            <button onClick={toggleLed} className="control-button">
-              Toggle LED ({isLedOn ? "ON" : "OFF"})
-            </button>
-            <button onClick={closeModal} className="close-button">
-              Close
-            </button>
-          </>
-        )}
-      </Modal>
-    </div>
+        ))}
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          contentLabel="Gauge Details"
+          className="modal"
+          overlayClassName="modal-overlay"
+        >
+          {selectedGauge && (
+            <>
+              <h2>{selectedGauge.label} Details</h2>
+              <Line data={data} />
+              <button onClick={toggleLed} className="control-button">
+                Toggle LED ({isLedOn ? "ON" : "OFF"})
+              </button>
+              <button onClick={closeModal} className="close-button">
+                Close
+              </button>
+            </>
+          )}
+        </Modal>
+      </div>
+    </main>
   );
 };
 

@@ -8,6 +8,8 @@
   padding: 10px 20px;
   border-radius: 25px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .searchbar {
@@ -48,4 +50,42 @@
 
 .search-shape:hover {
   color: #a3a3a3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .searchbar-container {
+    flex-direction: column;
+    align-items: stretch;
+    margin-left: 0;
+  }
+
+  .searchbar {
+    margin-right: 0;
+    margin-top: 10px;
+  }
+
+  .searchbar input {
+    width: 100%;
+  }
+
+  .SearchBarShapes {
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .searchbar-container {
+    padding: 10px;
+  }
+
+  .searchbar {
+    padding: 5px;
+  }
+
+  .search-shape {
+    font-size: 16px;
+    margin-left: 10px;
+  }
 }

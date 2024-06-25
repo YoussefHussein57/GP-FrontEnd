@@ -1,6 +1,5 @@
-// src/components/Sidebar/Sidebar.js
-import React from "react";
-import "./Sidebar.css";
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBell,
@@ -8,11 +7,21 @@ import {
   faChartLine,
   faGear,
   faHouse,
+  faUserShield,
 } from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from "react-router-dom";
+import "./Sidebar.css";
+import { login } from "../../Helpers/apiHelper"; // Assume you have a helper to get current user's role
 
 const Sidebar = () => {
-  const [activeButton, setActiveButton] = React.useState(null);
+  const [activeButton, setActiveButton] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(true);
+
+  // useEffect(() => {
+  //   const role = login();
+  //   if (role === "admin") {
+  //     setIsAdmin(true);
+  //   }
+  // }, []);
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
@@ -32,11 +41,11 @@ const Sidebar = () => {
             <NavLink
               to="/home"
               activeClassName="active"
-              onClick={() => handleButtonClick("Home")}>
+              onClick={() => handleButtonClick("Home")}
+            >
               <button
-                className={`Buttons ${
-                  activeButton === "Home" ? "active" : ""
-                }`}>
+                className={`Buttons ${activeButton === "Home" ? "active" : ""}`}
+              >
                 <span className="Shape">
                   <FontAwesomeIcon icon={faHouse} />
                 </span>
@@ -48,11 +57,13 @@ const Sidebar = () => {
             <NavLink
               to="/dashboard"
               activeClassName="active"
-              onClick={() => handleButtonClick("Dashboard")}>
+              onClick={() => handleButtonClick("Dashboard")}
+            >
               <button
                 className={`Buttons ${
                   activeButton === "Dashboard" ? "active" : ""
-                }`}>
+                }`}
+              >
                 <span className="Shape">
                   <FontAwesomeIcon icon={faChartLine} />
                 </span>
@@ -64,11 +75,13 @@ const Sidebar = () => {
             <NavLink
               to="/inventory"
               activeClassName="active"
-              onClick={() => handleButtonClick("Inventory")}>
+              onClick={() => handleButtonClick("Inventory")}
+            >
               <button
                 className={`Buttons ${
                   activeButton === "Inventory" ? "active" : ""
-                }`}>
+                }`}
+              >
                 <span className="Shape">
                   <FontAwesomeIcon icon={faBox} />
                 </span>
@@ -80,11 +93,13 @@ const Sidebar = () => {
             <NavLink
               to="/notification"
               activeClassName="active"
-              onClick={() => handleButtonClick("Notifications")}>
+              onClick={() => handleButtonClick("Notifications")}
+            >
               <button
                 className={`Buttons ${
                   activeButton === "Notifications" ? "active" : ""
-                }`}>
+                }`}
+              >
                 <span className="Shape">
                   <FontAwesomeIcon icon={faBell} />
                 </span>
@@ -96,11 +111,13 @@ const Sidebar = () => {
             <NavLink
               to="/settings"
               activeClassName="active"
-              onClick={() => handleButtonClick("Settings")}>
+              onClick={() => handleButtonClick("Settings")}
+            >
               <button
                 className={`Buttons ${
                   activeButton === "Settings" ? "active" : ""
-                }`}>
+                }`}
+              >
                 <span className="Shape">
                   <FontAwesomeIcon icon={faGear} />
                 </span>
@@ -108,6 +125,26 @@ const Sidebar = () => {
               </button>
             </NavLink>
           </li>
+          {isAdmin && (
+            <li>
+              <NavLink
+                to="/admin"
+                activeClassName="active"
+                onClick={() => handleButtonClick("Admin")}
+              >
+                <button
+                  className={`Buttons ${
+                    activeButton === "Admin" ? "active" : ""
+                  }`}
+                >
+                  <span className="Shape">
+                    <FontAwesomeIcon icon={faUserShield} />
+                  </span>
+                  Admin Panel
+                </button>
+              </NavLink>
+            </li>
+          )}
         </ul>
       </nav>
     </div>

@@ -1,6 +1,7 @@
 /* src/components/Sidebar/Sidebar.css */
+
 .sidebar {
-  width: 10%;
+  width: 11%;
   background-color: #ffffff;
   padding: 1%;
   height: 100vh;
@@ -74,11 +75,6 @@ button.Buttons.active {
   color: antiquewhite;
 }
 
-button.Buttons:hover .Shape,
-button.Buttons.active .Shape {
-  color: antiquewhite;
-}
-
 .Shape {
   margin-right: 1rem;
   color: #ef8354;
@@ -86,14 +82,27 @@ button.Buttons.active .Shape {
 }
 
 /* Responsive styles */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 20%;
+  }
+}
+
 @media (max-width: 768px) {
   .sidebar {
     width: 25%;
   }
 
-  .searchbar {
-    margin-left: 0;
-    max-width: 100%;
+  .logo-Container {
+    margin-bottom: 30%;
+  }
+
+  .logo-text h2 {
+    font-size: 2.5rem;
+  }
+
+  .logo-text h3 {
+    font-size: 1rem;
   }
 }
 
@@ -102,8 +111,15 @@ button.Buttons.active .Shape {
     width: 30%;
   }
 
-  .searchbar {
-    margin-left: 0;
-    max-width: 100%;
+  .logo-Container {
+    margin-bottom: 20%;
+  }
+
+  .logo-text h2 {
+    font-size: 2rem;
+  }
+
+  .logo-text h3 {
+    font-size: 0.875rem;
   }
 }

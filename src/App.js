@@ -1,4 +1,3 @@
-// src/App.js
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -11,6 +10,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import ManageUsers from "./pages/ManageUsers/ManageUsers"; // Import the ManageUsers component
 // import Notification from "./pages/Notification/Notification";
 // import Inventory from "./pages/Inventory/Inventory";
 // import Settings from "./pages/Settings/Settings";
@@ -33,15 +33,15 @@ const Main = () => {
   return (
     <div className="App">
       {!hideSidebarRoutes.includes(location.pathname) && <Sidebar />}
-   
       <div className="content">
-      <div className="SearchBar">
-      {!hideSearchbarRoutes.includes(location.pathname) && <Searchbar/>}
-      </div>
+        <div className="SearchBar">
+          {!hideSearchbarRoutes.includes(location.pathname) && <Searchbar />}
+        </div>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/admin" element={<ManageUsers />} />
           {/* <Route path="/notification" element={<Notification />} />
           <Route path="/inventory" element={<Inventory />} />
           <Route path="/settings" element={<Settings />} /> */}

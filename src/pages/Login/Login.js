@@ -21,6 +21,8 @@ export default function BackgroundComponent() {
       // Redirect to the home page
       await getLast10Readings("66757c879087f55851cfe033"); // Call the function with the token
       navigate("/home");
+      // const useRule = await getUserRole();
+      //console.log("User role:", getUserRole);
     }
   };
 

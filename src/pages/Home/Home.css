@@ -22,3 +22,40 @@ main {
   width: 100%;
   gap: 20px;
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    margin-left: 0;
+    height: auto;
+  }
+
+  main {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .column {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    flex-direction: column;
+    margin-left: 0;
+    height: auto;
+  }
+
+  main {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .column {
+    flex-direction: column;
+    gap: 5px;
+  }
+}

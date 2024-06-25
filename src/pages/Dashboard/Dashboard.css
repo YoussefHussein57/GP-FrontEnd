@@ -1,9 +1,6 @@
-/* Dashboard.css */
-
 .dashboard-container {
   padding: 20px;
   background-color: #fff;
-  margin-top: 16%;
   height: auto;
   width: 90%;
   max-width: 75rem;
@@ -13,15 +10,30 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 0 28rem;
-  margin-top: 6%;
-  
+  margin-top: 4%;
 }
+
 .top-text {
   margin-bottom: 20px;
   padding-right: 20px;
-
-
 }
+
+.dropdown-container {
+  margin-top: 1%;
+  margin-right:35% ;
+  color: #ff4d4d;
+}
+
+.dropdown {
+  background-color:  #EF8354;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
 .dashboard-wrapper {
   text-align: center;
   margin-top: 8%;
