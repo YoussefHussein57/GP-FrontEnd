@@ -10,18 +10,22 @@ import {
   faUserShield,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Sidebar.css";
-import { login } from "../../Helpers/apiHelper"; // Assume you have a helper to get current user's role
+import { login } from "../../Helpers/apiHelper";
 
-const Sidebar = () => {
+const Sidebar = ({ email, password }) => {
   const [activeButton, setActiveButton] = useState(null);
-  const [isAdmin, setIsAdmin] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
 
-  // useEffect(() => {
-  //   const role = login();
-  //   if (role === "admin") {
-  //     setIsAdmin(true);
-  //   }
-  // }, []);
+  useEffect(() => {
+    const checkRole = async () => {
+      const response = await login(email, password); // Pass email and password
+      console.log("Login response in Sidebar:", response);
+      if (response && response.role === "ADMIN") {
+        setIsAdmin(true);
+      }
+    };
+    checkRole();
+  }, [email, password]); // Trigger useEffect when email or password changes
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);

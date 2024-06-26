@@ -1,4 +1,3 @@
-// src/pages/Login/Login.js
 import React from "react";
 import "./Login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,9 +6,9 @@ import { useNavigate } from "react-router-dom";
 
 import { getLast10Readings, login } from "../../Helpers/apiHelper";
 
-export default function BackgroundComponent() {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+const Login = ({ setEmail, setPassword }) => {
+  const [email, setEmailLocal] = React.useState(""); // Local state for email
+  const [password, setPasswordLocal] = React.useState(""); // Local state for password
   const [error, setError] = React.useState(null);
   const navigate = useNavigate();
 
@@ -17,13 +16,21 @@ export default function BackgroundComponent() {
     e.preventDefault();
     setError(null); // Clear previous errors
     const token = await login(email, password); // Get the token from login function
+    console.log("Login token:", token); // Log the token
     if (token) {
-      // Redirect to the home page
-      await getLast10Readings("66757c879087f55851cfe033"); // Call the function with the token
+      // Redirect to the home page and pass email and password to Sidebar
+      setEmail(email); // Update parent state with current email
+      setPassword(password); // Update parent state with current password
       navigate("/home");
-      // const useRule = await getUserRole();
-      //console.log("User role:", getUserRole);
     }
+  };
+
+  const handleEmailChange = (e) => {
+    setEmailLocal(e.target.value); // Update local state for email
+  };
+
+  const handlePasswordChange = (e) => {
+    setPasswordLocal(e.target.value); // Update local state for password
   };
 
   return (
@@ -51,7 +58,7 @@ export default function BackgroundComponent() {
                 placeholder="Enter your email"
                 required
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={handleEmailChange}
               />
             </div>
             <div className="input-container">
@@ -66,7 +73,7 @@ export default function BackgroundComponent() {
                 placeholder="Enter password"
                 required
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={handlePasswordChange}
               />
             </div>
 
@@ -80,4 +87,6 @@ export default function BackgroundComponent() {
       </div>
     </div>
   );
-}
+};
+
+export default Login;

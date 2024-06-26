@@ -125,7 +125,7 @@ input:checked + .slider:before {
 
 @media (max-width: 480px) {
   .favorites-container {
-    width: 100%;
+    width: 60%;
     margin-right: 0;
   }
 
