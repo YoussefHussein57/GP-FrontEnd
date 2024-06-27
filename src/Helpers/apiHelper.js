@@ -8,7 +8,7 @@ let TOKEN = "";
 // Function to fetch data from backend
 const getFactroiesByUser = async () => {
   try {
-    const response = await axios.get(`${BASE_URL}/factories/user`, {
+    const response = await axios.get(`${BASE_URL}/factories/user/{userId}`, {
       headers: {
         Authorization: `Bearer ${TOKEN}`,
       },
@@ -86,13 +86,13 @@ const registerUser = async (userData) => {
     const response = await axios.post(`${BASE_URL}/users/register`, userData, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${TOKEN}`,
+        // Optionally include Authorization header if required
       },
     });
     return response.data;
   } catch (error) {
     console.error("Error registering user:", error);
-    return null;
+    throw error; // Rethrow error for higher-level handling
   }
 };
 

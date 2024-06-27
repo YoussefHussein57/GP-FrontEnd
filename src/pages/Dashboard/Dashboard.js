@@ -19,6 +19,9 @@ import {
 } from "../../Helpers/apiHelper";
 import "./Dashboard.css";
 
+// Set the app element for react-modal
+Modal.setAppElement("#root"); // Replace with the ID of your main app element
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -105,16 +108,16 @@ const Dashboard = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [isLedOn, setIsLedOn] = useState(false); // State to track LED status
   const [gaugeData, setGaugeData] = useState([]);
+  const [error, setError] = useState(null); // State for error handling
 
   useEffect(() => {
     const fetchFactories = async () => {
       const factoriesData = await getFactroiesByUser();
-      setFactories(factoriesData || []); // Ensure factoriesData is an array
+      setFactories(factoriesData || []);
     };
 
     fetchFactories();
   }, []);
-
   const handleFactoryChange = async (e) => {
     const factoryId = e.target.value;
     setSelectedFactory(factoryId);
@@ -152,8 +155,10 @@ const Dashboard = () => {
     labels: Array.from({ length: 10 }, (_, i) => i + 1),
     datasets: [
       {
-        label: `${selectedGauge ? selectedGauge.label : ""} Over Time`,
-        data: gaugeData.map((reading) => reading.value),
+        label: selectedGauge ? `${selectedGauge.label} Over Time` : "",
+        data: Array.isArray(gaugeData)
+          ? gaugeData.map((reading) => reading.value)
+          : [],
         fill: false,
         backgroundColor: selectedGauge ? selectedGauge.color : "#000",
         borderColor: selectedGauge ? selectedGauge.color : "#000",
@@ -180,41 +185,45 @@ const Dashboard = () => {
       <div className="dashboard-container">
         <h2>Dashboard</h2>
 
-        {dashboards.map((dashboard) => (
-          <div key={dashboard.id} className="dashboard-wrapper">
-            <div className="dashboard">
-              <h3>{dashboard.title}</h3>
-              <div className="gauges">
-                {dashboard.gauges.map((gauge) => (
-                  <div
-                    className="gauge-container"
-                    key={gauge.id}
-                    onClick={() => openModal(gauge)}
-                  >
-                    <h3>{gauge.label}</h3>
-                    <GaugeChart
-                      id={`gauge-chart-${gauge.id}`}
-                      nrOfLevels={10}
-                      percent={gauge.value}
-                      colors={[gauge.color, "#eee"]}
-                      arcWidth={0.3}
-                      textColor="#000"
-                    />
+        {error ? (
+          <p className="error-message">{error}</p>
+        ) : (
+          dashboards.map((dashboard) => (
+            <div key={dashboard.id} className="dashboard-wrapper">
+              <div className="dashboard">
+                <h3>{dashboard.title}</h3>
+                <div className="gauges">
+                  {dashboard.gauges.map((gauge) => (
                     <div
-                      style={{
-                        marginTop: "10px",
-                        fontSize: "20px",
-                        color: "#000",
-                      }}
+                      className="gauge-container"
+                      key={gauge.id}
+                      onClick={() => openModal(gauge)}
                     >
-                      {gauge.value * gauge.max} {gauge.unit}
+                      <h3>{gauge.label}</h3>
+                      <GaugeChart
+                        id={`gauge-chart-${gauge.id}`}
+                        nrOfLevels={10}
+                        percent={gauge.value}
+                        colors={[gauge.color, "#eee"]}
+                        arcWidth={0.3}
+                        textColor="#000"
+                      />
+                      <div
+                        style={{
+                          marginTop: "10px",
+                          fontSize: "20px",
+                          color: "#000",
+                        }}
+                      >
+                        {gauge.value * gauge.max} {gauge.unit}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}

@@ -35,6 +35,7 @@
 
 .modal {
   padding: 20px;
+  width: 100%;
 }
 
 .modal-heading {
@@ -47,10 +48,15 @@
   margin-bottom: 10px;
 }
 
-.form-input, .form-inputText {
+.form-input {
   width: 100%;
   padding: 8px;
   margin-bottom: 20px;
+}
+.form-inputText{
+  width: 92%;
+  padding: 8px;
+  border-radius: 0.5rem;
 }
 
 .form-button {

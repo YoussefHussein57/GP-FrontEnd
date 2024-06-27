@@ -1,11 +1,13 @@
-// src/components/ManageUsers/ManageUsers.js
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
-import { getAllUsers, registerUser, removeUser } from "../../Helpers/apiHelper"; // Ensure removeUser function is imported
+import { getAllUsers, registerUser } from "../../Helpers/apiHelper";
 import "./ManageUsers.css"; // Import CSS file
 
 const ManageUsers = () => {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState(() => {
+    const savedUsers = localStorage.getItem("users");
+    return savedUsers ? JSON.parse(savedUsers) : [];
+  });
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [newUser, setNewUser] = useState({
     firstName: "",
@@ -15,38 +17,36 @@ const ManageUsers = () => {
     password: "",
   });
   const [error, setError] = useState(null);
+  const [fetchTrigger, setFetchTrigger] = useState(false);
 
   useEffect(() => {
-    const storedUsers = JSON.parse(localStorage.getItem("users"));
-    if (storedUsers) {
-      setUsers(storedUsers);
-    } else {
-      fetchUsers();
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("users", JSON.stringify(users));
-  }, [users]);
-
-  const fetchUsers = async () => {
-    try {
-      const usersData = await getAllUsers();
-      if (usersData && usersData.data && usersData.data.users) {
-        setUsers(usersData.data.users);
-      } else {
-        setUsers([]);
+    const fetchUsers = async () => {
+      try {
+        const response = await getAllUsers();
+        if (response && response.data && response.data.users) {
+          setUsers(response.data.users);
+          localStorage.setItem("users", JSON.stringify(response.data.users));
+        } else {
+          setUsers([]);
+          localStorage.removeItem("users");
+        }
+      } catch (error) {
+        console.error("Error fetching users:", error);
+        setError("Failed to fetch users. Please try again later.");
       }
-    } catch (error) {
-      console.error("Error fetching users:", error);
-      setError("Failed to fetch users. Please try again later.");
-    }
-  };
+    };
+
+    fetchUsers();
+  }, [fetchTrigger]); // Dependency array includes fetchTrigger to re-fetch on add/remove
 
   const handleRemoveUser = async (userId) => {
     try {
-      //await removeUser(userId); // Assuming removeUser function handles API call to delete user
-      setUsers(users.filter((user) => user._id !== userId));
+      // Implement your remove user logic here
+      // Example: await removeUser(userId);
+      const updatedUsers = users.filter((user) => user._id !== userId);
+      setUsers(updatedUsers);
+      localStorage.setItem("users", JSON.stringify(updatedUsers));
+      setFetchTrigger(!fetchTrigger);
     } catch (error) {
       console.error("Error removing user:", error);
       setError("Failed to remove user. Please try again.");
@@ -57,15 +57,18 @@ const ManageUsers = () => {
     try {
       const addedUser = await registerUser(newUser);
       if (addedUser) {
-        setUsers([...users, addedUser]);
+        const updatedUsers = [...users, addedUser];
+        setUsers(updatedUsers);
+        localStorage.setItem("users", JSON.stringify(updatedUsers));
         setModalIsOpen(false);
         setNewUser({
           firstName: "",
           lastName: "",
-          email: "",
           role: "",
+          email: "",
           password: "",
         });
+        setFetchTrigger(!fetchTrigger); // Optional: Trigger fetch to update user list
       }
     } catch (error) {
       console.error("Error adding user:", error);
@@ -130,6 +133,13 @@ const ManageUsers = () => {
               }
               className="form-inputText"
             />
+            <label className="form-label">Role:</label>
+            <input
+              type="text"
+              value={newUser.role}
+              onChange={(e) => setNewUser({ ...newUser, role: e.target.value })}
+              className="form-inputText"
+            />
 
             <label className="form-label">Email:</label>
             <input
@@ -139,14 +149,6 @@ const ManageUsers = () => {
                 setNewUser({ ...newUser, email: e.target.value })
               }
               className="form-input"
-            />
-
-            <label className="form-label">Role:</label>
-            <input
-              type="text"
-              value={newUser.role}
-              onChange={(e) => setNewUser({ ...newUser, role: e.target.value })}
-              className="form-inputText"
             />
 
             <label className="form-label">Password:</label>

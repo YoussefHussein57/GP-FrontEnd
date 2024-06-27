@@ -17,14 +17,21 @@ const Sidebar = ({ email, password }) => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    const checkRole = async () => {
-      const response = await login(email, password); // Pass email and password
-      console.log("Login response in Sidebar:", response);
-      if (response && response.role === "ADMIN") {
-        setIsAdmin(true);
-      }
-    };
-    checkRole();
+    const storedEmail = localStorage.getItem("email");
+    const storedPassword = localStorage.getItem("password");
+    const userEmail = email || storedEmail;
+    const userPassword = password || storedPassword;
+
+    if (userEmail && userPassword) {
+      const checkRole = async () => {
+        const response = await login(userEmail, userPassword);
+        console.log("Login response in Sidebar:", response);
+        if (response && response.role === "ADMIN") {
+          setIsAdmin(true);
+        }
+      };
+      checkRole();
+    }
   }, [email, password]); // Trigger useEffect when email or password changes
 
   const handleButtonClick = (buttonName) => {
