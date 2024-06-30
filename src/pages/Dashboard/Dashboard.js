@@ -12,11 +12,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import {
-  getFactroiesByUser,
-  getLast10Readings,
-  appendNewReading,
-} from "../../Helpers/apiHelper";
+import { getFactroiesByUser, getLast10Readings } from "../../Helpers/apiHelper";
 import "./Dashboard.css";
 
 Modal.setAppElement("#root");
@@ -31,10 +27,9 @@ ChartJS.register(
   Legend
 );
 
-const dashboards = [];
-
 const Dashboard = () => {
   const [factories, setFactories] = useState([]);
+  const [dashboards, setDashboards] = useState([]);
   const [selectedFactory, setSelectedFactory] = useState(null);
   const [selectedGauge, setSelectedGauge] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -49,7 +44,6 @@ const Dashboard = () => {
       try {
         const { factories: factoriesData } = await getFactroiesByUser();
 
-        // Log fetched data for debugging
         console.log("Fetched factories data:", factoriesData.data.factories);
 
         if (!Array.isArray(factoriesData.data.factories)) {
@@ -59,60 +53,65 @@ const Dashboard = () => {
           );
           return;
         }
-
-        setFactories(factoriesData.data.factories);
-
-        // Log factory names
-        console.log(
-          "Fetched factories:",
-          factoriesData.data.factories.map((factory) => factory.name)
+        localStorage.setItem(
+          "factories",
+          JSON.stringify(factoriesData.data.factories)
         );
-        factoriesData.data.factories[0].assets.forEach((asset) => {
-          const parsedDashboard = {
-            id: asset._id,
-            title: asset.name,
-            gauges: asset.sensors.map((sensor) => ({
-              id: sensor._id,
-              value: sensor.lastReading,
-              label: sensor.name,
-              unit: "%",
-              max: 100,
-              color: "#8BC34A",
-            })),
-          };
-          console.log(parsedDashboard);
-          dashboards.push(parsedDashboard);
-        });
+        setFactories(factoriesData.data.factories);
       } catch (error) {
         console.error("Error fetching factories:", error);
       }
     };
 
-    fetchFactories();
+    const savedFactories = JSON.parse(localStorage.getItem("factories")) || [];
+    if (savedFactories.length > 0) {
+      setFactories(savedFactories);
+    } else {
+      fetchFactories();
+    }
+
+    const savedDashboards =
+      JSON.parse(localStorage.getItem("dashboards")) || [];
+    setDashboards(savedDashboards);
+
     const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     setFavorites(savedFavorites);
+
+    const savedSelectedFactory = localStorage.getItem("selectedFactory") || "";
+    setSelectedFactory(savedSelectedFactory);
   }, []);
 
-  const handleFactoryChange = async (e) => {
+  const handleFactoryChange = (e) => {
     const factoryId = e.target.value;
     setSelectedFactory(factoryId);
+    localStorage.setItem("selectedFactory", factoryId);
 
-    const readingData = {
-      bn: "temperature",
-      bv: 293,
-      n: "nozzle temperature",
-      u: "C",
-      v: 292,
-      s: "s_value",
-      t: "1718879726",
-    };
-    await appendNewReading(factoryId, readingData);
+    const selectedFactory = factories.find(
+      (factory) => factory._id === factoryId
+    );
+
+    const parsedDashboards = selectedFactory.assets.map((asset) => ({
+      id: asset._id,
+      title: asset.name,
+      gauges: asset.sensors.map((sensor) => ({
+        id: sensor._id,
+        value: sensor.lastReading,
+        label: sensor.name,
+        unit: sensor.unit,
+        max: 100,
+        color: "#8BC34A",
+      })),
+    }));
+
+    setDashboards(parsedDashboards);
+    localStorage.setItem("dashboards", JSON.stringify(parsedDashboards));
   };
-
   const openModal = async (gauge) => {
     setSelectedGauge(gauge);
-    const readings = await getLast10Readings("66757c879087f55851cfe033");
-    setGaugeData(readings || []);
+
+    const readings = await getLast10Readings(gauge.id);
+    setGaugeData(readings.data.readings || []);
+    console.log("readings:", readings.data.readings);
     setModalIsOpen(true);
   };
 
@@ -147,7 +146,7 @@ const Dashboard = () => {
       {
         label: selectedGauge ? `${selectedGauge.label} Over Time` : "",
         data: Array.isArray(gaugeData)
-          ? gaugeData.map((reading) => reading.value)
+          ? gaugeData.map((reading) => reading.v)
           : [],
         fill: false,
         backgroundColor: selectedGauge ? selectedGauge.color : "#000",
@@ -165,7 +164,6 @@ const Dashboard = () => {
           className="dropdown"
           value={selectedFactory || ""}
         >
-          <option value="">Select a factory</option>
           {factories.map((factory) => (
             <option key={factory._id} value={factory._id}>
               {factory.name}
@@ -194,7 +192,6 @@ const Dashboard = () => {
                       <GaugeChart
                         id={`gauge-chart-${gauge.id}`}
                         nrOfLevels={10}
-                        percent={gauge.value}
                         colors={[gauge.color, "#eee"]}
                         arcWidth={0.3}
                         textColor="#000"
@@ -206,7 +203,7 @@ const Dashboard = () => {
                           color: "#000",
                         }}
                       >
-                        {gauge.value * gauge.max} {gauge.unit}
+                        {gauge.value} {gauge.unit}
                       </div>
                       <button
                         onClick={(e) => {
