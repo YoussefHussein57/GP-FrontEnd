@@ -14,10 +14,10 @@ const getFactroiesByUser = async () => {
         Authorization: `Bearer ${TOKEN}`,
       },
     });
-    return { factories: response.data, userId: userId };
+    return { factories: response.data };
   } catch (error) {
     console.error("Error fetching data:", error);
-    return { factories: null, userId: null };
+    return { factories: null };
   }
 };
 
@@ -135,6 +135,11 @@ const removeUser = async (userId) => {
   }
 };
 
+const getUserId = async () => {
+  console.log(`-------- User ID: ${userId}`);
+  return userId;
+};
+
 export {
   getFactroiesByUser,
   login,
@@ -143,4 +148,5 @@ export {
   getAllUsers,
   registerUser,
   removeUser,
+  getUserId,
 };

@@ -31,74 +31,7 @@ ChartJS.register(
   Legend
 );
 
-const dashboards = [
-  {
-    id: 1,
-    title: "Production Line 1",
-    gauges: [
-      {
-        id: 1,
-        value: 0.5,
-        label: "Temperature",
-        unit: "°C",
-        max: 5000,
-        color: "#FF4D4D",
-      },
-      {
-        id: 2,
-        value: 0.25,
-        label: "Humidity",
-        unit: "%",
-        max: 100,
-        color: "#8BC34A",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Production Line 2",
-    gauges: [
-      {
-        id: 3,
-        value: 0.75,
-        label: "Pressure",
-        unit: "kPa",
-        max: 100,
-        color: "#FFD700",
-      },
-      {
-        id: 4,
-        value: 0.4,
-        label: "Voltage",
-        unit: "V",
-        max: 50,
-        color: "#0000FF",
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Production Line 3",
-    gauges: [
-      {
-        id: 5,
-        value: 0.6,
-        label: "Flow Rate",
-        unit: "L/min",
-        max: 100,
-        color: "#FFC107",
-      },
-      {
-        id: 6,
-        value: 0.3,
-        label: "Level",
-        unit: "%",
-        max: 100,
-        color: "#8BC34A",
-      },
-    ],
-  },
-];
+const dashboards = [];
 
 const Dashboard = () => {
   const [factories, setFactories] = useState([]);
@@ -114,12 +47,10 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchFactories = async () => {
       try {
-        const { factories: factoriesData, userId: fetchedUserId } =
-          await getFactroiesByUser();
+        const { factories: factoriesData } = await getFactroiesByUser();
 
         // Log fetched data for debugging
         console.log("Fetched factories data:", factoriesData.data.factories);
-        console.log("Fetched userId:", fetchedUserId);
 
         if (!Array.isArray(factoriesData.data.factories)) {
           console.error(
@@ -130,13 +61,28 @@ const Dashboard = () => {
         }
 
         setFactories(factoriesData.data.factories);
-        setUserId(fetchedUserId);
 
         // Log factory names
         console.log(
           "Fetched factories:",
           factoriesData.data.factories.map((factory) => factory.name)
         );
+        factoriesData.data.factories[0].assets.forEach((asset) => {
+          const parsedDashboard = {
+            id: asset._id,
+            title: asset.name,
+            gauges: asset.sensors.map((sensor) => ({
+              id: sensor._id,
+              value: sensor.lastReading,
+              label: sensor.name,
+              unit: "%",
+              max: 100,
+              color: "#8BC34A",
+            })),
+          };
+          console.log(parsedDashboard);
+          dashboards.push(parsedDashboard);
+        });
       } catch (error) {
         console.error("Error fetching factories:", error);
       }
