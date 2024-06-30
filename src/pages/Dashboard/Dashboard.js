@@ -19,8 +19,7 @@ import {
 } from "../../Helpers/apiHelper";
 import "./Dashboard.css";
 
-// Set the app element for react-modal
-Modal.setAppElement("#root"); // Replace with the ID of your main app element
+Modal.setAppElement("#root");
 
 ChartJS.register(
   CategoryScale,
@@ -106,18 +105,48 @@ const Dashboard = () => {
   const [selectedFactory, setSelectedFactory] = useState(null);
   const [selectedGauge, setSelectedGauge] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [isLedOn, setIsLedOn] = useState(false); // State to track LED status
+  const [isLedOn, setIsLedOn] = useState(false);
   const [gaugeData, setGaugeData] = useState([]);
-  const [error, setError] = useState(null); // State for error handling
+  const [error, setError] = useState(null);
+  const [favorites, setFavorites] = useState([]);
+  const [userId, setUserId] = useState(null);
 
   useEffect(() => {
     const fetchFactories = async () => {
-      const factoriesData = await getFactroiesByUser();
-      setFactories(factoriesData || []);
+      try {
+        const { factories: factoriesData, userId: fetchedUserId } =
+          await getFactroiesByUser();
+
+        // Log fetched data for debugging
+        console.log("Fetched factories data:", factoriesData.data.factories);
+        console.log("Fetched userId:", fetchedUserId);
+
+        if (!Array.isArray(factoriesData.data.factories)) {
+          console.error(
+            "Factories data is not an array:",
+            factoriesData.data.factories
+          );
+          return;
+        }
+
+        setFactories(factoriesData.data.factories);
+        setUserId(fetchedUserId);
+
+        // Log factory names
+        console.log(
+          "Fetched factories:",
+          factoriesData.data.factories.map((factory) => factory.name)
+        );
+      } catch (error) {
+        console.error("Error fetching factories:", error);
+      }
     };
 
     fetchFactories();
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    setFavorites(savedFavorites);
   }, []);
+
   const handleFactoryChange = async (e) => {
     const factoryId = e.target.value;
     setSelectedFactory(factoryId);
@@ -137,7 +166,7 @@ const Dashboard = () => {
   const openModal = async (gauge) => {
     setSelectedGauge(gauge);
     const readings = await getLast10Readings("66757c879087f55851cfe033");
-    setGaugeData(readings || []); // Ensure readings is an array
+    setGaugeData(readings || []);
     setModalIsOpen(true);
   };
 
@@ -149,6 +178,21 @@ const Dashboard = () => {
   const toggleLed = () => {
     setIsLedOn((prevStatus) => !prevStatus);
     console.log(`LED is now ${!isLedOn ? "ON" : "OFF"}`);
+  };
+
+  const toggleFavorite = (gauge) => {
+    let updatedFavorites;
+    if (favorites.some((fav) => fav.id === gauge.id)) {
+      updatedFavorites = favorites.filter((fav) => fav.id !== gauge.id);
+    } else {
+      if (favorites.length >= 4) {
+        alert("You can only add up to 4 favorites.");
+        return;
+      }
+      updatedFavorites = [...favorites, gauge];
+    }
+    setFavorites(updatedFavorites);
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
   };
 
   const data = {
@@ -173,10 +217,11 @@ const Dashboard = () => {
           id="factories"
           onChange={handleFactoryChange}
           className="dropdown"
+          value={selectedFactory || ""}
         >
           <option value="">Select a factory</option>
           {factories.map((factory) => (
-            <option key={factory.id} value={factory.id}>
+            <option key={factory._id} value={factory._id}>
               {factory.name}
             </option>
           ))}
@@ -217,6 +262,19 @@ const Dashboard = () => {
                       >
                         {gauge.value * gauge.max} {gauge.unit}
                       </div>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleFavorite(gauge);
+                        }}
+                        className={`star-button ${
+                          favorites.some((fav) => fav.id === gauge.id)
+                            ? "favorite"
+                            : ""
+                        }`}
+                      >
+                        ★
+                      </button>
                     </div>
                   ))}
                 </div>

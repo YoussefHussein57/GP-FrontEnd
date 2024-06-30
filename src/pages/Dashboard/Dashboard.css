@@ -1,31 +1,28 @@
 .dashboard-container {
   padding: 20px;
   background-color: #fff;
-  height: auto;
   width: 90%;
   max-width: 75rem;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 3%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  margin: 0 28rem;
-  margin-top: 4%;
-}
+  margin: 0 auto; /* Center the container horizontally */
+  margin-top: 2%;
+  align-items: center;
+  margin-right: 15rem;
 
-.top-text {
-  margin-bottom: 20px;
-  padding-right: 20px;
 }
 
 .dropdown-container {
   margin-top: 1%;
-  margin-right:35% ;
   color: #ff4d4d;
+  margin-left: 10rem;
 }
 
 .dropdown {
-  background-color:  #EF8354;
+  background-color: #ef8354;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -35,13 +32,18 @@
 }
 
 .dashboard-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.dashboard {
   text-align: center;
-  margin-top: 8%;
 }
 
 .gauges {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
 }
 
@@ -58,6 +60,28 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
   cursor: pointer;
+  position: relative; /* Added to position star button */
+  margin-right: 1rem;
+}
+
+.gauge-container h3 {
+  margin-bottom: 10px; /* Space between gauge label and gauge chart */
+}
+
+.gauge-container .star-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccc;
+  margin-top: 10px;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+}
+
+.gauge-container .star-button.favorite {
+  color: gold;
 }
 
 /* Modal Styles */
@@ -65,9 +89,6 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  right: auto;
-  bottom: auto;
-  margin-right: -50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   padding: 20px;
@@ -99,7 +120,12 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .gauges {
+  .dashboard-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .dashboard-wrapper {
     flex-direction: column;
     align-items: center;
   }
@@ -110,6 +136,10 @@
 }
 
 @media (max-width: 480px) {
+  .dashboard-container {
+    width: 95%;
+  }
+
   .gauge-container {
     width: 100%;
   }

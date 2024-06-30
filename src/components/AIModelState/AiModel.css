@@ -1,0 +1,45 @@
+.ai-model-container {
+    padding: 1.6rem;
+    background-color: #fff;
+    width: 75%;
+    max-height: 36%;
+   
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(50vh - 10px); /* Adjusted height to fit half of the screen minus padding */
+    overflow-y: auto;
+    margin-top: 0; /* remove the margin-top */
+    box-sizing: border-box;
+  }
+  
+  .ai-model-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    padding: 10px;
+  }
+  
+  .status {
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .status.available {
+    background-color: #28a745; /* Green color for available status */
+  }
+  
+  .status.unavailable {
+    background-color: #dc3545; /* Red color for unavailable status */
+  }
+  
+  .loading {
+    padding: 10px;
+    font-style: italic;
+  }
+  

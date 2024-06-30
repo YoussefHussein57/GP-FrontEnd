@@ -4,19 +4,20 @@ import { jwtDecode } from "jwt-decode";
 
 const BASE_URL = "http://localhost:4000/api";
 let TOKEN = "";
+let userId = "";
 
 // Function to fetch data from backend
 const getFactroiesByUser = async () => {
   try {
-    const response = await axios.get(`${BASE_URL}/factories/user/{userId}`, {
+    const response = await axios.get(`${BASE_URL}/factories/user/${userId}`, {
       headers: {
         Authorization: `Bearer ${TOKEN}`,
       },
     });
-    return response.data;
+    return { factories: response.data, userId: userId };
   } catch (error) {
     console.error("Error fetching data:", error);
-    return null;
+    return { factories: null, userId: null };
   }
 };
 
@@ -34,10 +35,10 @@ const login = async (email, password) => {
     console.log("Set token:", TOKEN);
 
     const decodedToken = jwtDecode(token);
-    const userRole = decodedToken.role;
-    console.log("User role:", userRole);
+    userId = decodedToken.id; // Decode and set the userId
+    console.log("User ID:", userId);
 
-    return { token, role: userRole };
+    return { token, role: decodedToken.role };
   } catch (err) {
     console.error("Login error:", err);
     return null;
@@ -110,6 +111,30 @@ const getAllUsers = async () => {
   }
 };
 
+const removeUser = async (userId) => {
+  try {
+    const response = await fetch(`${BASE_URL}/users/${userId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+
+        Authorization: `Bearer ${TOKEN}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to remove user");
+    }
+
+    const data = await response.json();
+    console.log("User removed successfully:", data);
+    return data; // Optionally return data if needed
+  } catch (error) {
+    console.error("Error removing user:", error);
+    throw error; // Propagate the error back to the caller
+  }
+};
+
 export {
   getFactroiesByUser,
   login,
@@ -117,4 +142,5 @@ export {
   appendNewReading,
   getAllUsers,
   registerUser,
+  removeUser,
 };

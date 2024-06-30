@@ -1,10 +1,10 @@
+// src/components/Login/Login.js
 import React from "react";
 import "./Login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-
-import { getLast10Readings, login } from "../../Helpers/apiHelper";
+import { login } from "../../Helpers/apiHelper";
 
 const Login = ({ setEmail, setPassword }) => {
   const [email, setEmailLocal] = React.useState(""); // Local state for email
@@ -15,13 +15,15 @@ const Login = ({ setEmail, setPassword }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null); // Clear previous errors
-    const token = await login(email, password); // Get the token from login function
-    console.log("Login token:", token); // Log the token
-    if (token) {
+    const tokenData = await login(email, password); // Get the token from login function
+    console.log("Login token:", tokenData); // Log the token
+    if (tokenData) {
       // Redirect to the home page and pass email and password to Sidebar
       setEmail(email); // Update parent state with current email
       setPassword(password); // Update parent state with current password
       navigate("/home");
+    } else {
+      setError("Login failed. Please check your credentials.");
     }
   };
 
@@ -76,7 +78,6 @@ const Login = ({ setEmail, setPassword }) => {
                 onChange={handlePasswordChange}
               />
             </div>
-
             <div>
               <button type="submit">Log In</button>
             </div>

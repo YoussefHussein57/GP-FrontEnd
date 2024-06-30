@@ -50,7 +50,7 @@ const Main = ({ email, password, setEmail, setPassword }) => {
             element={<Login setEmail={setEmail} setPassword={setPassword} />}
           />
           <Route path="/home" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard email={email} />} />
           <Route path="/admin" element={<ManageUsers />} />
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>

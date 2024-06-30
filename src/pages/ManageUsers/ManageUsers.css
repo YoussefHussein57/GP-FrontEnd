@@ -1,72 +1,76 @@
-.manage-users-container {
-  padding: 20px;
-  margin-top: 1%;
-}
+  .manage-users-container {
+    padding: 20px;
+    margin-top: 1%;
+    overflow-y: auto; /* add this */
+    max-height: 100%; /* adjust the value as needed */
+  }
 
-.manage-users-heading {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
+  .manage-users-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
 
-.user-table {
-  width: 85%;
-  border-collapse: collapse;
-  margin-left: 14%;
-  color: #1d1d1d;
-  background-color: antiquewhite;
-  
-}
-.newUser-Button {
-  margin-top: 8%;
-  margin-left: 10%;
-  
-}
+  .user-table {
+    width: 85%;
+    border-collapse: collapse;
+    margin-left: 14%;
+    color: #1d1d1d;
+    background-color: antiquewhite;
+    overflow-y: auto; /* add this */
+    max-height: 100%; 
+    
+  }
+  .newUser-Button {
+    margin-top: 8%;
+    margin-left: 10%;
+    
+  }
 
-.user-table th, .user-table td {
-  border: 1px solid #0056b3;
-  padding: 8px;
-  text-align: left;
-}
+  .user-table th, .user-table td {
+    border: 1px solid #0056b3;
+    padding: 8px;
+    text-align: left;
+  }
 
-.user-table th {
-  background-color: #ef8354;
-  width: 25%;
-}
+  .user-table th {
+    background-color: #ef8354;
+    width: 25%;
+  }
 
-.modal {
-  padding: 20px;
-  width: 100%;
-}
+  .modal {
+    padding: 20px;
+    width: 100%;
+  }
 
-.modal-heading {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
+  .modal-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
 
-.form-label {
-  display: block;
-  margin-bottom: 10px;
-}
+  .form-label {
+    display: block;
+    margin-bottom: 10px;
+  }
 
-.form-input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 20px;
-}
-.form-inputText{
-  width: 92%;
-  padding: 8px;
-  border-radius: 0.5rem;
-}
+  .form-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+  }
+  .form-inputText{
+    width: 92%;
+    padding: 8px;
+    border-radius: 0.5rem;
+  }
 
-.form-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
+  .form-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
 
-.form-button:hover {
-  background-color: #0056b3;
-}
+  .form-button:hover {
+    background-color: #0056b3;
+  }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
-import { getAllUsers, registerUser } from "../../Helpers/apiHelper";
+import { getAllUsers, registerUser, removeUser } from "../../Helpers/apiHelper";
 import "./ManageUsers.css"; // Import CSS file
 
 const ManageUsers = () => {
@@ -41,8 +41,7 @@ const ManageUsers = () => {
 
   const handleRemoveUser = async (userId) => {
     try {
-      // Implement your remove user logic here
-      // Example: await removeUser(userId);
+      await removeUser(userId); // Call removeUser function from apiHelper.js
       const updatedUsers = users.filter((user) => user._id !== userId);
       setUsers(updatedUsers);
       localStorage.setItem("users", JSON.stringify(updatedUsers));
@@ -134,12 +133,16 @@ const ManageUsers = () => {
               className="form-inputText"
             />
             <label className="form-label">Role:</label>
-            <input
-              type="text"
+            <select
               value={newUser.role}
               onChange={(e) => setNewUser({ ...newUser, role: e.target.value })}
               className="form-inputText"
-            />
+            >
+              <option value="CHOOSE">Choose A Role </option>
+              <option value="ADMIN">ADMIN</option>
+              <option value="OPERATION">OPERATION</option>
+              <option value="BUSINESS">BUSINESS</option>
+            </select>
 
             <label className="form-label">Email:</label>
             <input

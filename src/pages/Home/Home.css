@@ -1,9 +1,9 @@
-/* src/pages/Home/Home.css */
-.home {
-  display: flex;
-  height: 100vh;
+.Container {
+  max-height: 100vh;
+  width: 100%;
   overflow-y: auto;
-  margin-left: 250px; /* Add margin to accommodate the sidebar */
+  margin-left: 265px; /* Add margin to accommodate the sidebar */
+  margin-top: 4%;
 }
 
 main {
@@ -12,15 +12,26 @@ main {
   flex-grow: 1;
   padding: 20px;
   background-color: antiquewhite;
-  width: calc(100% - 250px); /* Adjust width to account for the sidebar */
+  width: 100%;
 }
 
-.column {
+.row {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   width: 100%;
+  
+ 
+}
+
+.column-2 {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
+  width: 100%;
+  max-height: 80%;
+}
+.column-1 {
+  width: 100%;
+  display: flex;
 }
 
 /* Responsive styles */
@@ -36,7 +47,7 @@ main {
     padding: 10px;
   }
 
-  .column {
+  .row {
     flex-direction: column;
     gap: 10px;
   }
@@ -54,7 +65,7 @@ main {
     padding: 5px;
   }
 
-  .column {
+  .row {
     flex-direction: column;
     gap: 5px;
   }
