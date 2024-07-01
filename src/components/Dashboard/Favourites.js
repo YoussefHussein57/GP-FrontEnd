@@ -25,13 +25,12 @@ const FavBar = () => {
             <GaugeChart
               id={`gauge-chart-${favorite.id}`}
               nrOfLevels={10}
-              percent={favorite.value}
               colors={[favorite.color, "#eee"]}
               arcWidth={0.3}
               textColor="#000"
             />
             <div style={{ marginTop: "10px", fontSize: "20px", color: "#000" }}>
-              {favorite.value * favorite.max} {favorite.unit}
+              {favorite.value} {favorite.unit}
             </div>
           </div>
         ))}

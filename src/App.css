@@ -8,14 +8,16 @@
 }
 
 .SearchBar {
-  margin-left: 15.5rem;
+  margin-left: 15.5rem; /* Adjust margin to accommodate expanded sidebar */
   max-width: 85%;
+  transition: margin-left 0.3s; /* Add transition for smooth animation */
 }
 
 .content {
   flex-grow: 1;
-  margin-left: 0px; /* Add margin to accommodate the sidebar */
+  margin-left: 0; /* Adjust margin to accommodate collapsed sidebar */
   padding: 0px;
+  transition: margin-left 0.3s; /* Add transition for smooth animation */
 }
 
 .page {
@@ -65,4 +67,13 @@
   .page {
     padding: 5px;
   }
+}
+
+/* Sidebar collapsed styles */
+.App.collapsed .SearchBar {
+  margin-left: 0;
+}
+
+.App.collapsed .content {
+  margin-left: 0;
 }

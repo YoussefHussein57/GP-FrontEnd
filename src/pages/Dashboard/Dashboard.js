@@ -12,7 +12,12 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { getFactroiesByUser, getLast10Readings } from "../../Helpers/apiHelper";
+import {
+  getFactroiesByUser,
+  getLast10Readings,
+  createFactory,
+  createAsset, // Import the createAsset function
+} from "../../Helpers/apiHelper";
 import "./Dashboard.css";
 
 Modal.setAppElement("#root");
@@ -38,6 +43,11 @@ const Dashboard = () => {
   const [error, setError] = useState(null);
   const [favorites, setFavorites] = useState([]);
   const [userId, setUserId] = useState(null);
+  const [isAddFactoryModalOpen, setIsAddFactoryModalOpen] = useState(false); // State to manage add factory modal visibility
+  const [newFactoryName, setNewFactoryName] = useState(""); // State to manage new factory name input
+  const [isAddAssetModalOpen, setIsAddAssetModalOpen] = useState(false); // State to manage add asset modal visibility
+  const [newAssetName, setNewAssetName] = useState(""); // State to manage new asset name input
+  const [newAssetType, setNewAssetType] = useState(""); // State to manage new asset type input
 
   useEffect(() => {
     const fetchFactories = async () => {
@@ -106,6 +116,44 @@ const Dashboard = () => {
     setDashboards(parsedDashboards);
     localStorage.setItem("dashboards", JSON.stringify(parsedDashboards));
   };
+
+  const handleAddFactory = async (e) => {
+    e.preventDefault();
+    try {
+      const newFactory = { name: newFactoryName };
+      await createFactory(newFactory);
+      setIsAddFactoryModalOpen(false);
+      setNewFactoryName("");
+      // Refresh factories list
+      const { factories: updatedFactories } = await getFactroiesByUser();
+      setFactories(updatedFactories.data.factories);
+    } catch (error) {
+      console.error("Error adding factory:", error);
+    }
+  };
+
+  const handleAddAsset = async (e) => {
+    e.preventDefault();
+    try {
+      const newAsset = {
+        name: newAssetName,
+        type: newAssetType,
+        factoryId: selectedFactory,
+      };
+      await createAsset(newAsset);
+      setIsAddAssetModalOpen(false);
+      setNewAssetName("");
+      setNewAssetType("");
+      // Refresh factories list to reflect the new asset
+      const { factories: updatedFactories } = await getFactroiesByUser();
+      setFactories(updatedFactories.data.factories);
+      // Optionally, update dashboards if needed
+      handleFactoryChange({ target: { value: selectedFactory } });
+    } catch (error) {
+      console.error("Error adding asset:", error);
+    }
+  };
+
   const openModal = async (gauge) => {
     setSelectedGauge(gauge);
 
@@ -170,9 +218,21 @@ const Dashboard = () => {
             </option>
           ))}
         </select>
+        <button
+          onClick={() => setIsAddFactoryModalOpen(true)}
+          className="add-factory-button"
+        >
+          Add Factory
+        </button>
       </div>
       <div className="dashboard-container">
         <h2>Dashboard</h2>
+        <button
+          onClick={() => setIsAddAssetModalOpen(true)}
+          className="Asset-button"
+        >
+          Add Asset
+        </button>
 
         {error ? (
           <p className="error-message">{error}</p>
@@ -244,6 +304,75 @@ const Dashboard = () => {
               </button>
             </>
           )}
+        </Modal>
+        <Modal
+          isOpen={isAddFactoryModalOpen}
+          onRequestClose={() => setIsAddFactoryModalOpen(false)}
+          contentLabel="Add Factory"
+          className="modal"
+          overlayClassName="modal-overlay"
+        >
+          <h2>Add Factory</h2>
+          <form onSubmit={handleAddFactory}>
+            <input
+              type="text"
+              value={newFactoryName}
+              onChange={(e) => setNewFactoryName(e.target.value)}
+              placeholder="Factory Name"
+              required
+              className="form-inputText"
+            />
+            <button type="submit" className="control-button">
+              Add Factory
+            </button>
+          </form>
+          <button
+            onClick={() => setIsAddFactoryModalOpen(false)}
+            className="close-button"
+          >
+            Close
+          </button>
+        </Modal>
+        <Modal
+          isOpen={isAddAssetModalOpen}
+          onRequestClose={() => setIsAddAssetModalOpen(false)}
+          contentLabel="Add Asset"
+          className="modal"
+          overlayClassName="modal-overlay"
+        >
+          <h2>Add Asset</h2>
+          <form onSubmit={handleAddAsset}>
+            <label>Factory Name :</label>
+            <input
+              type="text"
+              value={
+                factories.find((factory) => factory._id === selectedFactory)
+                  ?.name || ""
+              }
+              readOnly
+              placeholder="Factory Name"
+              required
+              className="form-inputText"
+            />
+            <label>Asset Name :</label>
+            <input
+              type="text"
+              value={newAssetName}
+              onChange={(e) => setNewAssetName(e.target.value)}
+              placeholder="Asset Name"
+              required
+              className="form-inputText"
+            />
+            <button type="submit" className="control-button">
+              Add Asset
+            </button>
+          </form>
+          <button
+            onClick={() => setIsAddAssetModalOpen(false)}
+            className="close-button"
+          >
+            Close
+          </button>
         </Modal>
       </div>
     </main>

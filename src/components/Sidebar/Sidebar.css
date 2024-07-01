@@ -5,7 +5,51 @@
   height: 100vh;
   justify-content: space-evenly;
   position: fixed;
+  transition: width 0.3s ease-in-out; /* Smooth transition for width change */
 }
+
+.sidebar.collapsed {
+  width: 3.5%; /* Adjust the collapsed width as needed */
+}
+
+/* Existing CSS continues... */
+
+.toggle-sidebar {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ef8354;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-sidebar:hover {
+  background-color: #007bff;
+}
+
+.toggle-sidebar:focus {
+  outline: none;
+}
+
+/* Hide text when collapsed */
+.sidebar.collapsed .ButtonText {
+  display: none;
+}
+
+/* Ensure icon alignment when text is hidden */
+.sidebar .Buttons {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .Buttons svg {
+  margin-right: 0.5rem;
+} 
 
 .logo-Container {
   font-size: 2%;

@@ -8,6 +8,8 @@ import {
   faGear,
   faHouse,
   faUserShield,
+  faAngleDoubleLeft,
+  faAngleDoubleRight,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Sidebar.css";
 import { login } from "../../Helpers/apiHelper";
@@ -15,6 +17,7 @@ import { login } from "../../Helpers/apiHelper";
 const Sidebar = ({ email, password }) => {
   const [activeButton, setActiveButton] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [collapsed, setCollapsed] = useState(false); // State for sidebar collapse/expand
 
   useEffect(() => {
     const storedEmail = localStorage.getItem("email");
@@ -38,12 +41,20 @@ const Sidebar = ({ email, password }) => {
     setActiveButton(buttonName);
   };
 
+  const toggleSidebar = () => {
+    setCollapsed(!collapsed);
+  };
+
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${collapsed ? "collapsed" : ""}`}>
       <div className="logo-Container">
         <div className="logo-text">
-          <h2>Factory</h2>
-          <h3>Monitoring System</h3>
+          {!collapsed && (
+            <>
+              <h2>Factory</h2>
+              <h3>Monitoring System</h3>
+            </>
+          )}
         </div>
       </div>
       <nav>
@@ -60,7 +71,7 @@ const Sidebar = ({ email, password }) => {
                 <span className="Shape">
                   <FontAwesomeIcon icon={faHouse} />
                 </span>
-                Home
+                {!collapsed && <span className="ButtonText">Home</span>}
               </button>
             </NavLink>
           </li>
@@ -78,7 +89,7 @@ const Sidebar = ({ email, password }) => {
                 <span className="Shape">
                   <FontAwesomeIcon icon={faChartLine} />
                 </span>
-                Dashboard
+                {!collapsed && <span className="ButtonText">Dashboard</span>}
               </button>
             </NavLink>
           </li>
@@ -96,7 +107,7 @@ const Sidebar = ({ email, password }) => {
                 <span className="Shape">
                   <FontAwesomeIcon icon={faBox} />
                 </span>
-                Inventory
+                {!collapsed && <span className="ButtonText">Inventory</span>}
               </button>
             </NavLink>
           </li>
@@ -114,7 +125,9 @@ const Sidebar = ({ email, password }) => {
                 <span className="Shape">
                   <FontAwesomeIcon icon={faBell} />
                 </span>
-                Notifications
+                {!collapsed && (
+                  <span className="ButtonText">Notifications</span>
+                )}
               </button>
             </NavLink>
           </li>
@@ -132,7 +145,7 @@ const Sidebar = ({ email, password }) => {
                 <span className="Shape">
                   <FontAwesomeIcon icon={faGear} />
                 </span>
-                Settings
+                {!collapsed && <span className="ButtonText">Settings</span>}
               </button>
             </NavLink>
           </li>
@@ -151,13 +164,22 @@ const Sidebar = ({ email, password }) => {
                   <span className="Shape">
                     <FontAwesomeIcon icon={faUserShield} />
                   </span>
-                  Admin Panel
+                  {!collapsed && (
+                    <span className="ButtonText">Admin Panel</span>
+                  )}
                 </button>
               </NavLink>
             </li>
           )}
         </ul>
       </nav>
+      <div className="toggle-sidebar" onClick={toggleSidebar}>
+        {collapsed ? (
+          <FontAwesomeIcon icon={faAngleDoubleRight} />
+        ) : (
+          <FontAwesomeIcon icon={faAngleDoubleLeft} />
+        )}
+      </div>
     </div>
   );
 };

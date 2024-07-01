@@ -139,6 +139,36 @@ const getUserId = async () => {
   console.log(`-------- User ID: ${userId}`);
   return userId;
 };
+// New functions for creating factory and asset
+const createFactory = async (factoryData) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/factories`, factoryData, {
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+        "Content-Type": "application/json",
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error creating factory:", error);
+    throw error;
+  }
+};
+
+const createAsset = async (assetData) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/assets`, assetData, {
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+        "Content-Type": "application/json",
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error creating asset:", error);
+    throw error;
+  }
+};
 
 export {
   getFactroiesByUser,
@@ -149,4 +179,6 @@ export {
   registerUser,
   removeUser,
   getUserId,
+  createFactory,
+  createAsset,
 };

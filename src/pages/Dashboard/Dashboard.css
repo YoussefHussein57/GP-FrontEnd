@@ -8,11 +8,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0 auto; /* Center the container horizontally */
+  margin: 0 22%; /* Center the container horizontally */
   margin-top: 2%;
   align-items: center;
-  margin-right: 15rem;
+}
 
+.dashboard-container h2 {
+  margin-right: 65rem;
 }
 
 .dropdown-container {
@@ -22,7 +24,8 @@
 }
 
 .dropdown {
-  background-color: #ef8354;
+  background: linear-gradient(to right, #2d3142 90%, #ef8354);
+  background-color: #2d3142;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -38,13 +41,11 @@
   justify-content: space-around;
 }
 
-.dashboard {
-  text-align: center;
-}
-
 .gauges {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
+  padding: 0 10px; /* Add padding to adjust spacing between gauges */
 }
 
 .gauge-container {
@@ -54,14 +55,14 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  width: 45%;
-  max-width: 200px;
+  width: calc(45% - 1rem); /* Adjusted width calculation with margin */
+  max-width: 300px; /* Increase max-width for larger screens */
   text-align: center;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
   cursor: pointer;
   position: relative; /* Added to position star button */
-  margin-right: 1rem;
+  margin-right: 20px; /* Increased margin for better spacing */
 }
 
 .gauge-container h3 {
@@ -82,6 +83,29 @@
 
 .gauge-container .star-button.favorite {
   color: gold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .gauge-container {
+    width: calc(45% - 1rem); /* Adjusted width for tablets */
+    max-width: 250px; /* Decrease max-width for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .gauge-container {
+    width: calc(50% - 1rem); /* Adjusted width for smaller tablets */
+    max-width: 300px; /* Increase max-width for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .gauge-container {
+    width: calc(100% - 1rem); /* Full width for mobile screens */
+    max-width: 100%; /* Ensure gauges take full width on small screens */
+    margin-right: 0; /* Remove margin for better spacing */
+  }
 }
 
 /* Modal Styles */
@@ -118,13 +142,38 @@
   background-color: #ff4d4d;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .dashboard-container {
-    width: 90%;
-    margin: 0 auto;
-  }
+.add-factory-button {
+  margin-left: 140%;
+  width: 11rem;
+  margin-top: 0%;
+}
 
+.Asset-button {
+  margin-left: 61.5rem;
+  width: 11rem;
+  margin-top: 0rem;
+}
+
+.form-inputText {
+  width: 92%;
+  padding: 8px;
+  border-radius: 0.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .dashboard-container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboard-container {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
   .dashboard-wrapper {
     flex-direction: column;
     align-items: center;
@@ -132,15 +181,35 @@
 
   .gauge-container {
     width: 80%;
+    max-width: 100%;
+  }
+
+  .dropdown-container {
+    margin-right: auto;
+    width: 90%;
+    max-width: 75rem;
+  }
+
+  .add-factory-button,
+  .Asset-button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+
+  .dashboard-container h2 {
+    margin-right: auto;
   }
 }
 
 @media (max-width: 480px) {
   .dashboard-container {
     width: 95%;
+    padding: 10px;
   }
 
   .gauge-container {
     width: 100%;
+    max-width: 100%;
   }
 }
