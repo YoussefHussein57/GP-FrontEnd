@@ -16,7 +16,9 @@ import {
   getFactroiesByUser,
   getLast10Readings,
   createFactory,
-  createAsset, // Import the createAsset function
+  createAsset,
+  removeAsset,
+  removeSensor,
 } from "../../Helpers/apiHelper";
 import "./Dashboard.css";
 
@@ -43,11 +45,14 @@ const Dashboard = () => {
   const [error, setError] = useState(null);
   const [favorites, setFavorites] = useState([]);
   const [userId, setUserId] = useState(null);
-  const [isAddFactoryModalOpen, setIsAddFactoryModalOpen] = useState(false); // State to manage add factory modal visibility
-  const [newFactoryName, setNewFactoryName] = useState(""); // State to manage new factory name input
-  const [isAddAssetModalOpen, setIsAddAssetModalOpen] = useState(false); // State to manage add asset modal visibility
-  const [newAssetName, setNewAssetName] = useState(""); // State to manage new asset name input
-  const [newAssetType, setNewAssetType] = useState(""); // State to manage new asset type input
+  const [isAddFactoryModalOpen, setIsAddFactoryModalOpen] = useState(false);
+  const [newFactoryName, setNewFactoryName] = useState("");
+  const [isAddAssetModalOpen, setIsAddAssetModalOpen] = useState(false);
+  const [newAssetName, setNewAssetName] = useState("");
+  const [newAssetType, setNewAssetType] = useState(""); // New state for asset type
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [itemToDelete, setItemToDelete] = useState(null);
+  const [recentlyAddedAssets, setRecentlyAddedAssets] = useState([]);
 
   useEffect(() => {
     const fetchFactories = async () => {
@@ -91,6 +96,20 @@ const Dashboard = () => {
     setSelectedFactory(savedSelectedFactory);
   }, []);
 
+  const fetchAndUpdateFactories = async () => {
+    try {
+      const { factories: factoriesData } = await getFactroiesByUser();
+      setFactories(factoriesData.data.factories);
+      localStorage.setItem(
+        "factories",
+        JSON.stringify(factoriesData.data.factories)
+      );
+      handleFactoryChange({ target: { value: selectedFactory } });
+    } catch (error) {
+      console.error("Error fetching and updating factories:", error);
+    }
+  };
+
   const handleFactoryChange = (e) => {
     const factoryId = e.target.value;
     setSelectedFactory(factoryId);
@@ -124,9 +143,7 @@ const Dashboard = () => {
       await createFactory(newFactory);
       setIsAddFactoryModalOpen(false);
       setNewFactoryName("");
-      // Refresh factories list
-      const { factories: updatedFactories } = await getFactroiesByUser();
-      setFactories(updatedFactories.data.factories);
+      fetchAndUpdateFactories(); // Refresh factories list
     } catch (error) {
       console.error("Error adding factory:", error);
     }
@@ -140,17 +157,25 @@ const Dashboard = () => {
         type: newAssetType,
         factoryId: selectedFactory,
       };
+
+      if (!newAsset.name || !newAsset.type || !newAsset.factoryId) {
+        alert("Please fill out all fields.");
+        return;
+      }
+
       await createAsset(newAsset);
       setIsAddAssetModalOpen(false);
       setNewAssetName("");
-      setNewAssetType("");
-      // Refresh factories list to reflect the new asset
-      const { factories: updatedFactories } = await getFactroiesByUser();
-      setFactories(updatedFactories.data.factories);
-      // Optionally, update dashboards if needed
-      handleFactoryChange({ target: { value: selectedFactory } });
+      setNewAssetType(""); // Reset the asset type state
+      fetchAndUpdateFactories(); // Refresh factories list to reflect the new asset
+      setRecentlyAddedAssets((prev) => [...prev, newAsset.name]);
     } catch (error) {
       console.error("Error adding asset:", error);
+      alert(
+        `Error adding asset: ${
+          error.response ? error.response.data.message : error.message
+        }`
+      );
     }
   };
 
@@ -186,6 +211,32 @@ const Dashboard = () => {
     }
     setFavorites(updatedFavorites);
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+  };
+
+  const openDeleteModal = (item) => {
+    setItemToDelete(item);
+    setIsDeleteModalOpen(true);
+  };
+
+  const closeDeleteModal = () => {
+    setIsDeleteModalOpen(false);
+    setItemToDelete(null);
+  };
+
+  const handleDeleteItem = async () => {
+    if (itemToDelete) {
+      try {
+        if (itemToDelete.type === "asset") {
+          await removeAsset(itemToDelete.id);
+        } else if (itemToDelete.type === "sensor") {
+          await removeSensor(itemToDelete.id);
+        }
+        fetchAndUpdateFactories(); // Refresh factories list to reflect the removal
+        closeDeleteModal();
+      } catch (error) {
+        console.error("Error removing item:", error);
+      }
+    }
   };
 
   const data = {
@@ -226,7 +277,6 @@ const Dashboard = () => {
         </button>
       </div>
       <div className="dashboard-container">
-        <h2>Dashboard</h2>
         <button
           onClick={() => setIsAddAssetModalOpen(true)}
           className="Asset-button"
@@ -240,7 +290,15 @@ const Dashboard = () => {
           dashboards.map((dashboard) => (
             <div key={dashboard.id} className="dashboard-wrapper">
               <div className="dashboard">
-                <h3>{dashboard.title}</h3>
+                <h2>{dashboard.title}</h2>
+                <button
+                  className="delete-button"
+                  onClick={() =>
+                    openDeleteModal({ id: dashboard.id, type: "asset" })
+                  }
+                >
+                  X
+                </button>
                 <div className="gauges">
                   {dashboard.gauges.map((gauge) => (
                     <div
@@ -250,33 +308,37 @@ const Dashboard = () => {
                     >
                       <h3>{gauge.label}</h3>
                       <GaugeChart
-                        id={`gauge-chart-${gauge.id}`}
-                        nrOfLevels={10}
-                        colors={[gauge.color, "#eee"]}
-                        arcWidth={0.3}
-                        textColor="#000"
+                        id={gauge.id}
+                        nrOfLevels={30}
+                        percent={gauge.value / gauge.max}
+                        colors={[gauge.color, "#FF5F6D"]}
                       />
-                      <div
-                        style={{
-                          marginTop: "10px",
-                          fontSize: "20px",
-                          color: "#000",
+                      <p>
+                        {gauge.value} {gauge.unit}
+                      </p>
+                      <button
+                        className="delete-button-sensor"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          openDeleteModal({ id: gauge.id, type: "sensor" });
                         }}
                       >
-                        {gauge.value} {gauge.unit}
-                      </div>
+                        X
+                      </button>
                       <button
+                        className={`star-button ${
+                          favorites.some((fav) => fav.id === gauge.id)
+                            ? "favorited"
+                            : ""
+                        }`}
                         onClick={(e) => {
                           e.stopPropagation();
                           toggleFavorite(gauge);
                         }}
-                        className={`star-button ${
-                          favorites.some((fav) => fav.id === gauge.id)
-                            ? "favorite"
-                            : ""
-                        }`}
                       >
-                        ★
+                        {favorites.some((fav) => fav.id === gauge.id)
+                          ? "★"
+                          : "☆"}
                       </button>
                     </div>
                   ))}
@@ -285,96 +347,100 @@ const Dashboard = () => {
             </div>
           ))
         )}
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          contentLabel="Gauge Details"
-          className="modal"
-          overlayClassName="modal-overlay"
-        >
-          {selectedGauge && (
-            <>
-              <h2>{selectedGauge.label} Details</h2>
-              <Line data={data} />
-              <button onClick={toggleLed} className="control-button">
-                Toggle LED ({isLedOn ? "ON" : "OFF"})
-              </button>
-              <button onClick={closeModal} className="close-button">
-                Close
-              </button>
-            </>
-          )}
-        </Modal>
-        <Modal
-          isOpen={isAddFactoryModalOpen}
-          onRequestClose={() => setIsAddFactoryModalOpen(false)}
-          contentLabel="Add Factory"
-          className="modal"
-          overlayClassName="modal-overlay"
-        >
-          <h2>Add Factory</h2>
-          <form onSubmit={handleAddFactory}>
-            <input
-              type="text"
-              value={newFactoryName}
-              onChange={(e) => setNewFactoryName(e.target.value)}
-              placeholder="Factory Name"
-              required
-              className="form-inputText"
-            />
-            <button type="submit" className="control-button">
-              Add Factory
-            </button>
-          </form>
-          <button
-            onClick={() => setIsAddFactoryModalOpen(false)}
-            className="close-button"
-          >
-            Close
-          </button>
-        </Modal>
-        <Modal
-          isOpen={isAddAssetModalOpen}
-          onRequestClose={() => setIsAddAssetModalOpen(false)}
-          contentLabel="Add Asset"
-          className="modal"
-          overlayClassName="modal-overlay"
-        >
-          <h2>Add Asset</h2>
-          <form onSubmit={handleAddAsset}>
-            <label>Factory Name :</label>
-            <input
-              type="text"
-              value={
-                factories.find((factory) => factory._id === selectedFactory)
-                  ?.name || ""
-              }
-              readOnly
-              placeholder="Factory Name"
-              required
-              className="form-inputText"
-            />
-            <label>Asset Name :</label>
-            <input
-              type="text"
-              value={newAssetName}
-              onChange={(e) => setNewAssetName(e.target.value)}
-              placeholder="Asset Name"
-              required
-              className="form-inputText"
-            />
-            <button type="submit" className="control-button">
-              Add Asset
-            </button>
-          </form>
-          <button
-            onClick={() => setIsAddAssetModalOpen(false)}
-            className="close-button"
-          >
-            Close
-          </button>
-        </Modal>
+        <div className="recently-added-assets">
+          {recentlyAddedAssets.map((assetName, index) => (
+            <div key={index} className="recent-asset">
+              <h2>{assetName}</h2>
+            </div>
+          ))}
+        </div>
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Gauge Modal"
+        className="modal"
+        overlayClassName="overlay"
+      >
+        <h2>{selectedGauge ? selectedGauge.label : ""}</h2>
+        <Line data={data} />
+        <button onClick={closeModal}>Close</button>
+      </Modal>
+      <Modal
+        isOpen={isAddFactoryModalOpen}
+        onRequestClose={() => setIsAddFactoryModalOpen(false)}
+        contentLabel="Add Factory Modal"
+        className="modal"
+        overlayClassName="overlay"
+      >
+        <h2>Add New Factory</h2>
+        <form onSubmit={handleAddFactory}>
+          <input
+            type="text"
+            value={newFactoryName}
+            onChange={(e) => setNewFactoryName(e.target.value)}
+            placeholder="Factory Name"
+            required
+            className="form-inputText"
+          />
+          <button type="submit">Add</button>
+        </form>
+        <button onClick={() => setIsAddFactoryModalOpen(false)}>Close</button>
+      </Modal>
+      <Modal
+        isOpen={isAddAssetModalOpen}
+        onRequestClose={() => setIsAddAssetModalOpen(false)}
+        contentLabel="Add Asset Modal"
+        className="modal"
+        overlayClassName="overlay"
+      >
+        <h2>Add New Asset</h2>
+        <form onSubmit={handleAddAsset}>
+          <label>Factory Name :</label>
+          <input
+            type="text"
+            value={
+              factories.find((factory) => factory._id === selectedFactory)
+                ?.name || ""
+            }
+            readOnly
+            placeholder="Factory Name"
+            required
+            className="form-inputText"
+          />
+          <label>Asset Name :</label>
+          <input
+            type="text"
+            value={newAssetName}
+            onChange={(e) => setNewAssetName(e.target.value)}
+            placeholder="Asset Name"
+            required
+            className="form-inputText"
+          />
+          <label>Asset Type :</label>
+          <input
+            type="text"
+            value={newAssetType}
+            onChange={(e) => setNewAssetType(e.target.value)}
+            placeholder="Asset Type"
+            required
+            className="form-inputText"
+          />
+          <button type="submit">Add</button>
+        </form>
+        <button onClick={() => setIsAddAssetModalOpen(false)}>Close</button>
+      </Modal>
+      <Modal
+        isOpen={isDeleteModalOpen}
+        onRequestClose={closeDeleteModal}
+        contentLabel="Delete Item Modal"
+        className="modal"
+        overlayClassName="overlay"
+      >
+        <h2>Are you sure you want to delete this item?</h2>
+        <button onClick={handleDeleteItem}>Yes, delete it</button>
+        <button onClick={closeDeleteModal}>Cancel</button>
+      </Modal>
     </main>
   );
 };

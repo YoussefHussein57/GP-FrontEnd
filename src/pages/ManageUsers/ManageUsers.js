@@ -9,6 +9,8 @@ const ManageUsers = () => {
     return savedUsers ? JSON.parse(savedUsers) : [];
   });
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [confirmationModalIsOpen, setConfirmationModalIsOpen] = useState(false);
+  const [userToBeRemoved, setUserToBeRemoved] = useState(null);
   const [newUser, setNewUser] = useState({
     firstName: "",
     lastName: "",
@@ -39,13 +41,26 @@ const ManageUsers = () => {
     fetchUsers();
   }, [fetchTrigger]); // Dependency array includes fetchTrigger to re-fetch on add/remove
 
-  const handleRemoveUser = async (userId) => {
+  const openConfirmationModal = (userId) => {
+    setUserToBeRemoved(userId);
+    setConfirmationModalIsOpen(true);
+  };
+
+  const closeConfirmationModal = () => {
+    setUserToBeRemoved(null);
+    setConfirmationModalIsOpen(false);
+  };
+
+  const handleRemoveUser = async () => {
+    if (!userToBeRemoved) return;
+
     try {
-      await removeUser(userId); // Call removeUser function from apiHelper.js
-      const updatedUsers = users.filter((user) => user._id !== userId);
+      await removeUser(userToBeRemoved); // Call removeUser function from apiHelper.js
+      const updatedUsers = users.filter((user) => user._id !== userToBeRemoved);
       setUsers(updatedUsers);
       localStorage.setItem("users", JSON.stringify(updatedUsers));
       setFetchTrigger(!fetchTrigger);
+      closeConfirmationModal();
     } catch (error) {
       console.error("Error removing user:", error);
       setError("Failed to remove user. Please try again.");
@@ -96,7 +111,7 @@ const ManageUsers = () => {
               <td>{user.email}</td>
               <td>{user.role}</td>
               <td>
-                <button onClick={() => handleRemoveUser(user._id)}>
+                <button onClick={() => openConfirmationModal(user._id)}>
                   Remove
                 </button>
               </td>
@@ -173,6 +188,19 @@ const ManageUsers = () => {
             </button>
           </form>
         </div>
+      </Modal>
+
+      <Modal
+        isOpen={confirmationModalIsOpen}
+        onRequestClose={closeConfirmationModal}
+        contentLabel="Confirm Removal"
+        className="modal"
+        overlayClassName="overlay"
+      >
+        <h2>Confirm User Removal</h2>
+        <p>Are you sure you want to remove this user?</p>
+        <button onClick={handleRemoveUser}>Yes, remove</button>
+        <button onClick={closeConfirmationModal}>Cancel</button>
       </Modal>
     </div>
   );

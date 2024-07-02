@@ -169,7 +169,66 @@ const createAsset = async (assetData) => {
     throw error;
   }
 };
+const removeAsset = async (assetId) => {
+  try {
+    const response = await axios.delete(`${BASE_URL}/assets/${assetId}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${TOKEN}`,
+      },
+    });
 
+    if (!response.status === 200) {
+      throw new Error("Failed to delete asset");
+    }
+
+    console.log("Asset deleted successfully:", response.data);
+    return response.data;
+  } catch (error) {
+    console.error("Error deleting asset:", error);
+    throw error; // Propagate the error back to the caller
+  }
+};
+const deleteFactory = async (factoryId) => {
+  try {
+    const response = await axios.delete(`${BASE_URL}/factories/${factoryId}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${TOKEN}`,
+      },
+    });
+
+    if (!response.status === 200) {
+      throw new Error("Failed to delete factory");
+    }
+
+    console.log("Factory deleted successfully:", response.data);
+    return response.data;
+  } catch (error) {
+    console.error("Error deleting factory:", error);
+    throw error; // Propagate the error back to the caller
+  }
+};
+const removeSensor = async (sensorId) => {
+  try {
+    const response = await axios.delete(`${BASE_URL}/sensors/${sensorId}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${TOKEN}`,
+      },
+    });
+
+    if (!response.status === 200) {
+      throw new Error("Failed to delete sensor");
+    }
+
+    console.log("Sensor deleted successfully:", response.data);
+    return response.data;
+  } catch (error) {
+    console.error("Error deleting sensor:", error);
+    throw error; // Propagate the error back to the caller
+  }
+};
 export {
   getFactroiesByUser,
   login,
@@ -181,4 +240,7 @@ export {
   getUserId,
   createFactory,
   createAsset,
+  removeAsset,
+  deleteFactory,
+  removeSensor,
 };

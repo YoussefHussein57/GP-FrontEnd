@@ -2,7 +2,7 @@
   padding: 20px;
   background-color: #fff;
   width: 90%;
-  max-width: 75rem;
+  max-width: 80rem;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 3%;
   display: flex;
@@ -11,10 +11,13 @@
   margin: 0 22%; /* Center the container horizontally */
   margin-top: 2%;
   align-items: center;
+  overflow-x: auto; /* Add horizontal scroll */
 }
 
 .dashboard-container h2 {
-  margin-right: 65rem;
+  margin-right: 72rem;
+  padding-bottom:2rem ;
+  margin-top: 0px;
 }
 
 .dropdown-container {
@@ -36,16 +39,17 @@
 
 .dashboard-wrapper {
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
-  justify-content: space-around;
+  justify-content: flex-start; /* Align items to the start for horizontal scroll */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding: 10px 0; /* Add padding for better spacing */
 }
 
 .gauges {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 0 10px; /* Add padding to adjust spacing between gauges */
+  flex-wrap: nowrap; /* Ensure gauges do not wrap to a new line */
+  width: calc(45% - 1rem); /* Adjusted width calculation with margin */
+  max-width: 400px; /* Increase max-width for larger screens */
 }
 
 .gauge-container {
@@ -69,16 +73,43 @@
   margin-bottom: 10px; /* Space between gauge label and gauge chart */
 }
 
-.gauge-container .star-button {
-  background: none;
+.gauge-container .star-button  {
+  background: none ;
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #ccc;
+  color: gold;
   margin-top: 10px;
   position: absolute;
   top: 10px;
-  right: 25px;
+  right: 80px;
+  max-width: 0.01rem;
+}
+.delete-button-sensor{
+  background: none  ;
+  color: #2d3142;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  position: absolute;
+  top: 0px;
+  margin-left: 12rem;
+  max-width: 0.1rem;
+  
+}
+.delete-button{
+  background: none  ;
+  color: #2d3142;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 15rem;
+  position: absolute;
+  top: 0px;
+  margin-left: 36rem;
+  max-width: 0.1rem;
+  
 }
 
 .gauge-container .star-button.favorite {
@@ -117,6 +148,7 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
+
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 80%;
   max-width: 600px;
@@ -149,10 +181,12 @@
 }
 
 .Asset-button {
-  margin-left: 61.5rem;
+  margin-left: 56rem;
   width: 11rem;
-  margin-top: 0rem;
+  margin-top: 1rem;
+
 }
+
 
 .form-inputText {
   width: 92%;

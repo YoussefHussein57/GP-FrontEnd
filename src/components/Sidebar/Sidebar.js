@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBell,
@@ -10,6 +10,7 @@ import {
   faUserShield,
   faAngleDoubleLeft,
   faAngleDoubleRight,
+  faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Sidebar.css";
 import { login } from "../../Helpers/apiHelper";
@@ -18,6 +19,7 @@ const Sidebar = ({ email, password }) => {
   const [activeButton, setActiveButton] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [collapsed, setCollapsed] = useState(false); // State for sidebar collapse/expand
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedEmail = localStorage.getItem("email");
@@ -43,6 +45,14 @@ const Sidebar = ({ email, password }) => {
 
   const toggleSidebar = () => {
     setCollapsed(!collapsed);
+  };
+
+  const handleLogout = () => {
+    const confirmLogout = window.confirm("Are you sure you want to log out?");
+    if (confirmLogout) {
+      localStorage.clear();
+      navigate("/login");
+    }
   };
 
   return (
@@ -171,6 +181,17 @@ const Sidebar = ({ email, password }) => {
               </NavLink>
             </li>
           )}
+          <li>
+            <button
+              className={`Buttons ${activeButton === "Logout" ? "active" : ""}`}
+              onClick={handleLogout}
+            >
+              <span className="Shape">
+                <FontAwesomeIcon icon={faRightFromBracket} />
+              </span>
+              {!collapsed && <span className="ButtonText">Logout</span>}
+            </button>
+          </li>
         </ul>
       </nav>
       <div className="toggle-sidebar" onClick={toggleSidebar}>
