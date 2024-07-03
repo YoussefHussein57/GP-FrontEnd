@@ -7,7 +7,7 @@ let TOKEN = "";
 let userId = "";
 
 // Function to fetch data from backend
-const getFactroiesByUser = async () => {
+const getFactoriesByUser = async () => {
   try {
     const response = await axios.get(`${BASE_URL}/factories/user/${userId}`, {
       headers: {
@@ -189,7 +189,7 @@ const removeAsset = async (assetId) => {
     throw error; // Propagate the error back to the caller
   }
 };
-const deleteFactory = async (factoryId) => {
+const removeFactory = async (factoryId) => {
   try {
     const response = await axios.delete(`${BASE_URL}/factories/${factoryId}`, {
       headers: {
@@ -230,7 +230,7 @@ const removeSensor = async (sensorId) => {
   }
 };
 export {
-  getFactroiesByUser,
+  getFactoriesByUser,
   login,
   getLast10Readings,
   appendNewReading,
@@ -241,6 +241,6 @@ export {
   createFactory,
   createAsset,
   removeAsset,
-  deleteFactory,
+  removeFactory,
   removeSensor,
 };

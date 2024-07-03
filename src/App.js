@@ -11,6 +11,9 @@ import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import ManageUsers from "./pages/ManageUsers/ManageUsers";
+import UnderConstruction from "./pages/Inventory/UnderConstruction";
+import UnderConstruction1 from "./pages/Notification/UnderConstruction";
+import UnderConstruction2 from "./pages/Settings/UnderConstruction";
 import "./App.css";
 import Searchbar from "./components/Searchbar/Searchbar";
 
@@ -52,7 +55,9 @@ const Main = ({ email, password, setEmail, setPassword }) => {
           <Route path="/home" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard email={email} />} />
           <Route path="/admin" element={<ManageUsers />} />
-          <Route path="*" element={<Navigate to="/login" />} />
+          <Route path="/Inventory" element={<UnderConstruction />} />
+          <Route path="/Notification" element={<UnderConstruction1 />} />
+          <Route path="/Settings" element={<UnderConstruction2 />} />
         </Routes>
       </div>
     </div>

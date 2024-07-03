@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: calc(50vh - 10px); /* Adjusted height to fit half of the screen minus padding */
-  overflow-y: auto;
+  overflow-y:inherit;
   box-sizing: border-box;
 }
 
