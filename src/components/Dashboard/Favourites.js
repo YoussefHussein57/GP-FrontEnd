@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import GaugeChart from "react-gauge-chart";
 import "./Favourites.css";
+import Card from "../Card/Card";
 
 const FavBar = () => {
   const getFavoritesFromLocalStorage = () => {
@@ -16,7 +17,8 @@ const FavBar = () => {
   }, []);
 
   return (
-    <div className="favorites-container">
+    <Card>
+      {" "}
       <h2>Favorites</h2>
       <div className="favorites">
         {favorites.map((favorite, index) => (
@@ -39,7 +41,7 @@ const FavBar = () => {
           </div>
         ))}
       </div>
-    </div>
+    </Card>
   );
 };
 

@@ -6,18 +6,16 @@ import AI from "../../components/AIModelState/AI";
 
 function Home() {
   return (
-    <div className="home">
-      <main className="Container">
-        <div className="row">
-          <div className="column-2">
-            <Notifications />
-            <AI />
-          </div>
-          <div className="column-1">
-            <FavBar />
-          </div>
+    <div className="home h-4/5">
+      <div className="flex gap-8 max-w-full p-8 h-full">
+        <div className="column-2">
+          <Notifications />
+          <AI />
         </div>
-      </main>
+        <div className="column-1">
+          <FavBar />
+        </div>
+      </div>
     </div>
   );
 }

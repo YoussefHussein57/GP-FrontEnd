@@ -39,12 +39,12 @@ const Main = ({ email, password, setEmail, setPassword }) => {
   const hideSearchbarRoutes = ["/login"];
 
   return (
-    <div className="App">
+    <div className="flex w-full h-screen">
       {!hideSidebarRoutes.includes(location.pathname) && (
         <Sidebar email={email} password={password} />
       )}
-      <div className="content">
-        <div className="SearchBar">
+      <div className="bg-background w-full">
+        <div>
           {!hideSearchbarRoutes.includes(location.pathname) && <Searchbar />}
         </div>
         <Routes>

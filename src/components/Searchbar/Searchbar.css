@@ -16,10 +16,8 @@
   display: flex;
   align-items: center;
   background-color: #f8faff;
-  padding: 5px 15px;
   border-radius: 25px;
   flex-grow: 1;
-  margin-right: 20px;
 }
 
 .search-icon {
@@ -63,7 +61,6 @@
   .searchbar {
     margin-right: 0;
     margin-top: 10px;
-    margin-left: 100%;
   }
 
   .searchbar input {
@@ -73,19 +70,16 @@
   .SearchBarShapes {
     justify-content: flex-end;
     margin-top: 10px;
-    
   }
 }
 
 @media (max-width: 480px) {
   .searchbar-container {
     padding: 10px;
-    
   }
 
   .searchbar {
     padding: 5px;
-    
   }
 
   .search-shape {

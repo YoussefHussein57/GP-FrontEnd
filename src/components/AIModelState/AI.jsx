@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 //import axios from "axios";
 import "./AiModel.css";
-
+import Card from "../Card/Card";
 const AI = () => {
   const [aiModelStatus, setAiModelStatus] = useState(null); // State for AI model status
 
@@ -21,7 +21,8 @@ const AI = () => {
   };
 
   return (
-    <div className="ai-model-container">
+    <Card className="flex-1">
+      {" "}
       <h2>AI Model Status</h2>
       <div className="ai-model-status">
         {aiModelStatus !== null ? (
@@ -32,7 +33,7 @@ const AI = () => {
           <div className="loading">Loading...</div>
         )}
       </div>
-    </div>
+    </Card>
   );
 };
 

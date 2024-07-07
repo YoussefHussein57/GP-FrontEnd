@@ -2,20 +2,18 @@
   width: 11%;
   background-color: #ffffff;
   padding: 1%;
-  height: 100vh;
+  height: 100%;
   justify-content: space-evenly;
-  position: fixed;
   transition: width 0.3s ease-in-out; /* Smooth transition for width change */
 }
 
-.sidebar.collapsed {
+.collapsed {
   width: 3.5%; /* Adjust the collapsed width as needed */
 }
 
 /* Existing CSS continues... */
 
 .toggle-sidebar {
-  position: absolute;
   bottom: 8%;
   left: 50%;
   transform: translateX(-50%);
@@ -46,10 +44,6 @@
   display: flex;
   align-items: center;
 }
-
-.sidebar .Buttons svg {
-  margin-right: 0.5rem;
-} 
 
 .logo-Container {
   font-size: 2%;
@@ -86,20 +80,13 @@ a {
 
 nav ul {
   list-style: none;
-  padding: 0;
-}
-
-nav li {
-  margin: 10px 0;
 }
 
 button.Buttons {
   border: none;
   cursor: pointer;
   display: flex;
-  width: 100%;
   height: 2.7rem;
-  padding: 0.5rem 1rem;
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
   font-size: 21px;
@@ -108,13 +95,13 @@ button.Buttons {
   border-radius: 11%;
   text-align: center;
   color: #ef8354;
-  margin-top: 30px;
 }
 
 button.Buttons:hover,
 button.Buttons:active {
   background-color: #ef8354;
   color: antiquewhite;
+  @apply rounded-xl;
 }
 
 button.Buttons:hover .Shape,
@@ -124,7 +111,6 @@ button.Buttons:active .Shape {
 }
 
 .Shape {
-  margin-right: 1rem;
   color: #ef8354;
   justify-content: space-around;
 }

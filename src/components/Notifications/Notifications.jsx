@@ -1,6 +1,6 @@
 import React from "react";
 import "./Notifications.css";
-
+import Card from "../Card/Card";
 const Notifications = () => {
   const [notifications, setNotifications] = React.useState([
     {
@@ -21,15 +21,15 @@ const Notifications = () => {
   ]);
 
   return (
-    <div className="notifications">
+    <Card className="flex-1 py-6 gap-20">
       {notifications.map((notification, index) => (
-        <div className="notification" key={index}>
+        <div className="notification text-text flex gap-4" key={index}>
           <div className="avatar">{notification.avatar}</div>
-          <div className="details">{notification.details}</div>
+          <div className="details font-semibold ">{notification.details}</div>
           <div className="time">{notification.time}</div>
         </div>
       ))}
-    </div>
+    </Card>
   );
 };
 

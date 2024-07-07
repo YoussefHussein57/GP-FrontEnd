@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /* src/App.css */
 .App {
   display: flex;
@@ -31,11 +34,6 @@
   .App {
     flex-direction: column;
     height: auto;
-  }
-
-  .SearchBar {
-    margin-left: 0;
-    width: 100%;
   }
 
   .content {
@@ -76,4 +74,27 @@
 
 .App.collapsed .content {
   margin-left: 0;
+}
+
+@layer base {
+  *.body {
+    @apply font-sans;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans;
+  }
+  p,
+  span,
+  a,
+  button,
+  label,
+  input,
+  textarea {
+    @apply font-sans;
+  }
 }

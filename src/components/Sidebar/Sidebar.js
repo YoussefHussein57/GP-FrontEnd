@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./Sidebar.css";
 import { login } from "../../Helpers/apiHelper";
+import LogoImg from "../../Images/Helwan_Logo.png";
 
 const Sidebar = ({ email, password }) => {
   const [activeButton, setActiveButton] = useState(null);
@@ -56,134 +57,72 @@ const Sidebar = ({ email, password }) => {
   };
 
   return (
-    <div className={`sidebar ${collapsed ? "collapsed" : ""}`}>
-      <div className="logo-Container">
-        <div className="logo-text">
-          {!collapsed && (
-            <>
-              <h2>Factory</h2>
-              <h3>Monitoring System</h3>
-            </>
-          )}
-        </div>
-      </div>
+    <div
+      className={`bg-primary p-4 flex flex-col items-center justify-evenly overflow-y-auto overflow-x-clip  sidebar ${
+        collapsed ? "collapsed" : ""
+      }`}
+    >
+      <Logo collapsed={collapsed} />
       <nav>
-        <ul>
-          <li>
-            <NavLink
-              to="/home"
-              activeClassName="active"
-              onClick={() => handleButtonClick("Home")}
-            >
-              <button
-                className={`Buttons ${activeButton === "Home" ? "active" : ""}`}
-              >
-                <span className="Shape">
-                  <FontAwesomeIcon icon={faHouse} />
-                </span>
-                {!collapsed && <span className="ButtonText">Home</span>}
-              </button>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/dashboard"
-              activeClassName="active"
-              onClick={() => handleButtonClick("Dashboard")}
-            >
-              <button
-                className={`Buttons ${
-                  activeButton === "Dashboard" ? "active" : ""
-                }`}
-              >
-                <span className="Shape">
-                  <FontAwesomeIcon icon={faChartLine} />
-                </span>
-                {!collapsed && <span className="ButtonText">Dashboard</span>}
-              </button>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/inventory"
-              activeClassName="active"
-              onClick={() => handleButtonClick("Inventory")}
-            >
-              <button
-                className={`Buttons ${
-                  activeButton === "Inventory" ? "active" : ""
-                }`}
-              >
-                <span className="Shape">
-                  <FontAwesomeIcon icon={faBox} />
-                </span>
-                {!collapsed && <span className="ButtonText">Inventory</span>}
-              </button>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/notification"
-              activeClassName="active"
-              onClick={() => handleButtonClick("Notifications")}
-            >
-              <button
-                className={`Buttons ${
-                  activeButton === "Notifications" ? "active" : ""
-                }`}
-              >
-                <span className="Shape">
-                  <FontAwesomeIcon icon={faBell} />
-                </span>
-                {!collapsed && (
-                  <span className="ButtonText">Notifications</span>
-                )}
-              </button>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/settings"
-              activeClassName="active"
-              onClick={() => handleButtonClick("Settings")}
-            >
-              <button
-                className={`Buttons ${
-                  activeButton === "Settings" ? "active" : ""
-                }`}
-              >
-                <span className="Shape">
-                  <FontAwesomeIcon icon={faGear} />
-                </span>
-                {!collapsed && <span className="ButtonText">Settings</span>}
-              </button>
-            </NavLink>
-          </li>
+        <ul className="flex flex-col gap-8">
+          <NavigationButton
+            buttonName="Home"
+            navigatePath={"/home"}
+            activeButton={activeButton}
+            handleButtonClick={handleButtonClick}
+            collapsed={collapsed}
+            icon={faHouse}
+          />
+          <NavigationButton
+            buttonName="Dashboard"
+            navigatePath={"/dashboard"}
+            activeButton={activeButton}
+            handleButtonClick={handleButtonClick}
+            collapsed={collapsed}
+            icon={faChartLine}
+          />
+
+          <NavigationButton
+            buttonName="Intentory"
+            navigatePath={"/intentory"}
+            activeButton={activeButton}
+            handleButtonClick={handleButtonClick}
+            collapsed={collapsed}
+            icon={faBox}
+          />
+
+          <NavigationButton
+            buttonName="Notifications"
+            navigatePath={"/notification"}
+            activeButton={activeButton}
+            handleButtonClick={handleButtonClick}
+            collapsed={collapsed}
+            icon={faBell}
+          />
+
+          <NavigationButton
+            buttonName="Settings"
+            navigatePath={"/settings"}
+            activeButton={activeButton}
+            handleButtonClick={handleButtonClick}
+            collapsed={collapsed}
+            icon={faGear}
+          />
+
           {isAdmin && (
-            <li>
-              <NavLink
-                to="/admin"
-                activeClassName="active"
-                onClick={() => handleButtonClick("Admin")}
-              >
-                <button
-                  className={`Buttons ${
-                    activeButton === "Admin" ? "active" : ""
-                  }`}
-                >
-                  <span className="Shape">
-                    <FontAwesomeIcon icon={faUserShield} />
-                  </span>
-                  {!collapsed && (
-                    <span className="ButtonText">Admin Panel</span>
-                  )}
-                </button>
-              </NavLink>
-            </li>
+            <NavigationButton
+              buttonName="Admin Panel"
+              navigatePath={"/admin"}
+              activeButton={activeButton}
+              handleButtonClick={handleButtonClick}
+              collapsed={collapsed}
+            />
           )}
           <li>
             <button
-              className={`Buttons ${activeButton === "Logout" ? "active" : ""}`}
+              className={`Buttons flex gap-2 px-1 ${
+                activeButton === "Logout" ? "active" : ""
+              }`}
               onClick={handleLogout}
             >
               <span className="Shape">
@@ -194,7 +133,12 @@ const Sidebar = ({ email, password }) => {
           </li>
         </ul>
       </nav>
-      <div className="toggle-sidebar" onClick={toggleSidebar}>
+
+      {/*Toggle Side Bar Button*/}
+      <div
+        className="bg-accent rounded-full flex items-center justify-center w-8 h-8 m-16 text-white"
+        onClick={toggleSidebar}
+      >
         {collapsed ? (
           <FontAwesomeIcon icon={faAngleDoubleRight} />
         ) : (
@@ -204,5 +148,57 @@ const Sidebar = ({ email, password }) => {
     </div>
   );
 };
+
+function NavigationButton({
+  buttonName,
+  activeButton,
+  handleButtonClick,
+  collapsed,
+  navigatePath,
+  icon,
+}) {
+  return (
+    <li>
+      <NavLink
+        to={navigatePath}
+        activeClassName="active"
+        onClick={() => handleButtonClick(buttonName)}
+      >
+        <button
+          className={`Buttons gap-2 px-1 ${
+            activeButton === buttonName ? "active" : ""
+          }`}
+        >
+          <span className="Shape">
+            <FontAwesomeIcon icon={icon} />
+          </span>
+          {!collapsed && (
+            <span className="ButtonText text-base">{buttonName}</span>
+          )}
+        </button>
+      </NavLink>
+    </li>
+  );
+}
+
+function Logo({ collapsed }) {
+  return (
+    <div className="mb-8 flex flex-col items-center justify-center">
+      <img
+        src={LogoImg}
+        alt="Helwan Logo"
+        className={`aspect-square w-full `}
+      />
+      {!collapsed && (
+        <>
+          <h1 className="text-xl font-bold text-center">Factory</h1>
+          <h3 className="text-lg font-bold text-center w-full">
+            Monitoring System
+          </h3>
+        </>
+      )}
+    </div>
+  );
+}
 
 export default Sidebar;

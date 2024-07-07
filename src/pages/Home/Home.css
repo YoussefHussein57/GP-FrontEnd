@@ -3,7 +3,6 @@
   width: 100%;
   overflow-y: auto;
   margin-left: 265px; /* Add margin to accommodate the sidebar */
-  margin-top: 4%;
 }
 
 main {
@@ -15,12 +14,9 @@ main {
   width: 100%;
 }
 
-
 .row {
   display: flex;
   width: 100%;
-  
- 
 }
 
 .column-2 {
@@ -28,7 +24,6 @@ main {
   flex-direction: column;
   gap: 20px;
   width: 100%;
-  max-height: 80%;
 }
 .column-1 {
   width: 100%;
