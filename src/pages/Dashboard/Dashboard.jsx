@@ -98,7 +98,8 @@ const Dashboard = ({ email, password }) => {
         value: sensor.lastReading,
         label: sensor.name,
         unit: sensor.unit,
-        max: 100,
+        max: sensor.max,
+        min: sensor.min,
         color: "#8BC34A",
       })),
     }));
@@ -230,7 +231,7 @@ const Dashboard = ({ email, password }) => {
       },
     ],
   };
-  console.log(dashboards);
+  console.log("KAK", dashboards);
   //#region  Render
   return (
     <main className="flex flex-col gap-8">
