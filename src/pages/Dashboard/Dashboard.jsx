@@ -13,7 +13,9 @@ import {
   login, // Import login function from apiHelper
 } from "../../Helpers/apiHelper";
 import "./Dashboard.css";
-
+import Card from "../../components/Card/Card";
+import "../Login/Login.css";
+import Button from "../../components/Buttons/Button";
 Modal.setAppElement("#root");
 
 const Dashboard = ({ email, password }) => {
@@ -28,12 +30,12 @@ const Dashboard = ({ email, password }) => {
   const [newFactoryName, setNewFactoryName] = useState("");
   const [isAddAssetModalOpen, setIsAddAssetModalOpen] = useState(false);
   const [newAssetName, setNewAssetName] = useState("");
-  const [newAssetType, setNewAssetType] = useState("");
+  const [newAssetModel, setNewAssetModel] = useState("");
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [itemToDelete, setItemToDelete] = useState(null);
   const [recentlyAddedAssets, setRecentlyAddedAssets] = useState([]);
   const [assetsInFactory, setAssetsInFactory] = useState([]);
-  const [isAdmin, setIsAdmin] = useState(true); // State to track if user is admin
+  const [isAdmin, setIsAdmin] = useState(false); // State to track if user is admin
 
   useEffect(() => {
     const storedEmail = localStorage.getItem("email");
@@ -43,23 +45,18 @@ const Dashboard = ({ email, password }) => {
 
     if (userEmail && userPassword) {
       const checkRole = async () => {
-        try {
-          const response = await login(userEmail, userPassword);
-          console.log("Login response:", response);
-          if (response && response.role === "ADMIN") {
-            setIsAdmin(true);
-          }
-        } catch (error) {
-          console.error("Error logging in:", error);
-          // Handle login error here
+        const response = await login(userEmail, userPassword);
+        console.log("Login response in Sidebar:", response);
+        if (response && response.role === "ADMIN") {
+          setIsAdmin(true);
         }
       };
-
       checkRole();
     }
-  }, [email, password]); // Trigger useEffect when email or password changes
 
-  console.log("Is Admin :", isAdmin);
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    setFavorites(savedFavorites);
+  }, [email, password]); // Trigger useEffect when email or password changes
 
   const fetchFactories = async () => {
     try {
@@ -125,13 +122,28 @@ const Dashboard = ({ email, password }) => {
   const handleAddAsset = async (e) => {
     e.preventDefault();
     try {
+      const selectedFactoryObj = factories.find(
+        (factory) => factory._id === selectedFactory
+      );
+
+      if (!selectedFactoryObj) {
+        console.error("Selected factory not found.");
+        alert("Selected factory not found. Please select a valid factory.");
+        return;
+      }
+
       const newAsset = {
         name: newAssetName,
-        type: newAssetType,
-        factoryId: selectedFactory,
+        model: newAssetModel,
+        factoryId: selectedFactory, // Assuming selectedFactory is already defined
+        predictiveMaintenance: "none", // Adjust as per your API response structure
+        sensors: [], // Adjust as per your API response structure
+        created_by: "668abeb5d7b7bb547086b9ea", // Adjust as per your API response structure
+        created_at: "2010-01-01T18:25:43.511+00:00", // Adjust as per your API response structure
+        __v: 6, // Adjust as per your API response structure
       };
 
-      if (!newAsset.name || !newAsset.type || !newAsset.factoryId) {
+      if (!newAsset.name || !newAsset.model || !newAsset.factoryId) {
         alert("Please fill out all fields.");
         return;
       }
@@ -139,7 +151,7 @@ const Dashboard = ({ email, password }) => {
       await createAsset(newAsset);
       setIsAddAssetModalOpen(false);
       setNewAssetName("");
-      setNewAssetType("");
+      setNewAssetModel("");
       fetchFactories();
       setRecentlyAddedAssets((prev) => [...prev, newAsset.name]);
     } catch (error) {
@@ -173,6 +185,7 @@ const Dashboard = ({ email, password }) => {
       updatedFavorites = [...favorites, gauge];
     }
     setFavorites(updatedFavorites);
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
   };
 
   const openDeleteModal = (item) => {
@@ -217,10 +230,11 @@ const Dashboard = ({ email, password }) => {
       },
     ],
   };
-
+  console.log(dashboards);
+  //#region  Render
   return (
-    <main>
-      <div className="dropdown-container">
+    <main className="flex flex-col gap-8">
+      <div className="flex justify-between items-center">
         <select
           id="factories"
           onChange={handleFactoryChange}
@@ -234,104 +248,100 @@ const Dashboard = ({ email, password }) => {
           ))}
         </select>
         {isAdmin && (
-          <button
+          <Button
+            className={"w-36"}
             onClick={() => setIsAddFactoryModalOpen(true)}
-            className="add-factory-button"
-          >
-            Add Factory
-          </button>
+            text="Add Factory"
+          />
         )}
       </div>
-      <div className="dashboard-container">
+      <div className="gap-8 flex flex-col ">
         {isAdmin && (
-          <button
-            onClick={() => setIsAddAssetModalOpen(true)}
-            className="asset-button"
-          >
-            Add Asset
-          </button>
-        )}
-
-        {dashboards.map((dashboard) => (
-          <div key={dashboard.id} className="dashboard-wrapper">
-            <div className="dashboard">
-              <h2>{dashboard.title}</h2>
-              {isAdmin && (
-                <button
-                  className="delete-button"
-                  onClick={() =>
-                    openDeleteModal({ id: dashboard.id, type: "asset" })
-                  }
-                >
-                  X
-                </button>
-              )}
-              <div className="gauges">
-                {dashboard.gauges.map((gauge) => (
-                  <div
-                    className="gauge-container"
-                    key={gauge.id}
-                    onClick={() => openModal(gauge)}
-                  >
-                    <h3>{gauge.label}</h3>
-                    <GaugeChart
-                      id={gauge.id}
-                      nrOfLevels={30}
-                      percent={gauge.value / gauge.max}
-                      colors={[gauge.color, "#FF5F6D"]}
-                    />
-                    <p>
-                      {gauge.value} {gauge.unit}
-                    </p>
-                    {isAdmin && (
-                      <button
-                        className="delete-button-sensor"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          openDeleteModal({ id: gauge.id, type: "sensor" });
-                        }}
-                      >
-                        X
-                      </button>
-                    )}
-                    <button
-                      className={`star-button ${
-                        favorites.some((fav) => fav.id === gauge.id)
-                          ? "favorited"
-                          : ""
-                      }`}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        toggleFavorite(gauge);
-                      }}
-                    >
-                      {favorites.some((fav) => fav.id === gauge.id) ? "★" : "☆"}
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="flex justify-between items-center">
+            <Button
+              className={"w-36"}
+              onClick={() => setIsAddAssetModalOpen(true)}
+              text="Add Asset"
+            />
+            <button
+              className="justify-end bg-accent border border-red-900 w-8 rounded-full h-8 text-center text-white"
+              onClick={() => openDeleteModal({ type: "asset" })}
+            >
+              X
+            </button>
           </div>
-        ))}
-        <div className="recently-added-assets">
-          {recentlyAddedAssets.map((assetName, index) => (
-            <div key={index} className="recent-asset">
-              <h2>{assetName}</h2>
-            </div>
+        )}
+        <div className="flex flex-col gap-6 ">
+          {dashboards.map((dashboard) => (
+            <Card className="w-[95%] self-center " key={dashboard.id}>
+              <div className="">
+                <h2 className="mb-4">{dashboard.title}</h2>
+
+                <div className="flex-shrink flex gap-4 overflow-x-auto">
+                  {dashboard.gauges.map((gauge) => (
+                    <Card
+                      className=" flex gap-2 w-fit justify-center items-center max-h-full"
+                      key={gauge.id}
+                      onClick={() => openModal(gauge)}
+                    >
+                      <div className="flex w-full justify-between items-baseline">
+                        <button
+                          className={`self-start w-fit text-yellow-500 ${
+                            favorites.some((fav) => fav.id === gauge.id)
+                              ? "favorited"
+                              : ""
+                          }`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleFavorite(gauge);
+                          }}
+                        >
+                          {favorites.some((fav) => fav.id === gauge.id)
+                            ? "★"
+                            : "☆"}
+                        </button>
+
+                        {isAdmin && (
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              openDeleteModal({ id: gauge.id, type: "sensor" });
+                            }}
+                            className="self-end w-fit "
+                          >
+                            X
+                          </button>
+                        )}
+                      </div>
+
+                      <h3 className="font-bold">{gauge.label}</h3>
+                      <GaugeChart
+                        id={gauge.id}
+                        nrOfLevels={30}
+                        percent={gauge.value / gauge.max}
+                        colors={[gauge.color, "#FF5F6D"]}
+                      />
+                      <p>
+                        {gauge.value} {gauge.unit}
+                      </p>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            </Card>
           ))}
         </div>
       </div>
-
       {isAdmin && (
-        <button
-          className="delete-factory-button"
+        <Button
+          className={"w-36"}
           onClick={() =>
             openDeleteModal({ id: selectedFactory, type: "factory" })
           }
-        >
-          Delete Factory
-        </button>
+          text="Delete Factory"
+        />
       )}
+
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -341,39 +351,45 @@ const Dashboard = ({ email, password }) => {
       >
         <h2>{selectedGauge ? selectedGauge.label : ""}</h2>
         <Line data={data} />
-        <button onClick={closeModal}>Close</button>
+        <Button onClick={closeModal}>Close</Button>
       </Modal>
       <Modal
         isOpen={isAddFactoryModalOpen}
         onRequestClose={() => setIsAddFactoryModalOpen(false)}
         contentLabel="Add Factory Modal"
         className="modal"
-        overlayClassName="overlay"
+        overlayClassName="overlay min-w-full fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
       >
         <h2>Add New Factory</h2>
-        <form onSubmit={handleAddFactory}>
+        <form
+          onSubmit={handleAddFactory}
+          className="items-center justify-center flex flex-col gap-2"
+        >
           <input
             type="text"
             value={newFactoryName}
             onChange={(e) => setNewFactoryName(e.target.value)}
             placeholder="Factory Name"
             required
-            className="form-inputText"
+            className="form-inputText border"
           />
-          <button type="submit">Add</button>
+          <Button type="submit">Add</Button>
+          <Button onClick={() => setIsAddFactoryModalOpen(false)}>Close</Button>
         </form>
-        <button onClick={() => setIsAddFactoryModalOpen(false)}>Close</button>
       </Modal>
       <Modal
         isOpen={isAddAssetModalOpen}
         onRequestClose={() => setIsAddAssetModalOpen(false)}
         contentLabel="Add Asset Modal"
         className="modal"
-        overlayClassName="overlay"
+        overlayClassName="overlay min-w-full fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
       >
         <h2>Add New Asset</h2>
-        <form onSubmit={handleAddAsset}>
-          <label>Factory Name :</label>
+        <form
+          onSubmit={handleAddAsset}
+          className="flex flex-col justify-center items-center gap-3"
+        >
+          <label className="self-start">Factory Name :</label>
           <input
             type="text"
             value={
@@ -383,43 +399,42 @@ const Dashboard = ({ email, password }) => {
             readOnly
             placeholder="Factory Name"
             required
-            className="form-inputText"
+            className="form-inputText border"
           />
-          <label>Asset Name :</label>
+          <label className="self-start">Asset Name :</label>
           <input
             type="text"
             value={newAssetName}
             onChange={(e) => setNewAssetName(e.target.value)}
             placeholder="Asset Name"
             required
-            className="form-inputText"
+            className="form-inputText border"
           />
-          <label>Asset Type :</label>
+          <label className="self-start">Asset Type :</label>
           <input
             type="text"
-            value={newAssetType}
-            onChange={(e) => setNewAssetType(e.target.value)}
+            value={newAssetModel}
+            onChange={(e) => setNewAssetModel(e.target.value)}
             placeholder="Asset Type"
             required
-            className="form-inputText"
+            className="form-inputText border"
           />
-          <button type="submit">Add</button>
+          <Button type="submit">Add</Button>
+          <Button onClick={() => setIsAddAssetModalOpen(false)}>Close</Button>
         </form>
-        <button onClick={() => setIsAddAssetModalOpen(false)}>Close</button>
       </Modal>
-
       <Modal
         isOpen={isDeleteModalOpen}
         onRequestClose={closeDeleteModal}
         contentLabel="Delete Item Modal"
-        className="modal"
-        overlayClassName="overlay"
+        className="modal  "
+        overlayClassName="overlay min-w-full fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
       >
         {itemToDelete && itemToDelete.type === "factory" && (
           <>
             <h2>Confirm Factory Deletion:</h2>
             <p>Are you sure you want to delete this factory?</p>
-            <button onClick={handleDeleteItem}>Delete Factory</button>
+            <Button onClick={handleDeleteItem}>Delete Factory</Button>
           </>
         )}
         {itemToDelete && itemToDelete.type === "asset" && (
@@ -446,17 +461,17 @@ const Dashboard = ({ email, password }) => {
                 </option>
               ))}
             </select>
-            <button onClick={handleDeleteItem}>Delete Asset</button>
+            <Button onClick={handleDeleteItem} text="Delete Asset"></Button>
           </>
         )}
         {itemToDelete && itemToDelete.type === "sensor" && (
           <>
             <h2>Confirm Sensor Deletion:</h2>
             <p>Are you sure you want to delete this sensor?</p>
-            <button onClick={handleDeleteItem}>Delete Sensor</button>
+            <Button onClick={handleDeleteItem}>Delete Sensor</Button>
           </>
         )}
-        <button onClick={closeDeleteModal}>Cancel</button>
+        <Button onClick={closeDeleteModal} text="cancel"></Button>
       </Modal>
     </main>
   );

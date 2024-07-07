@@ -43,7 +43,7 @@ const Main = ({ email, password, setEmail, setPassword }) => {
       {!hideSidebarRoutes.includes(location.pathname) && (
         <Sidebar email={email} password={password} />
       )}
-      <div className="bg-background w-full">
+      <div className="bg-background w-full flex flex-col ">
         <div>
           {!hideSearchbarRoutes.includes(location.pathname) && <Searchbar />}
         </div>
@@ -53,7 +53,10 @@ const Main = ({ email, password, setEmail, setPassword }) => {
             element={<Login setEmail={setEmail} setPassword={setPassword} />}
           />
           <Route path="/home" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard email={email} />} />
+          <Route
+            path="/dashboard"
+            element={<Dashboard email={email} password={password} />}
+          />
           <Route path="/admin" element={<ManageUsers />} />
           <Route path="/Inventory" element={<UnderConstruction />} />
           <Route path="/Notification" element={<UnderConstruction1 />} />

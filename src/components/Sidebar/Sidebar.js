@@ -21,7 +21,6 @@ const Sidebar = ({ email, password }) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [collapsed, setCollapsed] = useState(false); // State for sidebar collapse/expand
   const navigate = useNavigate();
-
   useEffect(() => {
     const storedEmail = localStorage.getItem("email");
     const storedPassword = localStorage.getItem("password");
@@ -55,10 +54,10 @@ const Sidebar = ({ email, password }) => {
       navigate("/login");
     }
   };
-
+  console.log("From Sidebar ", password);
   return (
     <div
-      className={`bg-primary p-4 flex flex-col items-center justify-evenly overflow-y-auto overflow-x-clip  sidebar ${
+      className={`bg-primary p-4 flex flex-col items-center justify-evenly overflow-y-auto overflow-x-clip min-w-40  sidebar ${
         collapsed ? "collapsed" : ""
       }`}
     >
@@ -116,6 +115,7 @@ const Sidebar = ({ email, password }) => {
               activeButton={activeButton}
               handleButtonClick={handleButtonClick}
               collapsed={collapsed}
+              icon={faUserShield}
             />
           )}
           <li>
@@ -172,9 +172,7 @@ function NavigationButton({
           <span className="Shape">
             <FontAwesomeIcon icon={icon} />
           </span>
-          {!collapsed && (
-            <span className="ButtonText text-base">{buttonName}</span>
-          )}
+          {!collapsed && <span className=" text-sm">{buttonName}</span>}
         </button>
       </NavLink>
     </li>

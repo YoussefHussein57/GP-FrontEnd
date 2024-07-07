@@ -1,14 +1,11 @@
 .dashboard-container {
   padding: 20px;
   background-color: #fff;
-  width: 90%;
-  max-width: 80rem;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 3%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0 22%; /* Center the container horizontally */
   margin-top: 2%;
   align-items: center;
   overflow-x: auto; /* Add horizontal scroll */
@@ -16,19 +13,18 @@
 
 .dashboard-container h2 {
   margin-right: 72rem;
-  padding-bottom:2rem ;
+  padding-bottom: 2rem;
   margin-top: 0px;
 }
 
 .dropdown-container {
   margin-top: 1%;
   color: #ff4d4d;
-  margin-right: 55rem;
 }
 
 .dropdown {
-  background:#2d3142 ;
-  background-color:  #ef8354;
+  background: #2d3142;
+  background-color: #ef8354;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -73,8 +69,8 @@
   margin-bottom: 10px; /* Space between gauge label and gauge chart */
 }
 
-.gauge-container .star-button  {
-  background: none ;
+.gauge-container .star-button {
+  background: none;
   border: none;
   font-size: 24px;
   cursor: pointer;
@@ -85,8 +81,8 @@
   right: 80px;
   max-width: 0.01rem;
 }
-.delete-button-sensor{
-  background: none  ;
+.delete-button-sensor {
+  background: none;
   color: #2d3142;
   border: none;
   font-size: 15px;
@@ -96,10 +92,9 @@
   top: 0px;
   margin-left: 12rem;
   max-width: 0.1rem;
-  
 }
-.delete-button{
-  background: none  ;
+.delete-button {
+  background: none;
   color: #2d3142;
   border: none;
   font-size: 15px;
@@ -107,24 +102,18 @@
   margin-top: 15rem;
   position: absolute;
   top: 0px;
-  margin-left: 36rem;
   max-width: 0.1rem;
-  
 }
 .delete-factory-button {
   margin-left: 74%;
   width: 12rem;
   margin-top: 2%;
-  
 }
 
 .Asset-Select {
   border-radius: 10%;
   width: 50%;
   height: 10%;
-
-
-
 }
 .gauge-container .star-button.favorite {
   color: gold;
@@ -184,24 +173,19 @@
   margin-right: 10px;
 }
 
-
 .close-button {
   background-color: #ff4d4d;
 }
 
 .add-factory-button {
-  margin-left: 138%;
   width: 12rem;
   margin-top: 0%;
 }
 
 .asset-button {
-  margin-left: 55.5rem;
   width: 12rem;
   margin-top: 1rem;
-
 }
-
 
 .form-inputText {
   width: 92%;
