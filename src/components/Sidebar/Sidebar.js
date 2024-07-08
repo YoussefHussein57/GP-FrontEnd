@@ -57,12 +57,12 @@ const Sidebar = ({ email, password }) => {
   console.log("From Sidebar ", password);
   return (
     <div
-      className={`bg-primary p-4 flex flex-col items-center justify-evenly overflow-y-auto overflow-x-clip min-w-40  sidebar ${
+      className={`bg-primary  p-4 flex flex-col items-center justify-evenly overflow-y-auto overflow-x-clip min-w-15  sidebar ${
         collapsed ? "collapsed" : ""
       }`}
     >
       <Logo collapsed={collapsed} />
-      <nav>
+      <nav className="w-full">
         <ul className="flex flex-col gap-8">
           <NavigationButton
             buttonName="Home"
@@ -82,8 +82,8 @@ const Sidebar = ({ email, password }) => {
           />
 
           <NavigationButton
-            buttonName="Intentory"
-            navigatePath={"/intentory"}
+            buttonName="Inventory"
+            navigatePath={"/inventory"}
             activeButton={activeButton}
             handleButtonClick={handleButtonClick}
             collapsed={collapsed}

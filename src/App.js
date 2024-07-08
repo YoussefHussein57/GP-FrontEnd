@@ -11,9 +11,8 @@ import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import ManageUsers from "./pages/ManageUsers/ManageUsers";
-import UnderConstruction from "./pages/Inventory/UnderConstruction";
-import UnderConstruction1 from "./pages/Notification/UnderConstruction";
-import UnderConstruction2 from "./pages/Settings/UnderConstruction";
+import UnderConstruction from "./components/UnderConstruction/comingSoon";
+
 import "./App.css";
 import Searchbar from "./components/Searchbar/Searchbar";
 
@@ -58,9 +57,9 @@ const Main = ({ email, password, setEmail, setPassword }) => {
             element={<Dashboard email={email} password={password} />}
           />
           <Route path="/admin" element={<ManageUsers />} />
-          <Route path="/Inventory" element={<UnderConstruction />} />
-          <Route path="/Notification" element={<UnderConstruction1 />} />
-          <Route path="/Settings" element={<UnderConstruction2 />} />
+          <Route path="/inventory" element={<UnderConstruction />} />
+          <Route path="/Notification" element={<UnderConstruction />} />
+          <Route path="/Settings" element={<UnderConstruction />} />
         </Routes>
       </div>
     </div>

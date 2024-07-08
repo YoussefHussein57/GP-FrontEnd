@@ -21,7 +21,7 @@ Modal.setAppElement("#root");
 const Dashboard = ({ email, password }) => {
   const [factories, setFactories] = useState([]);
   const [dashboards, setDashboards] = useState([]);
-  const [selectedFactory, setSelectedFactory] = useState(null);
+  const [selectedFactory, setSelectedFactory] = useState(factories.length > 0 ? factories[0]._id : null);
   const [selectedGauge, setSelectedGauge] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [gaugeData, setGaugeData] = useState([]);
@@ -45,10 +45,14 @@ const Dashboard = ({ email, password }) => {
 
     if (userEmail && userPassword) {
       const checkRole = async () => {
-        const response = await login(userEmail, userPassword);
-        console.log("Login response in Sidebar:", response);
-        if (response && response.role === "ADMIN") {
-          setIsAdmin(true);
+        try {
+          const response = await login(userEmail, userPassword);
+          console.log("Login response in Dashboard:", response);
+          if (response && response.role === "ADMIN") {
+            setIsAdmin(true);
+          }
+        } catch (error) {
+          console.error("Error logging in:", error);
         }
       };
       checkRole();
@@ -56,16 +60,7 @@ const Dashboard = ({ email, password }) => {
 
     const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     setFavorites(savedFavorites);
-  }, [email, password]); // Trigger useEffect when email or password changes
-
-  const fetchFactories = async () => {
-    try {
-      const { factories: factoriesData } = await getFactoriesByUser();
-      setFactories(factoriesData.data.factories);
-    } catch (error) {
-      console.error("Error fetching factories:", error);
-    }
-  };
+  }, [email, password]);
 
   useEffect(() => {
     fetchFactories();
@@ -73,38 +68,42 @@ const Dashboard = ({ email, password }) => {
 
   useEffect(() => {
     if (selectedFactory) {
-      const factory = factories.find(
-        (factory) => factory._id === selectedFactory
-      );
+      const factory = factories.find((factory) => factory._id === selectedFactory);
       if (factory) {
         setAssetsInFactory(factory.assets);
+        const parsedDashboards = factory.assets.map((asset) => ({
+          id: asset._id,
+          title: asset.name,
+          gauges: asset.sensors.map((sensor) => ({
+            id: sensor._id,
+            value: sensor.lastReading,
+            label: sensor.name,
+            unit: sensor.unit,
+            max: sensor.max,
+            min: sensor.min,
+            color: "#8BC34A",
+          })),
+        }));
+        setDashboards(parsedDashboards);
       }
     }
   }, [selectedFactory, factories]);
 
+  const fetchFactories = async () => {
+    try {
+      const { factories: factoriesData } = await getFactoriesByUser();
+      setFactories(factoriesData.data.factories);
+      if (factoriesData.data.factories.length > 0) {
+        setSelectedFactory(factoriesData.data.factories[0]._id);
+      }
+    } catch (error) {
+      console.error("Error fetching factories:", error);
+    }
+  };
+
   const handleFactoryChange = (e) => {
     const factoryId = e.target.value;
     setSelectedFactory(factoryId);
-
-    const selectedFactory = factories.find(
-      (factory) => factory._id === factoryId
-    );
-
-    const parsedDashboards = selectedFactory.assets.map((asset) => ({
-      id: asset._id,
-      title: asset.name,
-      gauges: asset.sensors.map((sensor) => ({
-        id: sensor._id,
-        value: sensor.lastReading,
-        label: sensor.name,
-        unit: sensor.unit,
-        max: sensor.max,
-        min: sensor.min,
-        color: "#8BC34A",
-      })),
-    }));
-
-    setDashboards(parsedDashboards);
   };
 
   const handleAddFactory = async (e) => {
@@ -160,15 +159,39 @@ const Dashboard = ({ email, password }) => {
       alert(`Error adding asset: ${error.message}`);
     }
   };
+  // Dashboard.jsx
 
-  const openModal = async (gauge) => {
-    setSelectedGauge(gauge);
+// Dashboard.jsx
 
-    const readings = await getLast10Readings(gauge.id);
-    setGaugeData(readings.data.readings || []);
-    setModalIsOpen(true);
-  };
+// Dashboard.jsx
 
+const openModal = async (gauge) => {
+  setSelectedGauge(gauge);
+
+  try {
+    const response = await getLast10Readings(gauge.id);
+    console.log("API Response:", response);
+
+    // Adjusting the condition to match the actual response format
+    if (response && response.data && response.data.status === 'success' && response.data.readings) {
+      const readings = response.data.readings;
+
+      if (Array.isArray(readings) && readings.length > 0) {
+        setGaugeData(readings);
+        setModalIsOpen(true);
+      } else {
+        console.error("No readings found in the API response:", readings);
+      }
+    } else {
+      console.error("Invalid response format from API:", response);
+    }
+  } catch (error) {
+    console.error("Error fetching last 10 readings:", error);
+  }
+};
+
+
+  
   const closeModal = () => {
     setModalIsOpen(false);
     setSelectedGauge(null);
@@ -222,16 +245,13 @@ const Dashboard = ({ email, password }) => {
     datasets: [
       {
         label: selectedGauge ? `${selectedGauge.label} Over Time` : "",
-        data: Array.isArray(gaugeData)
-          ? gaugeData.map((reading) => reading.v)
-          : [],
+        data: Array.isArray(gaugeData) ? gaugeData.map((reading) => reading.v) : [],
         fill: false,
         backgroundColor: selectedGauge ? selectedGauge.color : "#000",
         borderColor: selectedGauge ? selectedGauge.color : "#000",
       },
     ],
   };
-  console.log("KAK", dashboards);
   //#region  Render
   return (
     <main className="flex flex-col gap-8">
@@ -273,7 +293,7 @@ const Dashboard = ({ email, password }) => {
           </div>
         )}
         <div className="flex flex-col gap-6 ">
-          {dashboards.map((dashboard) => (
+          {dashboards&&dashboards.map((dashboard) => (
             <Card className="w-[95%] self-center " key={dashboard.id}>
               <div className="">
                 <h2 className="mb-4">{dashboard.title}</h2>
@@ -316,12 +336,16 @@ const Dashboard = ({ email, password }) => {
                       </div>
 
                       <h3 className="font-bold">{gauge.label}</h3>
+                      <div
+                      className="flex w-full justify-between items-baseline" 
+                      onClick={()=>openModal(gauge)}>
                       <GaugeChart
                         id={gauge.id}
                         nrOfLevels={30}
                         percent={gauge.value / gauge.max}
                         colors={[gauge.color, "#FF5F6D"]}
                       />
+                      </div>
                       <p>
                         {gauge.value} {gauge.unit}
                       </p>
@@ -351,7 +375,7 @@ const Dashboard = ({ email, password }) => {
         overlayClassName="overlay"
       >
         <h2>{selectedGauge ? selectedGauge.label : ""}</h2>
-        <Line data={data} />
+        <Line data={gaugeData} />
         <Button onClick={closeModal}>Close</Button>
       </Modal>
       <Modal
@@ -435,7 +459,7 @@ const Dashboard = ({ email, password }) => {
           <>
             <h2>Confirm Factory Deletion:</h2>
             <p>Are you sure you want to delete this factory?</p>
-            <Button onClick={handleDeleteItem}>Delete Factory</Button>
+            <Button  onClick={handleDeleteItem}>Delete Factory</Button>
           </>
         )}
         {itemToDelete && itemToDelete.type === "asset" && (

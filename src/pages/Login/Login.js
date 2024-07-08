@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../Helpers/apiHelper";
+import Button from "../../components/Buttons/Button";
 
 const Login = ({ setEmail, setPassword }) => {
   const [email, setEmailLocal] = React.useState(""); // Local state for email
@@ -45,7 +46,7 @@ const Login = ({ setEmail, setPassword }) => {
         </div>
       </div>
       <div className="background-right">
-        <div className="login-form-container">
+        <div className="login-form-container ">
           <h2>Welcome Back!</h2>
           <form onSubmit={handleSubmit}>
             <div className="input-container">
@@ -79,7 +80,7 @@ const Login = ({ setEmail, setPassword }) => {
               />
             </div>
             <div>
-              <button type="submit">Log In</button>
+              <Button type="submit">Log In</Button>
             </div>
           </form>
 

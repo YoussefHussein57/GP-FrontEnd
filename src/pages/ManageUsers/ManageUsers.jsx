@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { getAllUsers, registerUser, removeUser } from "../../Helpers/apiHelper";
 import "./ManageUsers.css"; // Import CSS file
+import Button from "../../components/Buttons/Button";
 
 const ManageUsers = () => {
   const [users, setUsers] = useState(() => {
@@ -91,7 +92,7 @@ const ManageUsers = () => {
   };
 
   return (
-    <div className="manage-users-container">
+    <div className=" grid place-items-center p-4">
       <h2 className="manage-users-heading">Manage Users</h2>
       {error && <div className="error-message">{error}</div>}
 
@@ -111,22 +112,22 @@ const ManageUsers = () => {
               <td>{user.email}</td>
               <td>{user.role}</td>
               <td>
-                <button onClick={() => openConfirmationModal(user._id)}>
+                <Button onClick={() => openConfirmationModal(user._id)}>
                   Remove
-                </button>
+                </Button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <button onClick={() => setModalIsOpen(true)} className="newUser-Button">
+      <Button onClick={() => setModalIsOpen(true)} className="newUser-Button">
         Add New User
-      </button>
+      </Button>
 
       <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
         <div className="modal">
           <h2 className="modal-heading">Add New User</h2>
-          <form>
+          <form className={"border-grey-600"}>
             <label className="form-label">
               First Name:
               <input
@@ -179,13 +180,13 @@ const ManageUsers = () => {
               className="form-input"
             />
 
-            <button
+            <Button
               type="button"
               onClick={handleAddUser}
               className="form-button"
             >
               Submit
-            </button>
+            </Button>
           </form>
         </div>
       </Modal>
@@ -194,13 +195,14 @@ const ManageUsers = () => {
         isOpen={confirmationModalIsOpen}
         onRequestClose={closeConfirmationModal}
         contentLabel="Confirm Removal"
-        className="modal"
+        className="modal "
         overlayClassName="overlay"
       >
         <h2>Confirm User Removal</h2>
         <p>Are you sure you want to remove this user?</p>
-        <button onClick={handleRemoveUser}>Yes, remove</button>
-        <button onClick={closeConfirmationModal}>Cancel</button>
+        <Button 
+        onClick={handleRemoveUser}>Yes, remove</Button>
+        <Button onClick={closeConfirmationModal}>Cancel</Button>
       </Modal>
     </div>
   );

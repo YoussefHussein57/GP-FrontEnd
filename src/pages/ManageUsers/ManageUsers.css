@@ -1,6 +1,8 @@
 .manage-users-container {
   padding: 20px;
   margin-top: 1%;
+  align-items: center;
+  justify-content: center;
   overflow-y: auto; /* Add this to enable scrolling */
   max-height: 100%; /* Adjust the value as needed */
 }
@@ -8,12 +10,14 @@
 .manage-users-heading {
   font-size: 24px;
   margin-bottom: 20px;
+  align-items: center;
+ 
 }
 
 .user-table {
   width:  85%;
   border-collapse: collapse;
-  margin-left: 12.8%;
+  align-items: center;
   color: #1d1d1d;
   background-color: antiquewhite;
   overflow-x: auto; /* Add horizontal scrolling for small screens */
@@ -22,7 +26,7 @@
 
 .newUser-Button {
   margin-top: 8%;
-  margin-left: 10%;
+  align-items: center;
 }
 
 .user-table th,
@@ -40,11 +44,15 @@
 .modal {
   padding: 20px;
   width: 100%;
+  border: grey;
 }
 
 .modal-heading {
   font-size: 24px;
   margin-bottom: 20px;
+}
+.form {
+  border: 0625rem solid #bab6b6;
 }
 
 .form-label {
@@ -56,12 +64,14 @@
   width: 100%;
   padding: 8px;
   margin-bottom: 20px;
+  border: grey;
 }
 
 .form-inputText {
   width: 92%;
   padding: 8px;
   border-radius: 0.5rem;
+  border: 0.0625rem solid #bab6b6;;
 }
 
 .form-button {
