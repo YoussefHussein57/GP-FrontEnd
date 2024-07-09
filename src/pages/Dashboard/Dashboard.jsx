@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
 import GaugeChart from "react-gauge-chart";
 import Modal from "react-modal";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 import { Line } from "react-chartjs-2";
 import {
   getFactoriesByUser,
@@ -17,6 +27,16 @@ import Card from "../../components/Card/Card";
 import "../Login/Login.css";
 import Button from "../../components/Buttons/Button";
 Modal.setAppElement("#root");
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const Dashboard = ({ email, password }) => {
   const [factories, setFactories] = useState([]);
@@ -173,11 +193,13 @@ const openModal = async (gauge) => {
     console.log("API Response:", response);
 
     // Adjusting the condition to match the actual response format
-    if (response && response.data && response.data.status === 'success' && response.data.readings) {
+    if (response.data.readings) {
       const readings = response.data.readings;
 
       if (Array.isArray(readings) && readings.length > 0) {
-        setGaugeData(readings);
+        setGaugeData(readings || []);
+        let times = gaugeData.map((reading) => new Date(reading.t))
+        console.log("########################",times) ;
         setModalIsOpen(true);
       } else {
         console.error("No readings found in the API response:", readings);
@@ -241,17 +263,27 @@ const openModal = async (gauge) => {
   };
 
   const data = {
-    labels: Array.from({ length: 10 }, (_, i) => i + 1),
+    labels: Array.isArray(gaugeData)
+      ? gaugeData.map((reading) => {
+          const timestamp = reading.t;
+          const date = new Date(timestamp * 1000); // multiply by 1000 if the timestamp is in seconds
+          return date.toLocaleTimeString();
+        })
+      : Array.from({ length: 10 }, (_, i) => i + 1),
     datasets: [
       {
         label: selectedGauge ? `${selectedGauge.label} Over Time` : "",
-        data: Array.isArray(gaugeData) ? gaugeData.map((reading) => reading.v) : [],
+        data: Array.isArray(gaugeData)
+          ? gaugeData.map((reading) => reading.v)
+          : [],
         fill: false,
         backgroundColor: selectedGauge ? selectedGauge.color : "#000",
         borderColor: selectedGauge ? selectedGauge.color : "#000",
       },
     ],
   };
+  
+  
   //#region  Render
   return (
     <main className="flex flex-col gap-8">
@@ -340,8 +372,8 @@ const openModal = async (gauge) => {
                       className="flex w-full justify-between items-baseline" 
                       onClick={()=>openModal(gauge)}>
                       <GaugeChart
-                        id={gauge.id}
-                        nrOfLevels={30}
+                        id={`${gauge.id}`}
+                        nrOfLevels={10}
                         percent={gauge.value / gauge.max}
                         colors={[gauge.color, "#FF5F6D"]}
                       />
@@ -375,7 +407,7 @@ const openModal = async (gauge) => {
         overlayClassName="overlay"
       >
         <h2>{selectedGauge ? selectedGauge.label : ""}</h2>
-        <Line data={gaugeData} />
+        <Line data={data} />
         <Button onClick={closeModal}>Close</Button>
       </Modal>
       <Modal
