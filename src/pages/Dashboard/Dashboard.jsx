@@ -63,7 +63,7 @@ const Dashboard = ({ email, password }) => {
   const [assetsInFactory, setAssetsInFactory] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false); // State to track if user is admin
 const [ledState, setLedState] = useState(localStorage.getItem("ledState") === "true");
-
+//#Favoruites Reigon
   useEffect(() => {
     const storedEmail = localStorage.getItem("email");
     const storedPassword = localStorage.getItem("password");
@@ -413,6 +413,7 @@ const openModal = async (gauge) => {
                                 {gauge.type === 'DO' && (<Slider handleToggleLed={() => handleToggleLed(gauge.id)} />
 
                                 )}
+                                </div>
                                   <div  
                           className="flex w-full justify-between items-baseline place-items-center "
                           onClick={() => openModal(gauge)}
@@ -439,7 +440,7 @@ const openModal = async (gauge) => {
                                   />
                                 )}
                                 </div>
-                          </div>
+                          
                               
                                                     <p>
                         {gauge.value} {gauge.unit}
