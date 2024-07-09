@@ -229,6 +229,24 @@ const removeSensor = async (sensorId) => {
     throw error; // Propagate the error back to the caller
   }
 };
+const toggleSensor = async (sensorId) => {
+  try {
+    const response = await axios.post(
+      `${BASE_URL}/sensors/${sensorId}/toggle`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${TOKEN}`,
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error toggling sensor:", error);
+    throw error;
+  }
+};
+
 export {
   getFactoriesByUser,
   login,
@@ -243,4 +261,5 @@ export {
   removeAsset,
   removeFactory,
   removeSensor,
+  toggleSensor,
 };

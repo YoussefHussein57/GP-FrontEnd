@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import GaugeChart from "react-gauge-chart";
+import { Gauge } from '@mui/x-charts/Gauge';
+import Slider from "../../components/SliderButton/Slider";
+
+
 import Modal from "react-modal";
 import {
   Chart as ChartJS,
@@ -20,12 +24,14 @@ import {
   removeAsset,
   removeSensor,
   removeFactory,
+  toggleSensor,
   login, // Import login function from apiHelper
 } from "../../Helpers/apiHelper";
 import "./Dashboard.css";
 import Card from "../../components/Card/Card";
 import "../Login/Login.css";
 import Button from "../../components/Buttons/Button";
+
 Modal.setAppElement("#root");
 
 ChartJS.register(
@@ -56,6 +62,7 @@ const Dashboard = ({ email, password }) => {
   const [recentlyAddedAssets, setRecentlyAddedAssets] = useState([]);
   const [assetsInFactory, setAssetsInFactory] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false); // State to track if user is admin
+const [ledState, setLedState] = useState(localStorage.getItem("ledState") === "true");
 
   useEffect(() => {
     const storedEmail = localStorage.getItem("email");
@@ -98,6 +105,7 @@ const Dashboard = ({ email, password }) => {
             id: sensor._id,
             value: sensor.lastReading,
             label: sensor.name,
+            type : sensor.gauge_type,
             unit: sensor.unit,
             max: sensor.max,
             min: sensor.min,
@@ -179,11 +187,7 @@ const Dashboard = ({ email, password }) => {
       alert(`Error adding asset: ${error.message}`);
     }
   };
-  // Dashboard.jsx
 
-// Dashboard.jsx
-
-// Dashboard.jsx
 
 const openModal = async (gauge) => {
   setSelectedGauge(gauge);
@@ -281,7 +285,41 @@ const openModal = async (gauge) => {
         borderColor: selectedGauge ? selectedGauge.color : "#000",
       },
     ],
+  }; 
+  const handleToggleLed = async (gaugeId) => {
+    try {
+      // Call API to toggle sensor based on the provided gaugeId
+      const response = await toggleSensor(gaugeId);
+      console.log("Toggle Sensor Response:", response);
+  
+      // Update status based on response
+      if (response.status === "success") {
+        const newReqStatus = response.data.sensor.req_status;
+  
+        // Update state or perform other actions based on newReqStatus
+        // For example, update a specific sensor in the dashboards state
+        const updatedDashboards = dashboards.map((dashboard) => ({
+          ...dashboard,
+          gauges: dashboard.gauges.map((gauge) =>
+            gauge.id === gaugeId ? { ...gauge, req_status: newReqStatus } : gauge
+          ),
+        }));
+  
+        setDashboards(updatedDashboards);
+  
+        // Example: Show a success message to the user
+        console.log(`Sensor toggled successfully. New req_status: ${newReqStatus}`);
+      } else {
+        // Handle error cases if needed
+        console.error("Toggle Sensor API returned an error:", response.error);
+        // Update state or show error message
+      }
+    } catch (error) {
+      console.error("Error toggling sensor:", error);
+      // Handle error gracefully, show error message, etc.
+    }
   };
+  
   
   
   //#region  Render
@@ -368,17 +406,42 @@ const openModal = async (gauge) => {
                       </div>
 
                       <h3 className="font-bold">{gauge.label}</h3>
-                      <div
-                      className="flex w-full justify-between items-baseline" 
-                      onClick={()=>openModal(gauge)}>
-                      <GaugeChart
-                        id={`${gauge.id}`}
-                        nrOfLevels={10}
-                        percent={gauge.value / gauge.max}
-                        colors={[gauge.color, "#FF5F6D"]}
-                      />
-                      </div>
-                      <p>
+                      <div  
+                          className="flex w-full justify-between items-baseline place-items-center "
+                           
+                      >
+                                {gauge.type === 'DO' && (<Slider handleToggleLed={() => handleToggleLed(gauge.id)} />
+
+                                )}
+                                  <div  
+                          className="flex w-full justify-between items-baseline place-items-center "
+                          onClick={() => openModal(gauge)}
+                           
+                      >
+                                {gauge.type === 'AI' && (
+                                  // Render AI specific content or component
+                                  <GaugeChart
+                  
+                                  id={gauge.id}
+                                  nrOfLevels={25}
+                                  percent={gauge.value / gauge.max}
+                                  colors={[gauge.color, "#FF5F6D"]}
+                                  
+                                />
+                                )}
+                                {gauge.type === 'DI' && (
+                                  // Render DI specific content or component
+                                  <Gauge
+                                    id={`${gauge.id}`}
+                                    value={gauge.value}
+                                    max={gauge.max}
+                                    color={gauge.color}
+                                  />
+                                )}
+                                </div>
+                          </div>
+                              
+                                                    <p>
                         {gauge.value} {gauge.unit}
                       </p>
                     </Card>
