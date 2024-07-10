@@ -44,6 +44,22 @@ const login = async (email, password) => {
     return null;
   }
 };
+const refreshToken = async () => {
+  try {
+    const response = await axios.post(`${BASE_URL}/users/refresh-token`, {
+      refreshToken: localStorage.getItem("refreshToken"),
+    });
+
+    const token = response.data.token;
+    TOKEN = token;
+    localStorage.setItem("token", token);
+
+    return token;
+  } catch (error) {
+    console.error("Error refreshing token:", error);
+    throw error;
+  }
+};
 
 const appendNewReading = async (sensorId, readingData) => {
   try {
@@ -247,6 +263,65 @@ const toggleSensor = async (sensorId) => {
   }
 };
 
+const createSensor = async (sensorData) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/sensors`, sensorData, {
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+        "Content-Type": "application/json",
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error creating sensor:", error);
+    throw error;
+  }
+};
+
+const api = axios.create({
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+// Intercept requests to add token to headers
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// Intercept responses to handle token refresh if needed
+api.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  async (error) => {
+    const originalRequest = error.config;
+    if (error.response.status === 401 && !originalRequest._retry) {
+      originalRequest._retry = true;
+      try {
+        const token = await refreshToken(); // Example function to refresh token
+        localStorage.setItem("token", token);
+        return api(originalRequest); // Retry original request with new token
+      } catch (refreshError) {
+        // Handle refresh token error (e.g., logout user)
+        console.error("Failed to refresh token:", refreshError);
+      }
+    }
+    return Promise.reject(error);
+  }
+);
+
+export default api;
+
 export {
   getFactoriesByUser,
   login,
@@ -262,4 +337,5 @@ export {
   removeFactory,
   removeSensor,
   toggleSensor,
+  createSensor, // Export the new function
 };

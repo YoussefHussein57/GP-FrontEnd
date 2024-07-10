@@ -25,6 +25,7 @@ import {
   removeSensor,
   removeFactory,
   toggleSensor,
+  createSensor,
   login, // Import login function from apiHelper
 } from "../../Helpers/apiHelper";
 import "./Dashboard.css";
@@ -63,6 +64,14 @@ const Dashboard = ({ email, password }) => {
   const [assetsInFactory, setAssetsInFactory] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false); // State to track if user is admin
 const [ledState, setLedState] = useState(localStorage.getItem("ledState") === "true");
+//add new Sensor Variables 
+const [isAddSensorModalOpen, setIsAddSensorModalOpen] = useState(false);
+const [selectedAssetForSensor, setSelectedAssetForSensor] = useState(null);
+const [newSensorName, setNewSensorName] = useState("");
+const [newSensorType, setNewSensorType] = useState(""); // State to store selected sensor type
+const [newSensorUnit, setNewSensorUnit] = useState(""); // State to store selected unit for sensor
+
+
 //#Favoruites Reigon
   useEffect(() => {
     const storedEmail = localStorage.getItem("email");
@@ -188,6 +197,42 @@ const [ledState, setLedState] = useState(localStorage.getItem("ledState") === "t
     }
   };
 
+  const handleAddSensor = async () => {
+    try {
+      console.log("Creating new sensor for asset:", selectedAssetForSensor);
+      
+      // Call createSensor with the necessary parameters (update as needed)
+      const sensorData = {
+        assetId: selectedAssetForSensor,
+        name: newSensorName,
+        gauge_type: newSensorType, // Add selected sensor type
+        unit: newSensorUnit, // Add selected unit for sensor 
+        // Add other sensor properties as needed
+      };
+      await createSensor(sensorData);
+  
+      // Close the modal after creating the sensor
+      setIsAddSensorModalOpen(false);
+      setSelectedAssetForSensor(null);
+      refreshData(); 
+    } catch (error) {
+      console.error("Error adding sensor:", error);
+      alert(`Error adding sensor: ${error.message}`);
+    }
+  };
+  
+  const openAddSensorModal = (assetId) => {
+    setSelectedAssetForSensor(assetId);
+    setIsAddSensorModalOpen(true);
+  };
+    
+  const refreshData = async () => {
+    try {
+      await fetchFactories();
+    } catch (error) {
+      console.error("Error refreshing data:", error);
+    }
+  };
 
 const openModal = async (gauge) => {
   setSelectedGauge(gauge);
@@ -319,8 +364,7 @@ const openModal = async (gauge) => {
       // Handle error gracefully, show error message, etc.
     }
   };
-  
-  
+    
   
   //#region  Render
   return (
@@ -410,7 +454,11 @@ const openModal = async (gauge) => {
                           className="flex w-full justify-between items-baseline place-items-center "
                            
                       >
-                                {gauge.type === 'DO' && (<Slider handleToggleLed={() => handleToggleLed(gauge.id)} />
+                                {gauge.type === 'DO' && (          <Slider 
+            id={gauge.id} 
+         
+            handleToggleLed={() => handleToggleLed(gauge.id)}
+          />
 
                                 )}
                                 </div>
@@ -445,14 +493,26 @@ const openModal = async (gauge) => {
                                                     <p>
                         {gauge.value} {gauge.unit}
                       </p>
+                      
                     </Card>
                   ))}
                 </div>
               </div>
+              {isAdmin && (
+              <Button
+                onClick={() => openAddSensorModal(dashboard.id)}
+                text="Add Sensor"
+                className={"w-36 self-end "}
+                
+              />
+            )}
             </Card>
           ))}
+               
+
         </div>
       </div>
+  
       {isAdmin && (
         <Button
           className={"w-36"}
@@ -544,6 +604,50 @@ const openModal = async (gauge) => {
           <Button onClick={() => setIsAddAssetModalOpen(false)}>Close</Button>
         </form>
       </Modal>
+
+      <Modal
+  isOpen={isAddSensorModalOpen}
+  onRequestClose={() => setIsAddSensorModalOpen(false)}
+  contentLabel="Add Sensor Modal"
+  className="modal"
+  overlayClassName="overlay min-w-full fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+>
+  <h2>Add New Sensor</h2>
+  <form
+    onSubmit={handleAddSensor}
+    className="items-center justify-center flex flex-col gap-2"
+  >
+    <input
+      type="text"
+      value={newSensorName}
+      onChange={(e) => setNewSensorName(e.target.value)}
+      placeholder="Sensor Name"
+      required
+      className="form-inputText border"
+    />
+     <input
+      type="text"
+      value={newSensorUnit}
+      onChange={(e) => setNewSensorUnit(e.target.value)}
+      placeholder="Sensor Unit"
+      required
+      className="form-inputText border"
+    />
+    <select
+      value={newSensorType}
+      onChange={(e) => setNewSensorType(e.target.value)}
+      required
+      className="form-inputText border bg-accent"
+    >
+      <option value="">Select Sensor Type</option>
+      <option value="DO">DO (Digital Output)</option>
+      <option value="DI">DI (Digital Input)</option>
+      <option value="AI">AI (Analog Input)</option>
+    </select>
+    <Button type="submit">Add</Button>
+    <Button onClick={() => setIsAddSensorModalOpen(false)}>Close</Button>
+  </form>
+</Modal>
       <Modal
         isOpen={isDeleteModalOpen}
         onRequestClose={closeDeleteModal}
