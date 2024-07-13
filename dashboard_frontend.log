@@ -1,0 +1,2322 @@
+nohup: ignoring input
+
+> front_end@0.1.0 start
+> react-scripts start
+
+(node:11052) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:11052) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view front_end in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.56.1:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
+Failed to compile.
+
+Module not found: Error: Can't resolve 'tailwind-merge' in 'D:\College\Grad project\src\Dashboard Front-end\src\components\Buttons'
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 36:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 243:9:  'data' is assigned a value but never used                 no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/components/Buttons/Button.jsx[39m[22m [1m[32m5:0-41[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'tailwind-merge' in 'D:\College\Grad project\src\Dashboard Front-end\src\components\Buttons'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/components/Card/Card.jsx[39m[22m [1m[32m5:0-41[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'tailwind-merge' in 'D:\College\Grad project\src\Dashboard Front-end\src\components\Card'[39m[22m
+
+webpack compiled with [1m[31m2 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 36:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 243:9:  'data' is assigned a value but never used                 no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 36:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 243:9:  'data' is assigned a value but never used                 no-unused-vars
+
+[39m[22m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'classnames' in 'D:\College\Grad project\src\Dashboard Front-end\src\components\SliderButton'
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/components/SliderButton/Slider.jsx[39m[22m [1m[32m6:0-36[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'classnames' in 'D:\College\Grad project\src\Dashboard Front-end\src\components\SliderButton'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/pages/Dashboard/Dashboard.jsx[39m[22m [1m[32m7:0-44[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/x-charts/Gauge' in 'D:\College\Grad project\src\Dashboard Front-end\src\pages\Dashboard'[39m[22m
+
+webpack compiled with [1m[31m2 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve '@mui/x-charts/Gauge' in 'D:\College\Grad project\src\Dashboard Front-end\src\pages\Dashboard'
+[1mLOG from webpack.FileSystemInfo[39m[22m
+<w> [1m[33mManaged item D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\x-charts isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
+<w> [1m[33mManaged item D:\College\Grad project\src\Dashboard Front-end\node_modules\classnames isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
++ 14 hidden lines
+
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/pages/Dashboard/Dashboard.jsx[39m[22m [1m[32m7:0-44[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/x-charts/Gauge' in 'D:\College\Grad project\src\Dashboard Front-end\src\pages\Dashboard'[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve '@mui/x-charts/Gauge' in 'D:\College\Grad project\src\Dashboard Front-end\src\pages\Dashboard'
+[1mLOG from webpack.FileSystemInfo[39m[22m
+<w> [1m[33mManaged item D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\x-charts isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
+<w> [1m[33mManaged item D:\College\Grad project\src\Dashboard Front-end\node_modules\classnames isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
++ 14 hidden lines
+
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/pages/Dashboard/Dashboard.jsx[39m[22m [1m[32m7:0-44[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/x-charts/Gauge' in 'D:\College\Grad project\src\Dashboard Front-end\src\pages\Dashboard'[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve '@mui/x-charts/Gauge' in 'D:\College\Grad project\src\Dashboard Front-end\src\pages\Dashboard'
+[1mLOG from webpack.FileSystemInfo[39m[22m
+<w> [1m[33mManaged item D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\x-charts isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
++ 13 hidden lines
+
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/pages/Dashboard/Dashboard.jsx[39m[22m [1m[32m7:0-44[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/x-charts/Gauge' in 'D:\College\Grad project\src\Dashboard Front-end\src\pages\Dashboard'[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve '@mui/material/styles' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\x-charts'
+[1mLOG from webpack.FileSystemInfo[39m[22m
+<w> [1m[33mManaged item D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\x-charts isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
+<w> [1m[33mManaged item D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\material isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
++ 13 hidden lines
+
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/x-charts/ChartsSurface.js[39m[22m [1m[32m10:14-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/material/styles' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\x-charts'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/x-charts/Gauge/GaugeContainer.js[39m[22m [1m[32m13:14-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/material/styles' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\x-charts\Gauge'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/x-charts/Gauge/GaugeReferenceArc.js[39m[22m [1m[32m11:14-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/material/styles' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\x-charts\Gauge'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/x-charts/Gauge/GaugeValueArc.js[39m[22m [1m[32m11:14-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/material/styles' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\x-charts\Gauge'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/x-charts/context/SeriesContextProvider.js[39m[22m [1m[32m11:14-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/material/styles' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\x-charts\context'[39m[22m
+
+webpack compiled with [1m[31m5 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve '@mui/material/styles' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\x-charts'
+[1mLOG from webpack.FileSystemInfo[39m[22m
+<w> [1m[33mManaged item D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\material isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
++ 26 hidden lines
+
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/x-charts/ChartsSurface.js[39m[22m [1m[32m10:14-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/material/styles' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\x-charts'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/x-charts/Gauge/GaugeContainer.js[39m[22m [1m[32m13:14-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/material/styles' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\x-charts\Gauge'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/x-charts/Gauge/GaugeReferenceArc.js[39m[22m [1m[32m11:14-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/material/styles' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\x-charts\Gauge'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/x-charts/Gauge/GaugeValueArc.js[39m[22m [1m[32m11:14-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/material/styles' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\x-charts\Gauge'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/x-charts/context/SeriesContextProvider.js[39m[22m [1m[32m11:14-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/material/styles' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\x-charts\context'[39m[22m
+
+webpack compiled with [1m[31m5 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+Failed to compile.
+
+Error: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\colorManipulator.js'
+[1mLOG from webpack.FileSystemInfo[39m[22m
+<w> [1m[33mManaged item D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
+<w> [1m[33mManaged item D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\styled-engine isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
+<w> [1m[33mManaged item D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\private-theming isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
++ 15 hidden lines
+
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/colorManipulator.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\colorManipulator.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/createStyled.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\createStyled.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Box/Box.js[39m[22m [1m[32m4:0-63[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/ClassNameGenerator' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Box'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Box/boxClasses.js[39m[22m [1m[32m1:0-71[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Box'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Container/containerClasses.js[39m[22m [1m[32m1:0-71[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Container'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Container/containerClasses.js[39m[22m [1m[32m2:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Container'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Container/createContainer.js[39m[22m [1m[32m7:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Container'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Container/createContainer.js[39m[22m [1m[32m8:0-55[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/composeClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Container'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Container/createContainer.js[39m[22m [1m[32m9:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/capitalize' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Container'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/DefaultPropsProvider/DefaultPropsProvider.js[39m[22m [1m[32m5:0-51[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/resolveProps' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\DefaultPropsProvider'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/GlobalStyles/GlobalStyles.js[39m[22m [1m[32m5:0-69[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\GlobalStyles'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Stack/createStack.js[39m[22m [1m[32m7:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Stack'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Stack/createStack.js[39m[22m [1m[32m8:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Stack'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Stack/createStack.js[39m[22m [1m[32m9:0-55[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/composeClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Stack'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Stack/stackClasses.js[39m[22m [1m[32m1:0-71[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Stack'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Stack/stackClasses.js[39m[22m [1m[32m2:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Stack'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/ThemeProvider/ThemeProvider.js[39m[22m [1m[32m6:0-102[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/private-theming' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\ThemeProvider'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/ThemeProvider/ThemeProvider.js[39m[22m [1m[32m7:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/exactProp' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\ThemeProvider'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/ThemeProvider/ThemeProvider.js[39m[22m [1m[32m8:0-78[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\ThemeProvider'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Unstable_Grid/createGrid.js[39m[22m [1m[32m7:0-51[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/isMuiElement' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Unstable_Grid'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Unstable_Grid/createGrid.js[39m[22m [1m[32m8:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Unstable_Grid'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Unstable_Grid/createGrid.js[39m[22m [1m[32m9:0-55[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/composeClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Unstable_Grid'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Unstable_Grid/gridClasses.js[39m[22m [1m[32m1:0-71[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Unstable_Grid'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Unstable_Grid/gridClasses.js[39m[22m [1m[32m2:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Unstable_Grid'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/breakpoints.js[39m[22m [1m[32m3:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/colorManipulator.js[39m[22m [1m[32m1:0-70[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/formatMuiErrorMessage' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/colorManipulator.js[39m[22m [1m[32m3:0-37[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/clamp' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createBox.js[39m[22m [1m[32m8:0-40[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createStyled.js[39m[22m [1m[32m7:0-97[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createStyled.js[39m[22m [1m[32m8:0-53[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createStyled.js[39m[22m [1m[32m9:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/capitalize' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createStyled.js[39m[22m [1m[32m10:0-55[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/getDisplayName' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createTheme/createTheme.js[39m[22m [1m[32m4:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\createTheme'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/cssVars/createCssVarsProvider.js[39m[22m [1m[32m3:0-70[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/formatMuiErrorMessage' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\cssVars'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/cssVars/createCssVarsProvider.js[39m[22m [1m[32m7:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\cssVars'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/cssVars/createCssVarsProvider.js[39m[22m [1m[32m8:0-50[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\cssVars'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/cssVars/createCssVarsProvider.js[39m[22m [1m[32m9:0-63[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/private-theming' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\cssVars'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/cssVars/prepareCssVars.js[39m[22m [1m[32m5:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\cssVars'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/index.js[39m[22m [1m[32m1:0-70[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/formatMuiErrorMessage' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/index.js[39m[22m [1m[32m2:0-74[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/merge.js[39m[22m [1m[32m1:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/style.js[39m[22m [1m[32m1:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/capitalize' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/styleFunctionSx/extendSxProp.js[39m[22m [1m[32m4:0-53[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\styleFunctionSx'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/styleFunctionSx/styleFunctionSx.js[39m[22m [1m[32m1:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/capitalize' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\styleFunctionSx'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/useMediaQuery/useMediaQuery.js[39m[22m [1m[32m4:0-61[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/useEnhancedEffect' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\useMediaQuery'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/useThemeProps/getThemeProps.js[39m[22m [1m[32m1:0-51[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/resolveProps' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\useThemeProps'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/useThemeWithoutDefault.js[39m[22m [1m[32m4:0-50[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/composeClasses/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\composeClasses\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/deepmerge/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\deepmerge\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/formatMuiErrorMessage/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\formatMuiErrorMessage\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/generateUtilityClass/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\generateUtilityClass\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/generateUtilityClasses/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\generateUtilityClasses\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/ownerWindow/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\ownerWindow\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/useEnhancedEffect/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\useEnhancedEffect\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/useForkRef/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\useForkRef\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/useId/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\useId\index.js'[39m[22m
+
+webpack compiled with [1m[31m56 errors[39m[22m and [1m[33m1 warning[39m[22m
+Failed to compile.
+
+Error: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\colorManipulator.js'
+[1mLOG from webpack.FileSystemInfo[39m[22m
+<w> [1m[33mManaged item D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
++ 14 hidden lines
+
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/colorManipulator.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\colorManipulator.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/createStyled.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\createStyled.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Box/Box.js[39m[22m [1m[32m4:0-63[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/ClassNameGenerator' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Box'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Box/boxClasses.js[39m[22m [1m[32m1:0-71[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Box'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Container/containerClasses.js[39m[22m [1m[32m1:0-71[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Container'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Container/containerClasses.js[39m[22m [1m[32m2:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Container'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Container/createContainer.js[39m[22m [1m[32m7:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Container'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Container/createContainer.js[39m[22m [1m[32m8:0-55[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/composeClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Container'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Container/createContainer.js[39m[22m [1m[32m9:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/capitalize' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Container'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/DefaultPropsProvider/DefaultPropsProvider.js[39m[22m [1m[32m5:0-51[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/resolveProps' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\DefaultPropsProvider'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/GlobalStyles/GlobalStyles.js[39m[22m [1m[32m5:0-69[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\GlobalStyles'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Stack/createStack.js[39m[22m [1m[32m7:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Stack'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Stack/createStack.js[39m[22m [1m[32m8:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Stack'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Stack/createStack.js[39m[22m [1m[32m9:0-55[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/composeClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Stack'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Stack/stackClasses.js[39m[22m [1m[32m1:0-71[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Stack'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Stack/stackClasses.js[39m[22m [1m[32m2:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Stack'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/ThemeProvider/ThemeProvider.js[39m[22m [1m[32m6:0-102[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/private-theming' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\ThemeProvider'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/ThemeProvider/ThemeProvider.js[39m[22m [1m[32m7:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/exactProp' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\ThemeProvider'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/ThemeProvider/ThemeProvider.js[39m[22m [1m[32m8:0-78[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\ThemeProvider'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Unstable_Grid/createGrid.js[39m[22m [1m[32m7:0-51[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/isMuiElement' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Unstable_Grid'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Unstable_Grid/createGrid.js[39m[22m [1m[32m8:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Unstable_Grid'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Unstable_Grid/createGrid.js[39m[22m [1m[32m9:0-55[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/composeClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Unstable_Grid'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Unstable_Grid/gridClasses.js[39m[22m [1m[32m1:0-71[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Unstable_Grid'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Unstable_Grid/gridClasses.js[39m[22m [1m[32m2:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Unstable_Grid'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/breakpoints.js[39m[22m [1m[32m3:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/colorManipulator.js[39m[22m [1m[32m1:0-70[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/formatMuiErrorMessage' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/colorManipulator.js[39m[22m [1m[32m3:0-37[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/clamp' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createBox.js[39m[22m [1m[32m8:0-40[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createStyled.js[39m[22m [1m[32m7:0-97[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createStyled.js[39m[22m [1m[32m8:0-53[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createStyled.js[39m[22m [1m[32m9:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/capitalize' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createStyled.js[39m[22m [1m[32m10:0-55[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/getDisplayName' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createTheme/createTheme.js[39m[22m [1m[32m4:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\createTheme'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/cssVars/createCssVarsProvider.js[39m[22m [1m[32m3:0-70[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/formatMuiErrorMessage' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\cssVars'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/cssVars/createCssVarsProvider.js[39m[22m [1m[32m7:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\cssVars'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/cssVars/createCssVarsProvider.js[39m[22m [1m[32m8:0-50[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\cssVars'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/cssVars/createCssVarsProvider.js[39m[22m [1m[32m9:0-63[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/private-theming' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\cssVars'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/cssVars/prepareCssVars.js[39m[22m [1m[32m5:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\cssVars'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/index.js[39m[22m [1m[32m1:0-70[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/formatMuiErrorMessage' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/index.js[39m[22m [1m[32m2:0-74[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/merge.js[39m[22m [1m[32m1:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/style.js[39m[22m [1m[32m1:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/capitalize' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/styleFunctionSx/extendSxProp.js[39m[22m [1m[32m4:0-53[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\styleFunctionSx'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/styleFunctionSx/styleFunctionSx.js[39m[22m [1m[32m1:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/capitalize' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\styleFunctionSx'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/useMediaQuery/useMediaQuery.js[39m[22m [1m[32m4:0-61[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/useEnhancedEffect' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\useMediaQuery'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/useThemeProps/getThemeProps.js[39m[22m [1m[32m1:0-51[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/resolveProps' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\useThemeProps'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/useThemeWithoutDefault.js[39m[22m [1m[32m4:0-50[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/composeClasses/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\composeClasses\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/deepmerge/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\deepmerge\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/formatMuiErrorMessage/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\formatMuiErrorMessage\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/generateUtilityClass/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\generateUtilityClass\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/generateUtilityClasses/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\generateUtilityClasses\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/ownerWindow/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\ownerWindow\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/useEnhancedEffect/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\useEnhancedEffect\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/useForkRef/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\useForkRef\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/useId/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\useId\index.js'[39m[22m
+
+webpack compiled with [1m[31m56 errors[39m[22m and [1m[33m1 warning[39m[22m
+Failed to compile.
+
+Error: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\colorManipulator.js'
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/colorManipulator.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\colorManipulator.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/createStyled.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\createStyled.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Box/Box.js[39m[22m [1m[32m4:0-63[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/ClassNameGenerator' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Box'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Box/boxClasses.js[39m[22m [1m[32m1:0-71[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Box'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Container/containerClasses.js[39m[22m [1m[32m1:0-71[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Container'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Container/containerClasses.js[39m[22m [1m[32m2:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Container'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Container/createContainer.js[39m[22m [1m[32m7:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Container'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Container/createContainer.js[39m[22m [1m[32m8:0-55[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/composeClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Container'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Container/createContainer.js[39m[22m [1m[32m9:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/capitalize' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Container'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/DefaultPropsProvider/DefaultPropsProvider.js[39m[22m [1m[32m5:0-51[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/resolveProps' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\DefaultPropsProvider'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/GlobalStyles/GlobalStyles.js[39m[22m [1m[32m5:0-69[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\GlobalStyles'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Stack/createStack.js[39m[22m [1m[32m7:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Stack'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Stack/createStack.js[39m[22m [1m[32m8:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Stack'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Stack/createStack.js[39m[22m [1m[32m9:0-55[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/composeClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Stack'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Stack/stackClasses.js[39m[22m [1m[32m1:0-71[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Stack'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Stack/stackClasses.js[39m[22m [1m[32m2:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Stack'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/ThemeProvider/ThemeProvider.js[39m[22m [1m[32m6:0-102[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/private-theming' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\ThemeProvider'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/ThemeProvider/ThemeProvider.js[39m[22m [1m[32m7:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/exactProp' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\ThemeProvider'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/ThemeProvider/ThemeProvider.js[39m[22m [1m[32m8:0-78[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\ThemeProvider'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Unstable_Grid/createGrid.js[39m[22m [1m[32m7:0-51[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/isMuiElement' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Unstable_Grid'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Unstable_Grid/createGrid.js[39m[22m [1m[32m8:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Unstable_Grid'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Unstable_Grid/createGrid.js[39m[22m [1m[32m9:0-55[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/composeClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Unstable_Grid'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Unstable_Grid/gridClasses.js[39m[22m [1m[32m1:0-71[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClasses' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Unstable_Grid'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/Unstable_Grid/gridClasses.js[39m[22m [1m[32m2:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/generateUtilityClass' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\Unstable_Grid'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/borders.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\borders.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/breakpoints.js[39m[22m [1m[32m3:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/colorManipulator.js[39m[22m [1m[32m1:0-70[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/formatMuiErrorMessage' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/colorManipulator.js[39m[22m [1m[32m3:0-37[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/clamp' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createBox.js[39m[22m [1m[32m8:0-40[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createStyled.js[39m[22m [1m[32m7:0-97[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createStyled.js[39m[22m [1m[32m8:0-53[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createStyled.js[39m[22m [1m[32m9:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/capitalize' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createStyled.js[39m[22m [1m[32m10:0-55[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/getDisplayName' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/createTheme/createTheme.js[39m[22m [1m[32m4:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\createTheme'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/cssVars/createCssVarsProvider.js[39m[22m [1m[32m3:0-70[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/formatMuiErrorMessage' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\cssVars'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/cssVars/createCssVarsProvider.js[39m[22m [1m[32m7:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\cssVars'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/cssVars/createCssVarsProvider.js[39m[22m [1m[32m8:0-50[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\cssVars'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/cssVars/createCssVarsProvider.js[39m[22m [1m[32m9:0-63[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/private-theming' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\cssVars'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/cssVars/prepareCssVars.js[39m[22m [1m[32m5:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\cssVars'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/index.js[39m[22m [1m[32m1:0-70[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/formatMuiErrorMessage' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/index.js[39m[22m [1m[32m2:0-74[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/merge.js[39m[22m [1m[32m1:0-45[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/style.js[39m[22m [1m[32m1:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/capitalize' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/styleFunctionSx/extendSxProp.js[39m[22m [1m[32m4:0-53[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/deepmerge' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\styleFunctionSx'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/styleFunctionSx/styleFunctionSx.js[39m[22m [1m[32m1:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/capitalize' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\styleFunctionSx'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/useMediaQuery/useMediaQuery.js[39m[22m [1m[32m4:0-61[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/useEnhancedEffect' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\useMediaQuery'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/useThemeProps/getThemeProps.js[39m[22m [1m[32m1:0-51[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/utils/resolveProps' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\useThemeProps'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/useThemeWithoutDefault.js[39m[22m [1m[32m4:0-50[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve '@mui/styled-engine' in 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/composeClasses/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\composeClasses\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/deepmerge/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\deepmerge\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/formatMuiErrorMessage/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\formatMuiErrorMessage\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/generateUtilityClass/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\generateUtilityClass\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/generateUtilityClasses/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\generateUtilityClasses\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/ownerWindow/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\ownerWindow\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/useEnhancedEffect/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\useEnhancedEffect\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/useForkRef/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\useForkRef\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/useId/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\useId\index.js'[39m[22m
+
+webpack compiled with [1m[31m57 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+Error: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\material\node\styles\index.js'
+[1mLOG from webpack.FileSystemInfo[39m[22m
+<w> [1m[33mManaged item D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\material isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
++ 8 hidden lines
+
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/material/node/styles/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\material\node\styles\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/composeClasses/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\composeClasses\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/generateUtilityClass/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\generateUtilityClass\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/generateUtilityClasses/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\generateUtilityClasses\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/ownerWindow/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\ownerWindow\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/useEnhancedEffect/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\useEnhancedEffect\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/useForkRef/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\useForkRef\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/useId/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\useId\index.js'[39m[22m
+
+webpack compiled with [1m[31m8 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+Error: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\material\node\styles\index.js'
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/material/node/styles/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\material\node\styles\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/generateUtilityClass/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\generateUtilityClass\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/generateUtilityClasses/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\generateUtilityClasses\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/ownerWindow/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\ownerWindow\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/useEnhancedEffect/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\useEnhancedEffect\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/useForkRef/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\useForkRef\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/utils/useId/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\utils\useId\index.js'[39m[22m
+
+webpack compiled with [1m[31m7 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+Error: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\material\node\styles\index.js'
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/material/node/styles/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\material\node\styles\index.js'[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+[eslint] 
+src\Helpers\apiHelper.js
+Syntax error: Unexpected token, expected "," (325:38) (325:38)
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/Helpers/apiHelper.js[39m[22m
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: D:\College\Grad project\src\Dashboard Front-end\src\Helpers\apiHelper.js: Unexpected token, expected "," (325:38)
+
+[0m [90m 323 |[39m [36mconst[39m fetchModelData [33m=[39m [36masync[39m () [33m=>[39m {
+ [90m 324 |[39m   [36mtry[39m {
+[31m[1m>[22m[39m[90m 325 |[39m     [36mconst[39m response [33m=[39m [36mawait[39m axios[33m.[39m[36mget[39m(${[33mBASE_URL[39m}[33m/[39massets[33m,[39m {
+ [90m     |[39m                                       [31m[1m^[22m[39m
+ [90m 326 |[39m       headers[33m:[39m {
+ [90m 327 |[39m         [33mAuthorization[39m[33m:[39m [33mBearer[39m ${[33mTOKEN[39m}[33m,[39m
+ [90m 328 |[39m       }[33m,[39m[0m
+    at constructor (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:351:19)
+    at FlowParserMixin.raise (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3233:19)
+    at FlowParserMixin.unexpected (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3253:16)
+    at FlowParserMixin.expect (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3557:28)
+    at FlowParserMixin.parseCallExpressionArguments (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10742:14)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10671:29)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10581:19)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5715:18)
+    at FlowParserMixin.parseExprSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10572:17)
+    at FlowParserMixin.parseUpdate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10551:21)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10529:23)
+    at FlowParserMixin.parseAwait (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11778:28)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10498:25)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10383:61)
+    at FlowParserMixin.parseExprOps (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10388:23)
+    at FlowParserMixin.parseMaybeConditional (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10365:23)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10326:21)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5648:18)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:39
+    at FlowParserMixin.allowInAnd (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11915:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:17)
+    at FlowParserMixin.parseVar (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12848:91)
+    at FlowParserMixin.parseVarStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12694:10)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12306:23)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseTryStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12669:23)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12260:21)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11600:24)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5167:16)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:12)
+    at FlowParserMixin.parseArrowExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11575:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10766:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5586:18)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10679:27)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/material/node/styles/index.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\material\node\styles\index.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[eslint] 
+src\Helpers\apiHelper.js
+  Line 325:38:  Parsing [1m[31merror[39m[22m[1m: [1m[31mUnexpected[39m[22m[1m token, expected "," (325:38)
+
+[39m[22m
+
+webpack compiled with [1m[31m3 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+[eslint] 
+src\Helpers\apiHelper.js
+Syntax error: Unexpected token, expected "," (325:38) (325:38)
+[1mLOG from webpack.FileSystemInfo[39m[22m
+<w> [1m[33mManaged item D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\material isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
++ 53 hidden lines
+
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/Helpers/apiHelper.js[39m[22m
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: D:\College\Grad project\src\Dashboard Front-end\src\Helpers\apiHelper.js: Unexpected token, expected "," (325:38)
+
+[0m [90m 323 |[39m [36mconst[39m fetchModelData [33m=[39m [36masync[39m () [33m=>[39m {
+ [90m 324 |[39m   [36mtry[39m {
+[31m[1m>[22m[39m[90m 325 |[39m     [36mconst[39m response [33m=[39m [36mawait[39m axios[33m.[39m[36mget[39m(${[33mBASE_URL[39m}[33m/[39massets[33m,[39m {
+ [90m     |[39m                                       [31m[1m^[22m[39m
+ [90m 326 |[39m       headers[33m:[39m {
+ [90m 327 |[39m         [33mAuthorization[39m[33m:[39m [33mBearer[39m ${[33mTOKEN[39m}[33m,[39m
+ [90m 328 |[39m       }[33m,[39m[0m
+    at constructor (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:351:19)
+    at FlowParserMixin.raise (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3233:19)
+    at FlowParserMixin.unexpected (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3253:16)
+    at FlowParserMixin.expect (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3557:28)
+    at FlowParserMixin.parseCallExpressionArguments (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10742:14)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10671:29)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10581:19)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5715:18)
+    at FlowParserMixin.parseExprSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10572:17)
+    at FlowParserMixin.parseUpdate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10551:21)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10529:23)
+    at FlowParserMixin.parseAwait (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11778:28)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10498:25)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10383:61)
+    at FlowParserMixin.parseExprOps (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10388:23)
+    at FlowParserMixin.parseMaybeConditional (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10365:23)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10326:21)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5648:18)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:39
+    at FlowParserMixin.allowInAnd (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11915:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:17)
+    at FlowParserMixin.parseVar (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12848:91)
+    at FlowParserMixin.parseVarStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12694:10)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12306:23)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseTryStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12669:23)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12260:21)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11600:24)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5167:16)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:12)
+    at FlowParserMixin.parseArrowExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11575:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10766:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5586:18)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10679:27)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/borders.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\borders.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[eslint] 
+src\Helpers\apiHelper.js
+  Line 325:38:  Parsing [1m[31merror[39m[22m[1m: [1m[31mUnexpected[39m[22m[1m token, expected "," (325:38)
+
+[39m[22m
+
+webpack compiled with [1m[31m3 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+[eslint] 
+src\Helpers\apiHelper.js
+Syntax error: Unexpected token, expected "," (325:38) (325:38)
+[1mLOG from webpack.FileSystemInfo[39m[22m
+<w> [1m[33mManaged item D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\material isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)[39m[22m
++ 42 hidden lines
+
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/Helpers/apiHelper.js[39m[22m
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: D:\College\Grad project\src\Dashboard Front-end\src\Helpers\apiHelper.js: Unexpected token, expected "," (325:38)
+
+[0m [90m 323 |[39m [36mconst[39m fetchModelData [33m=[39m [36masync[39m () [33m=>[39m {
+ [90m 324 |[39m   [36mtry[39m {
+[31m[1m>[22m[39m[90m 325 |[39m     [36mconst[39m response [33m=[39m [36mawait[39m axios[33m.[39m[36mget[39m(${[33mBASE_URL[39m}[33m/[39massets[33m,[39m {
+ [90m     |[39m                                       [31m[1m^[22m[39m
+ [90m 326 |[39m       headers[33m:[39m {
+ [90m 327 |[39m         [33mAuthorization[39m[33m:[39m [33mBearer[39m ${[33mTOKEN[39m}[33m,[39m
+ [90m 328 |[39m       }[33m,[39m[0m
+    at constructor (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:351:19)
+    at FlowParserMixin.raise (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3233:19)
+    at FlowParserMixin.unexpected (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3253:16)
+    at FlowParserMixin.expect (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3557:28)
+    at FlowParserMixin.parseCallExpressionArguments (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10742:14)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10671:29)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10581:19)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5715:18)
+    at FlowParserMixin.parseExprSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10572:17)
+    at FlowParserMixin.parseUpdate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10551:21)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10529:23)
+    at FlowParserMixin.parseAwait (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11778:28)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10498:25)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10383:61)
+    at FlowParserMixin.parseExprOps (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10388:23)
+    at FlowParserMixin.parseMaybeConditional (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10365:23)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10326:21)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5648:18)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:39
+    at FlowParserMixin.allowInAnd (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11915:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:17)
+    at FlowParserMixin.parseVar (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12848:91)
+    at FlowParserMixin.parseVarStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12694:10)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12306:23)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseTryStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12669:23)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12260:21)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11600:24)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5167:16)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:12)
+    at FlowParserMixin.parseArrowExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11575:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10766:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5586:18)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10679:27)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/borders.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\borders.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[eslint] 
+src\Helpers\apiHelper.js
+  Line 325:38:  Parsing [1m[31merror[39m[22m[1m: [1m[31mUnexpected[39m[22m[1m token, expected "," (325:38)
+
+[39m[22m
+
+webpack compiled with [1m[31m3 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+[eslint] 
+src\Helpers\apiHelper.js
+Syntax error: Unexpected token, expected "," (325:38) (325:38)
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/Helpers/apiHelper.js[39m[22m
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: D:\College\Grad project\src\Dashboard Front-end\src\Helpers\apiHelper.js: Unexpected token, expected "," (325:38)
+
+[0m [90m 323 |[39m [36mconst[39m fetchModelData [33m=[39m [36masync[39m () [33m=>[39m {
+ [90m 324 |[39m   [36mtry[39m {
+[31m[1m>[22m[39m[90m 325 |[39m     [36mconst[39m response [33m=[39m [36mawait[39m axios[33m.[39m[36mget[39m(${[33mBASE_URL[39m}[33m/[39massets[33m,[39m {
+ [90m     |[39m                                       [31m[1m^[22m[39m
+ [90m 326 |[39m       headers[33m:[39m {
+ [90m 327 |[39m         [33mAuthorization[39m[33m:[39m [33mBearer[39m ${[33mTOKEN[39m}[33m,[39m
+ [90m 328 |[39m       }[33m,[39m[0m
+    at constructor (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:351:19)
+    at FlowParserMixin.raise (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3233:19)
+    at FlowParserMixin.unexpected (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3253:16)
+    at FlowParserMixin.expect (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3557:28)
+    at FlowParserMixin.parseCallExpressionArguments (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10742:14)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10671:29)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10581:19)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5715:18)
+    at FlowParserMixin.parseExprSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10572:17)
+    at FlowParserMixin.parseUpdate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10551:21)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10529:23)
+    at FlowParserMixin.parseAwait (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11778:28)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10498:25)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10383:61)
+    at FlowParserMixin.parseExprOps (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10388:23)
+    at FlowParserMixin.parseMaybeConditional (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10365:23)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10326:21)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5648:18)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:39
+    at FlowParserMixin.allowInAnd (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11915:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:17)
+    at FlowParserMixin.parseVar (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12848:91)
+    at FlowParserMixin.parseVarStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12694:10)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12306:23)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseTryStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12669:23)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12260:21)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11600:24)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5167:16)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:12)
+    at FlowParserMixin.parseArrowExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11575:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10766:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5586:18)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10679:27)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/borders.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\borders.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[eslint] 
+src\Helpers\apiHelper.js
+  Line 325:38:  Parsing [1m[31merror[39m[22m[1m: [1m[31mUnexpected[39m[22m[1m token, expected "," (325:38)
+
+[39m[22m
+
+webpack compiled with [1m[31m3 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+[eslint] 
+src\Helpers\apiHelper.js
+Syntax error: Unexpected token, expected "," (325:38) (325:38)
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/Helpers/apiHelper.js[39m[22m
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: D:\College\Grad project\src\Dashboard Front-end\src\Helpers\apiHelper.js: Unexpected token, expected "," (325:38)
+
+[0m [90m 323 |[39m [36mconst[39m fetchModelData [33m=[39m [36masync[39m () [33m=>[39m {
+ [90m 324 |[39m   [36mtry[39m {
+[31m[1m>[22m[39m[90m 325 |[39m     [36mconst[39m response [33m=[39m [36mawait[39m axios[33m.[39m[36mget[39m(${[33mBASE_URL[39m}[33m/[39massets[33m,[39m {
+ [90m     |[39m                                       [31m[1m^[22m[39m
+ [90m 326 |[39m       headers[33m:[39m {
+ [90m 327 |[39m         [33mAuthorization[39m[33m:[39m [33mBearer[39m ${[33mTOKEN[39m}[33m,[39m
+ [90m 328 |[39m       }[33m,[39m[0m
+    at constructor (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:351:19)
+    at FlowParserMixin.raise (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3233:19)
+    at FlowParserMixin.unexpected (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3253:16)
+    at FlowParserMixin.expect (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3557:28)
+    at FlowParserMixin.parseCallExpressionArguments (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10742:14)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10671:29)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10581:19)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5715:18)
+    at FlowParserMixin.parseExprSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10572:17)
+    at FlowParserMixin.parseUpdate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10551:21)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10529:23)
+    at FlowParserMixin.parseAwait (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11778:28)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10498:25)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10383:61)
+    at FlowParserMixin.parseExprOps (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10388:23)
+    at FlowParserMixin.parseMaybeConditional (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10365:23)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10326:21)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5648:18)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:39
+    at FlowParserMixin.allowInAnd (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11915:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:17)
+    at FlowParserMixin.parseVar (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12848:91)
+    at FlowParserMixin.parseVarStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12694:10)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12306:23)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseTryStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12669:23)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12260:21)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11600:24)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5167:16)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:12)
+    at FlowParserMixin.parseArrowExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11575:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10766:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5586:18)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10679:27)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/borders.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\borders.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[eslint] 
+src\Helpers\apiHelper.js
+  Line 325:38:  Parsing [1m[31merror[39m[22m[1m: [1m[31mUnexpected[39m[22m[1m token, expected "," (325:38)
+
+[39m[22m
+
+webpack compiled with [1m[31m3 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+[eslint] 
+src\Helpers\apiHelper.js
+Syntax error: Unexpected token, expected "," (325:38) (325:38)
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/Helpers/apiHelper.js[39m[22m
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: D:\College\Grad project\src\Dashboard Front-end\src\Helpers\apiHelper.js: Unexpected token, expected "," (325:38)
+
+[0m [90m 323 |[39m [36mconst[39m fetchModelData [33m=[39m [36masync[39m () [33m=>[39m {
+ [90m 324 |[39m   [36mtry[39m {
+[31m[1m>[22m[39m[90m 325 |[39m     [36mconst[39m response [33m=[39m [36mawait[39m axios[33m.[39m[36mget[39m(${[33mBASE_URL[39m}[33m/[39massets[33m,[39m {
+ [90m     |[39m                                       [31m[1m^[22m[39m
+ [90m 326 |[39m       headers[33m:[39m {
+ [90m 327 |[39m         [33mAuthorization[39m[33m:[39m [33mBearer[39m ${[33mTOKEN[39m}[33m,[39m
+ [90m 328 |[39m       }[33m,[39m[0m
+    at constructor (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:351:19)
+    at FlowParserMixin.raise (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3233:19)
+    at FlowParserMixin.unexpected (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3253:16)
+    at FlowParserMixin.expect (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3557:28)
+    at FlowParserMixin.parseCallExpressionArguments (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10742:14)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10671:29)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10581:19)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5715:18)
+    at FlowParserMixin.parseExprSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10572:17)
+    at FlowParserMixin.parseUpdate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10551:21)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10529:23)
+    at FlowParserMixin.parseAwait (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11778:28)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10498:25)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10383:61)
+    at FlowParserMixin.parseExprOps (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10388:23)
+    at FlowParserMixin.parseMaybeConditional (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10365:23)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10326:21)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5648:18)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:39
+    at FlowParserMixin.allowInAnd (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11915:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:17)
+    at FlowParserMixin.parseVar (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12848:91)
+    at FlowParserMixin.parseVarStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12694:10)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12306:23)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseTryStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12669:23)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12260:21)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11600:24)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5167:16)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:12)
+    at FlowParserMixin.parseArrowExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11575:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10766:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5586:18)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10679:27)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@mui/system/esm/borders.js[39m[22m
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open 'D:\College\Grad project\src\Dashboard Front-end\node_modules\@mui\system\esm\borders.js'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[eslint] 
+src\Helpers\apiHelper.js
+  Line 325:38:  Parsing [1m[31merror[39m[22m[1m: [1m[31mUnexpected[39m[22m[1m token, expected "," (325:38)
+
+[39m[22m
+
+webpack compiled with [1m[31m3 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+[eslint] 
+src\Helpers\apiHelper.js
+Syntax error: Unexpected token, expected "," (325:38) (325:38)
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/Helpers/apiHelper.js[39m[22m
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: D:\College\Grad project\src\Dashboard Front-end\src\Helpers\apiHelper.js: Unexpected token, expected "," (325:38)
+
+[0m [90m 323 |[39m [36mconst[39m fetchModelData [33m=[39m [36masync[39m () [33m=>[39m {
+ [90m 324 |[39m   [36mtry[39m {
+[31m[1m>[22m[39m[90m 325 |[39m     [36mconst[39m response [33m=[39m [36mawait[39m axios[33m.[39m[36mget[39m(${[33mBASE_URL[39m}[33m/[39massets[33m,[39m {
+ [90m     |[39m                                       [31m[1m^[22m[39m
+ [90m 326 |[39m       headers[33m:[39m {
+ [90m 327 |[39m         [33mAuthorization[39m[33m:[39m [33mBearer[39m ${[33mTOKEN[39m}[33m,[39m
+ [90m 328 |[39m       }[33m,[39m[0m
+    at constructor (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:351:19)
+    at FlowParserMixin.raise (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3233:19)
+    at FlowParserMixin.unexpected (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3253:16)
+    at FlowParserMixin.expect (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3557:28)
+    at FlowParserMixin.parseCallExpressionArguments (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10742:14)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10671:29)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10581:19)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5715:18)
+    at FlowParserMixin.parseExprSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10572:17)
+    at FlowParserMixin.parseUpdate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10551:21)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10529:23)
+    at FlowParserMixin.parseAwait (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11778:28)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10498:25)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10383:61)
+    at FlowParserMixin.parseExprOps (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10388:23)
+    at FlowParserMixin.parseMaybeConditional (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10365:23)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10326:21)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5648:18)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:39
+    at FlowParserMixin.allowInAnd (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11915:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:17)
+    at FlowParserMixin.parseVar (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12848:91)
+    at FlowParserMixin.parseVarStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12694:10)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12306:23)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseTryStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12669:23)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12260:21)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11600:24)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5167:16)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:12)
+    at FlowParserMixin.parseArrowExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11575:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10766:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5586:18)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10679:27)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+
+[1m[31mERROR[39m[22m in [1m[eslint] 
+src\Helpers\apiHelper.js
+  Line 325:38:  Parsing [1m[31merror[39m[22m[1m: [1m[31mUnexpected[39m[22m[1m token, expected "," (325:38)
+
+[39m[22m
+
+webpack compiled with [1m[31m2 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+[eslint] 
+src\Helpers\apiHelper.js
+Syntax error: Unexpected token, expected "," (319:38) (319:38)
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/Helpers/apiHelper.js[39m[22m
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: D:\College\Grad project\src\Dashboard Front-end\src\Helpers\apiHelper.js: Unexpected token, expected "," (319:38)
+
+[0m [90m 317 |[39m [36mconst[39m fetchModelData [33m=[39m [36masync[39m () [33m=>[39m {
+ [90m 318 |[39m   [36mtry[39m {
+[31m[1m>[22m[39m[90m 319 |[39m     [36mconst[39m response [33m=[39m [36mawait[39m axios[33m.[39m[36mget[39m(${[33mBASE_URL[39m}[33m/[39massets[33m,[39m {
+ [90m     |[39m                                       [31m[1m^[22m[39m
+ [90m 320 |[39m       headers[33m:[39m {
+ [90m 321 |[39m         [33mAuthorization[39m[33m:[39m [33mBearer[39m ${[33mTOKEN[39m}[33m,[39m
+ [90m 322 |[39m       }[33m,[39m[0m
+    at constructor (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:351:19)
+    at FlowParserMixin.raise (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3233:19)
+    at FlowParserMixin.unexpected (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3253:16)
+    at FlowParserMixin.expect (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3557:28)
+    at FlowParserMixin.parseCallExpressionArguments (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10742:14)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10671:29)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10581:19)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5715:18)
+    at FlowParserMixin.parseExprSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10572:17)
+    at FlowParserMixin.parseUpdate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10551:21)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10529:23)
+    at FlowParserMixin.parseAwait (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11778:28)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10498:25)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10383:61)
+    at FlowParserMixin.parseExprOps (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10388:23)
+    at FlowParserMixin.parseMaybeConditional (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10365:23)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10326:21)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5648:18)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:39
+    at FlowParserMixin.allowInAnd (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11915:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:17)
+    at FlowParserMixin.parseVar (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12848:91)
+    at FlowParserMixin.parseVarStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12694:10)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12306:23)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseTryStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12669:23)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12260:21)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11600:24)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5167:16)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:12)
+    at FlowParserMixin.parseArrowExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11575:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10766:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5586:18)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10679:27)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+
+[1m[31mERROR[39m[22m in [1m[eslint] 
+src\Helpers\apiHelper.js
+  Line 319:38:  Parsing [1m[31merror[39m[22m[1m: [1m[31mUnexpected[39m[22m[1m token, expected "," (319:38)
+
+[39m[22m
+
+webpack compiled with [1m[31m2 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+[eslint] 
+src\Helpers\apiHelper.js
+Syntax error: Unexpected token, expected "," (319:38) (319:38)
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/Helpers/apiHelper.js[39m[22m
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: D:\College\Grad project\src\Dashboard Front-end\src\Helpers\apiHelper.js: Unexpected token, expected "," (319:38)
+
+[0m [90m 317 |[39m [36mconst[39m fetchModelData [33m=[39m [36masync[39m () [33m=>[39m {
+ [90m 318 |[39m   [36mtry[39m {
+[31m[1m>[22m[39m[90m 319 |[39m     [36mconst[39m response [33m=[39m [36mawait[39m axios[33m.[39m[36mget[39m(${[33mBASE_URL[39m}[33m/[39massets[33m,[39m {
+ [90m     |[39m                                       [31m[1m^[22m[39m
+ [90m 320 |[39m       headers[33m:[39m {
+ [90m 321 |[39m         [33mAuthorization[39m[33m:[39m [33mBearer[39m ${[33mTOKEN[39m}[33m,[39m
+ [90m 322 |[39m       }[33m,[39m[0m
+    at constructor (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:351:19)
+    at FlowParserMixin.raise (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3233:19)
+    at FlowParserMixin.unexpected (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3253:16)
+    at FlowParserMixin.expect (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3557:28)
+    at FlowParserMixin.parseCallExpressionArguments (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10742:14)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10671:29)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10581:19)
+    at FlowParserMixin.parseSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5715:18)
+    at FlowParserMixin.parseExprSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10572:17)
+    at FlowParserMixin.parseUpdate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10551:21)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10529:23)
+    at FlowParserMixin.parseAwait (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11778:28)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10498:25)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10383:61)
+    at FlowParserMixin.parseExprOps (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10388:23)
+    at FlowParserMixin.parseMaybeConditional (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10365:23)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10326:21)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5648:18)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:39
+    at FlowParserMixin.allowInAnd (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11915:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:17)
+    at FlowParserMixin.parseVar (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12848:91)
+    at FlowParserMixin.parseVarStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12694:10)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12306:23)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseTryStatement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12669:23)
+    at FlowParserMixin.parseStatementContent (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12260:21)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12223:17)
+    at FlowParserMixin.parseStatementLike (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5017:24)
+    at FlowParserMixin.parseStatementListItem (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12203:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12780:61)
+    at FlowParserMixin.parseBlockBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12773:10)
+    at FlowParserMixin.parseBlock (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:12761:10)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11600:24)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5167:16)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:12)
+    at FlowParserMixin.parseArrowExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11575:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10766:10)
+    at FlowParserMixin.parseAsyncArrowFromCallExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5586:18)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10679:27)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10608:19)
+    at FlowParserMixin.parseSubscript (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5749:18)
+
+[1m[31mERROR[39m[22m in [1m[eslint] 
+src\Helpers\apiHelper.js
+  Line 319:38:  Parsing [1m[31merror[39m[22m[1m: [1m[31mUnexpected[39m[22m[1m token, expected "," (319:38)
+
+[39m[22m
+
+webpack compiled with [1m[31m2 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+[eslint] 
+src\Helpers\apiHelper.js
+  Line 282:1:   'api' is not defined  no-undef
+  Line 296:1:   'api' is not defined  no-undef
+  Line 307:16:  'api' is not defined  no-undef
+
+Search for the keywords to learn more about each error.
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[eslint] 
+src\Helpers\apiHelper.js
+  Line 282:1:   'api' is not defined  no-undef
+  Line 296:1:   'api' is not defined  no-undef
+  Line 307:16:  'api' is not defined  no-undef
+
+Search for the keywords to learn more about each [1m[31merror[39m[22m[1m.[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+[eslint] 
+src\Helpers\apiHelper.js
+  Line 282:1:   'api' is not defined  no-undef
+  Line 296:1:   'api' is not defined  no-undef
+  Line 307:16:  'api' is not defined  no-undef
+
+Search for the keywords to learn more about each error.
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\AIModelState\AI.jsx
+  Line 7:25:  'setAiModelStatus' is assigned a value but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[eslint] 
+src\Helpers\apiHelper.js
+  Line 282:1:   'api' is not defined  no-undef
+  Line 296:1:   'api' is not defined  no-undef
+  Line 307:16:  'api' is not defined  no-undef
+
+Search for the keywords to learn more about each [1m[31merror[39m[22m[1m.[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+[eslint] 
+src\Helpers\apiHelper.js
+  Line 282:1:   'api' is not defined  no-undef
+  Line 296:1:   'api' is not defined  no-undef
+  Line 307:16:  'api' is not defined  no-undef
+
+src\components\AIModelState\AI.jsx
+Syntax error: Unexpected token, expected "}" (46:22) (46:22)
+
+Search for the keywords to learn more about each error.
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/components/AIModelState/AI.jsx[39m[22m
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: D:\College\Grad project\src\Dashboard Front-end\src\components\AIModelState\AI.jsx: Unexpected token, expected "}" (46:22)
+
+[0m [90m 44 |[39m             [33m<[39m[33mChip[39m
+ [90m 45 |[39m               key[33m=[39m{index}
+[31m[1m>[22m[39m[90m 46 |[39m               label[33m=[39m{${asset[33m.[39mname}[33m:[39m ${asset[33m.[39mstatus}}
+ [90m    |[39m                       [31m[1m^[22m[39m
+ [90m 47 |[39m               className[33m=[39m{p[33m-[39m[35m2[39m text[33m-[39mwhite ${asset[33m.[39mstatus [33m===[39m [32m'Everything is good'[39m [33m?[39m [32m'bg-green-500'[39m [33m:[39m [32m'bg-red-500'[39m}}
+ [90m 48 |[39m             [33m/[39m[33m>[39m
+ [90m 49 |[39m           ))[0m
+    at constructor (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:351:19)
+    at FlowParserMixin.raise (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3233:19)
+    at FlowParserMixin.unexpected (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3253:16)
+    at FlowParserMixin.expect (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3557:28)
+    at FlowParserMixin.jsxParseExpressionContainer (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:6654:10)
+    at FlowParserMixin.jsxParseAttributeValue (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:6621:21)
+    at FlowParserMixin.jsxParseAttribute (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:6670:38)
+    at FlowParserMixin.jsxParseOpeningElementAfterName (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:6684:28)
+    at FlowParserMixin.jsxParseOpeningElementAt (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:6679:17)
+    at FlowParserMixin.jsxParseElementAt (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:6703:33)
+    at FlowParserMixin.jsxParseElement (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:6766:17)
+    at FlowParserMixin.parseExprAtom (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:6776:19)
+    at FlowParserMixin.parseExprSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10568:23)
+    at FlowParserMixin.parseUpdate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10551:21)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10529:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10383:61)
+    at FlowParserMixin.parseExprOps (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10388:23)
+    at FlowParserMixin.parseMaybeConditional (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10365:23)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10326:21)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5597:39
+    at FlowParserMixin.tryParse (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:3564:20)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5597:18)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:39
+    at FlowParserMixin.allowInAnd (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11920:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10296:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11177:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5690:18)
+    at FlowParserMixin.parseExprAtom (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10835:23)
+    at FlowParserMixin.parseExprAtom (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:6781:20)
+    at FlowParserMixin.parseExprSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10568:23)
+    at FlowParserMixin.parseUpdate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10551:21)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10529:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10383:61)
+    at FlowParserMixin.parseExprOps (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10388:23)
+    at FlowParserMixin.parseMaybeConditional (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10365:23)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10326:21)
+    at FlowParserMixin.parseMaybeAssign (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5648:18)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11593:24)
+    at D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5167:16)
+    at FlowParserMixin.parseFunctionBody (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:4991:12)
+    at FlowParserMixin.parseArrowExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11575:10)
+    at FlowParserMixin.parseParenAndDistinguishExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:11189:12)
+    at FlowParserMixin.parseParenAndDistinguishExpression (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:5690:18)
+    at FlowParserMixin.parseExprAtom (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10835:23)
+    at FlowParserMixin.parseExprAtom (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:6781:20)
+    at FlowParserMixin.parseExprSubscripts (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10568:23)
+    at FlowParserMixin.parseUpdate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10551:21)
+    at FlowParserMixin.parseMaybeUnary (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10529:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (D:\College\Grad project\src\Dashboard Front-end\node_modules\@babel\parser\lib\index.js:10383:61)
+
+[1m[31mERROR[39m[22m in [1m[eslint] 
+src\Helpers\apiHelper.js
+  Line 282:1:   'api' is not defined  no-undef
+  Line 296:1:   'api' is not defined  no-undef
+  Line 307:16:  'api' is not defined  no-undef
+
+src\components\AIModelState\AI.jsx
+  Line 46:22:  Parsing [1m[31merror[39m[22m[1m: [1m[31mUnexpected[39m[22m[1m token, expected "}" (46:22)
+
+Search for the keywords to learn more about each [1m[31merror[39m[22m[1m.[39m[22m
+
+webpack compiled with [1m[31m2 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+Attempted import error: '../../Helpers/apiHelper' does not contain a default export (imported as 'fetchModelData').
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/components/AIModelState/AI.jsx[39m[22m [1m[32m19:29-43[39m[22m
+[1mexport 'default' (imported as 'fetchModelData') was [1m[31mnot found[39m[22m[1m in '../../Helpers/apiHelper' (possible exports: [1m[32mappendNewReading, createAsset, createFactory, createSensor, fetchModelData, getAllUsers, getFactoriesByUser, getLast10Readings, getUserId, login, registerUser, removeAsset, removeFactory, removeSensor, removeUser, toggleSensor[39m[22m[1m)[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[eslint] 
+src\Helpers\apiHelper.js
+  Line 282:1:   'api' is not defined  no-undef
+  Line 296:1:   'api' is not defined  no-undef
+  Line 307:16:  'api' is not defined  no-undef
+
+Search for the keywords to learn more about each [1m[31merror[39m[22m[1m.[39m[22m
+
+webpack compiled with [1m[31m2 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+Attempted import error: '../../Helpers/apiHelper' does not contain a default export (imported as 'fetchModelData').
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/components/AIModelState/AI.jsx[39m[22m [1m[32m19:29-43[39m[22m
+[1mexport 'default' (imported as 'fetchModelData') was [1m[31mnot found[39m[22m[1m in '../../Helpers/apiHelper' (possible exports: [1m[32mappendNewReading, createAsset, createFactory, createSensor, fetchModelData, getAllUsers, getFactoriesByUser, getLast10Readings, getUserId, login, registerUser, removeAsset, removeFactory, removeSensor, removeUser, toggleSensor[39m[22m[1m)[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[eslint] 
+src\Helpers\apiHelper.js
+  Line 282:1:   'api' is not defined  no-undef
+  Line 296:1:   'api' is not defined  no-undef
+  Line 307:16:  'api' is not defined  no-undef
+
+Search for the keywords to learn more about each [1m[31merror[39m[22m[1m.[39m[22m
+
+webpack compiled with [1m[31m2 errors[39m[22m and [1m[33m1 warning[39m[22m
+Compiling...
+Failed to compile.
+
+[eslint] 
+src\Helpers\apiHelper.js
+  Line 282:1:   'api' is not defined  no-undef
+  Line 296:1:   'api' is not defined  no-undef
+  Line 307:16:  'api' is not defined  no-undef
+
+Search for the keywords to learn more about each error.
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\App.js
+  Line 6:3:  'Navigate' is defined but never used  no-unused-vars
+
+src\components\Notifications\Notifications.jsx
+  Line 5:25:  'setNotifications' is assigned a value but never used  no-unused-vars
+
+src\components\SliderButton\Slider.jsx
+  Line 6:10:  'value' is assigned a value but never used     no-unused-vars
+  Line 6:17:  'setValue' is assigned a value but never used  no-unused-vars
+
+src\pages\Dashboard\Dashboard.jsx
+  Line 63:10:  'recentlyAddedAssets' is assigned a value but never used  no-unused-vars
+  Line 66:8:   'ledState' is assigned a value but never used             no-unused-vars
+  Line 66:18:  'setLedState' is assigned a value but never used          no-unused-vars
+
+[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[eslint] 
+src\Helpers\apiHelper.js
+  Line 282:1:   'api' is not defined  no-undef
+  Line 296:1:   'api' is not defined  no-undef
+  Line 307:16:  'api' is not defined  no-undef
+
+Search for the keywords to learn more about each [1m[31merror[39m[22m[1m.[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m and [1m[33m1 warning[39m[22m

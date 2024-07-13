@@ -1,10 +1,11 @@
 // src/components/AI.js
-import React, { useState, useEffect } from "react";
-//import axios from "axios";
-import "./AiModel.css";
-import Card from "../Card/Card";
+import React, { useState, useEffect } from 'react';
+import Card from '../Card/Card';
+import { fetchModelData } from '../../Helpers/apiHelper'; // Adjust the path based on your file structure
+import Chip from '@mui/material/Chip';
+
 const AI = () => {
-  const [aiModelStatus, setAiModelStatus] = useState(null); // State for AI model status
+  const [aiModelStatus, setAiModelStatus] = useState([]);
 
   useEffect(() => {
     fetchAiModelStatus();
@@ -12,27 +13,59 @@ const AI = () => {
 
   const fetchAiModelStatus = async () => {
     try {
-      // const response = await axios.get(`${BASE_URL}/ai/model/status`);
-      //setAiModelStatus(response.data.status);
+      const response = await fetchModelData();
+      console.log('Full response from server:', response); // Debug log
+
+      if (response && response.status === "success" && response.data && response.data.assets) {
+        const assets = response.data.assets;
+        const statuses = assets.map(asset => ({
+          name: asset.name,
+          Model: asset.model, // Assuming 'model' represents the Model
+          status: asset.predictive_maintenance === 'none' ? 'Everything is good' : `Maintenance: ${asset.predictive_maintenance}`
+        }));
+        console.log('Extracted statuses:', statuses); // Debug log
+
+        setAiModelStatus(statuses);
+      } else {
+        console.warn('Unexpected response structure:', response);
+        setAiModelStatus([{ name: 'Unavailable', Model: 'Unavailable', status: 'Unavailable' }]);
+      }
     } catch (error) {
-      console.error("Error fetching AI model status:", error);
-      // setAiModelStatus("Unavailable");
+      console.error('Error fetching AI model status:', error);
+      setAiModelStatus([{ name: 'Unavailable', Model: 'Unavailable', status: 'Unavailable' }]);
     }
   };
 
   return (
-    <Card className="flex-1">
-      {" "}
-      <h2>AI Model Status</h2>
-      <div className="ai-model-status">
-        {aiModelStatus !== null ? (
-          <div className={`status ${aiModelStatus.toLowerCase()}`}>
-            {aiModelStatus}
-          </div>
-        ) : (
-          <div className="loading">Loading...</div>
-        )}
-      </div>
+    <Card className="flex-1 p-4">
+      <h2 className="text-lg font-bold mb-4">AI Model Status</h2>
+      {aiModelStatus.length > 0 ? (
+        <table className="min-w-full bg-white">
+          <thead>
+            <tr>
+              <th className="py-2">Asset Name</th>
+              <th className="py-2">Model Name</th>
+              <th className="py-2">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {aiModelStatus.map((asset, index) => (
+              <tr key={index} className="text-center">
+                <td className="py-2">{asset.name}</td>
+                <td className="py-2">{asset.Model}</td>
+                <td className="py-2">
+                  <Chip
+                    label={asset.status}
+                    className={`p-2 text-white ${asset.status === 'Everything is good' ? 'bg-green-500' : 'bg-red-500'}`}
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <div className="loading">Loading...</div>
+      )}
     </Card>
   );
 };

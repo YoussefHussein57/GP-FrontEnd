@@ -320,6 +320,21 @@ api.interceptors.response.use(
   }
 );
 
+const fetchModelData = async () => {
+  try {
+    const response = await axios.get(`${BASE_URL}/assets`, {
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+      },
+    });
+    console.log("Response from server:", response.data); // Debug log
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching model data:", error);
+    throw error;
+  }
+};
+
 export default api;
 
 export {
@@ -337,5 +352,6 @@ export {
   removeFactory,
   removeSensor,
   toggleSensor,
+  fetchModelData,
   createSensor, // Export the new function
 };
