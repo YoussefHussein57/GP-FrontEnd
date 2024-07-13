@@ -1,4 +1,3 @@
-// src/components/AI.js
 import React, { useState, useEffect } from 'react';
 import Card from '../Card/Card';
 import { fetchModelData } from '../../Helpers/apiHelper'; // Adjust the path based on your file structure
@@ -56,7 +55,11 @@ const AI = () => {
                 <td className="py-2">
                   <Chip
                     label={asset.status}
-                    className={`p-2 text-white ${asset.status === 'Everything is good' ? 'bg-green-500' : 'bg-red-500'}`}
+                    style={{
+                      backgroundColor: asset.status === 'Everything is good' ? '#4CAF50' : '#F44336',
+                      color: '#ffffff' // white text color
+                    }}
+                    className="p-2"
                   />
                 </td>
               </tr>

@@ -105,7 +105,7 @@ form {
 .icon {
   position: absolute;
   left: 5%;
-  top: 72%;
+  top: 66%;
   transform: translateY(-50%);
   color: hsl(0, 2%, 62%);
   z-index: 1;
